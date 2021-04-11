@@ -134,7 +134,7 @@ h6 {
 }
 
 a {
-	color: #626262;
+	color: #307f96;;
 }
 
 a:hover {
@@ -145,8 +145,8 @@ a.turquoise {
 	color: #307f96;
 }
 
-a.white {
-	color: #fff;
+a.dark {
+	color:#3b3b3b;
 }
 
 .testimonial-text {
