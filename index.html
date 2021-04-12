@@ -55,26 +55,28 @@ layout: default
 			<div class="row">
 				{% for post in site.posts limit:6 %}
 				<div class="col-lg-4 col-md-6 col-xs-12 mb-5 post">
-					<div class="post-thumbnail mb-3">
-						<a href="{{ site.baseurl }}{{ post.url }}">
-							<img src="/assets/images/{{ post.banner_image }}" class="img-fluid" alt="">
-						</a>
-					</div>
-					<div class="post-meta">
-						<h3 class="text-center">
-							<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-						</h3>
-						<ul class="text-center p-0">
-							<li class="date">{{ post.date | date: "%B %-d, %Y" }}</li>
-						</ul>
-					</div>
-					<div class="post-info">
-						<p>{{ post.description }}</p>
-					</div>
-					<div class="text-center">
-						<a href="{{ site.baseurl }}{{ post.url }}" class="btn btn-solid-reg">
-							Read More
-						</a>
+					<div class="h-100">
+						<div class="post-thumbnail mb-3">
+							<a href="{{ site.baseurl }}{{ post.url }}">
+								<img src="/assets/images/{{ post.banner_image }}" class="img-fluid img-top-teaser" alt="">
+							</a>
+						</div>
+						<div class="post-meta">
+							<h3 class="text-center">
+								<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+							</h3>
+							<ul class="text-center p-0">
+								<li class="date">{{ post.date | date: "%B %-d, %Y" }}</li>
+							</ul>
+						</div>
+						<div class="post-info">
+							<p>{{ post.description }}</p>
+						</div>
+						<div class="text-center">
+							<a href="{{ site.baseurl }}{{ post.url }}" class="btn btn-solid-reg">
+								Read More
+							</a>
+						</div>
 					</div>
 				</div>
 				{% endfor %}
