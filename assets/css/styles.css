@@ -591,7 +591,7 @@ input[type='checkbox'] {
 .img-top-teaser {
 	object-fit: cover;
     width: 100%;
-    max-height: 125px;
+    max-height: 140px;
 }
 
 /*************************/
