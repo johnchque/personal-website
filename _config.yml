@@ -9,7 +9,7 @@
 title: "John Choque"
 
 # A description of your site for social meta tag, search engines, and feed.xml
-description: "Finding my way to intentional growth. Sharing knowledge about productivity, peace of mind and learning tools."
+description: "Finding my way to living a full life. Sharing knowledge about productivity, peace of mind and learning tools."
 
 # The subpath of your site, e.g. /blog, for generating urls
 baseurl:  ""
@@ -18,7 +18,7 @@ sass:
   sass_dir: _sass
 
 # The base hostname & protocol of your site for where absolute urls are needed
-url: "https://jhnchoque.com/"
+url: "https://johnchque.com/"
 
 # The shortname for your Disqus site to enable comments.
 disqus:
