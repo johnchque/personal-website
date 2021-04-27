@@ -4,7 +4,7 @@ title: "Staying true to yourself"
 date: 2021-04-25
 description: "Hey lovely friends, This week I felt especially thoughtful about what the future holds. As some of you may know, I am moving to Eur..."
 banner_image: post/20210425_true_yourself.jpg
-category: Weekly realizations
+category: weekly-realizations
 tags: [Comics]
 ---
 

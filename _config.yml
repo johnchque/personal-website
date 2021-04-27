@@ -38,9 +38,15 @@ collections:
     permalink: /projects/:name
 
 gems:
-  - jekyll-paginate
-paginate: 6
-paginate_path: /blog/:num/
+  - jekyll-paginate-v2
 
 plugins:
   - jekyll-seo-tag
+
+permalink: /:categories/:title:output_ext
+pagination:
+  enabled: true
+  permalink: '/page/:num/'
+  trail: 
+    before: 2
+    after: 2 
