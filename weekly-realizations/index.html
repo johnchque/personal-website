@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default-simple
 pagination:
   enabled: true
   category: weekly-realizations
@@ -17,28 +17,50 @@ pagination:
 		<div class="col-12 col-lg-10 col-xl-8 ml-top-padding">
 			<div class="heading-title">
 				<h1>Weekly realizations</h1>
-				<p>Some of my works over the years about living a full life.</p>
+				<p>This is my weekly email newsletter. I usually share some advice that helped me find more ways to live
+					a full life. So if you are interested to read more, sign up below.</p>
 			</div>
+		</div>
+	</div>
+	<div class="row pt-3 justify-content-center">
+		<div class="col-12 col-md-6 my-3 text-center" id="revue-embed">
+			<div class="intro">
+				<h3 class="text-center">Sign up to my weekly realizations</h2>
+					<p class="text-center">Every Sunday sharing the best findings from the web about productivity,
+						mental health, and personal growth.</p>
+			</div>
+			<form action="https://www.getrevue.co/profile/johnchque/add_subscriber" method="post" id="revue-form"
+				name="revue-form" target="_blank">
+				<div class="form-group revue-form-group">
+					<input class="form-control-input" type="email" name="member[email]" placeholder="Email"
+						id="member_email">
+				</div>
+				<div class="form-group revue-form-actions">
+					<input type="submit" value="Subscribe" name="member[subscribe]" id="member_submit"
+						class="btn btn-solid-reg">
+					<small class="form-text text-muted">By subscribing, you agree with Revue’s <a target="_blank"
+							href="https://www.getrevue.co/terms">Terms</a> and <a target="_blank"
+							href="https://www.getrevue.co/privacy">Privacy Policy</a>.</small>
+				</div>
+			</form>
 		</div>
 	</div>
 	<div class="row justify-content-center mb-4">
 		<div class="col-12 col-lg-10 col-xl-8">
-			<ul>
-				{% for post in paginator.posts %}
-				<div class="row">
-					<div class="col-12 col-md-3">{{ post.date | date: "%B %-d, %Y" }}</div>
-					<div class="col"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
-				</div>
-				<hr>
-				{% endfor %}
-			</ul>
+			{% for post in paginator.posts %}
+			<div class="row">
+				<div class="col-12 col-md-3">{{ post.date | date: "%B %-d, %Y" }}</div>
+				<div class="col"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
+			</div>
+			<hr>
+			{% endfor %}
 		</div>
 	</div>
 	{% if paginator.page_trail %}
 	{% for trail in paginator.page_trail %}
-		<li {% if page.url == trail.path %}class="selected"{% endif %}>
-			<a href="{{ trail.path | prepend: site.baseurl }}" title="{{trail.title}}">{{ trail.num }}</a>
-		</li>
+	<li {% if page.url==trail.path %}class="selected" {% endif %}>
+		<a href="{{ trail.path | prepend: site.baseurl }}" title="{{trail.title}}">{{ trail.num }}</a>
+	</li>
 	{% endfor %}
 	{% endif %}
 </div>
