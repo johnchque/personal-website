@@ -3,7 +3,7 @@ layout: post
 title: "A language journey"
 date: 2020-07-13
 description: "It was a once in a lifetime opportunity. Something you never thought was possible. You find your mind flooded with thoughts over th..."
-banner_image: post/10_blog_language_journey.jpg
+image: post/10_blog_language_journey.jpg
 category: Language
 tags: [TOEFL]
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Your mistakes don't define you"
 date: 2021-04-18
 description: "Hey lovely people, I've been reflecting on certain mistakes I made time ago and how I feel now about them. One of the biggest probl..."
-banner_image: post/20210418_mistakes_define.jpg
+image: post/20210418_mistakes_define.jpg
 category: weekly-realizations
 tags: [Comics]
 ---
