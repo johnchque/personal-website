@@ -3,7 +3,7 @@ layout: post
 title: "A blurry past"
 date: 2019-08-17
 description: "I never knew the words to say when I needed help. It wasn’t until I became an adult that I could say that I was broken. When I look back..."
-image: post/a_blurry_past.jpg
+banner_image: post/a_blurry_past.jpg
 category: Thoughts
 tags: [mental health]
 ---

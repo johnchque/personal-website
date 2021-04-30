@@ -3,7 +3,7 @@ layout: post
 title: "The world is much bigger now"
 date: 2021-03-28
 description: "Hey lovely people, As you might know, I've been working on a webcomic with my friend @dartvidgo about breakups and the process of l..."
-image: post/20210328_world_bigger_now.jpg
+banner_image: post/20210328_world_bigger_now.jpg
 category: weekly-realizations
 tags: [Comics]
 ---

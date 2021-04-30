@@ -3,7 +3,7 @@ layout: post
 title: "Getting a message to more people"
 date: 2021-04-11
 description: "Hey lovely people, As you might know, I've been working on a webcomic with my friend @dartvidgo about breakups and the process of l..."
-image: post/20210411_message_people.jpg
+banner_image: post/20210411_message_people.jpg
 category: weekly-realizations
 tags: [Comics]
 ---

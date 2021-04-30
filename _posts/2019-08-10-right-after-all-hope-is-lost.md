@@ -3,7 +3,7 @@ layout: post
 title: "Right after all hope is lost"
 date: 2019-08-10
 description: "Depression, such a complex word that explains certain times in life. When I first read about YSI Global I was not sure what to do with..."
-image: post/after_all_hope.jpg
+banner_image: post/after_all_hope.jpg
 category: Entrepreneurship
 tags: [YSI, mental health, entrepreneurship]
 ---

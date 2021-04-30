@@ -16,8 +16,8 @@
 	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
 	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
 	<!--<meta property="og:image" content="/assets/images/thumbnail.jpg" /> image link, make sure it's jpg -->
-    {% if page.image %}
-        <meta property="og:image" content="/assets/images/{{ page.image }}">
+    {% if page.banner_image %}
+        <meta property="og:image" content="/assets/images/{{ page.banner_image }}">
     {% else %}
         <meta property="og:image" content="/assets/images/thumbnail.jpg">
     {% endif %}
