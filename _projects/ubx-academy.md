@@ -1,12 +1,12 @@
 ---
 layout: project
-title: "IAESTE Bolivia"
+title: "ubX Academy"
 description: "Community leader for Events organization and applicants monitoring. Guide for foreign interns about the local culture and transportation. During my time as Local Comitee Leader there have been more than 7 students that were accepted to internships abroad."
 banner_image: project/iaesteb_banner.png
 thumbnail: iaesteb_thumbnail.png
 external_url: https://www.facebook.com/iaestebolivia
 category: Community
-order: 7
+order: 8
 type: current
 ---
 Since 1948 IAESTE has been providing young science and engineering students from around the world with paid, course related work experience. Similarly, IAESTE has been a source of high quality trainees for companies and institutions in more than 80 countries worldwide.

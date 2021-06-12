@@ -6,7 +6,8 @@ banner_image: project/quanticgames_banner.png
 thumbnail: quanticgames_thumbnail.png
 external_url: https://www.facebook.com/quanticgames
 category: Videogames
-order: 3
+order: 102
+type: old
 ---
 
 Quantic Games is a video game studio based in Bolivia. It is formed by a group of multi-discplinary artists who share their passion for video games. The main task of the studio is to create games with stories worth remembering. Working together, each of the members has equal rights to contribute creatively with the ideas and games that are created.
