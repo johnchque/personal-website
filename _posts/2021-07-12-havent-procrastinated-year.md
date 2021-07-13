@@ -38,4 +38,4 @@ John
 
 The list of the accepted students for the Tutorship program of Tu Beca Bolivia has been published. You can find the list here: 
 
-(https://tubecabolivia.com/programa-tutorias/)[https://tubecabolivia.com/programa-tutorias/]
+[https://tubecabolivia.com/programa-tutorias/](https://tubecabolivia.com/programa-tutorias/)
