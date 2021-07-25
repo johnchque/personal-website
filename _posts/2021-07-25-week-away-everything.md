@@ -40,10 +40,7 @@ John
 
 **Learning over having a big portfolio** - I saw many discussions on Twitter about the importance of having a good GitHub profile. And some others preferring to focus more on developing our learning skills. This made me think that I was focusing too much on my learning process and not displaying enough about what I know. This is something that is now on my list of new habits to create.
 
-**Sustainability is applied differently in different places** - I had some interesting talks with friends this week about how the environmental part and the social part of the SDGs are seen differently depending on where you come from. It really depends on your background, your interests, and what kind of impact you want to create. We will be talking about such a topic on my podcast soon. To listen to it go to: [https://go.johnchque.com/podcast](https://go.johnchque.com/podcast)Some time ago I was invite to a podcast called "Sin Direccion" by my friend Mike. We had a cool talk about many different topics and I believe it is one of the most personal podcast I've done to the date. You can listen to it here:
-
-[Liberarse de si mismo - John Choque - SIN DIRECCIÓN](https://open.spotify.com/episode/4TxlqK3DZOLK9ETIMzUaU9?fbclid=IwAR398jYZziUc6JTXsXO6H1fk267shiFP7yc2X0kaE9oS7fgUvkP8jrV4K5E)
-
+**Sustainability is applied differently in different places** - I had some interesting talks with friends this week about how the environmental part and the social part of the SDGs are seen differently depending on where you come from. It really depends on your background, your interests, and what kind of impact you want to create. We will be talking about such a topic on my podcast soon. To listen to it go to: [https://go.johnchque.com/podcast](https://go.johnchque.com/podcast)
 
 ## Highlight of the week
 
