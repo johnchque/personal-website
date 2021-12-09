@@ -2256,14 +2256,9 @@ a:hover.back-to-top {
 	left: 0;
 	background: inherit;
   }
-  .card.card-has-bg:hover {
-	transform: scale(0.98);
-	transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-  }
   .card.card-has-bg:hover .card-img-overlay {
 	transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
-	background: #234f6d;
-	background: linear-gradient(0deg, rgba(35, 79, 109, 0.35) 0%, rgba(48, 127, 150, 0.35) 100%);
+	background: rgba(59, 59, 59, 0.2);
   }
   .card .card-meta {
 	color: #307f96;
@@ -2274,6 +2269,5 @@ a:hover.back-to-top {
   }
   .card .card-img-overlay {
 	transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
-	background: #234f6d;
-	background: linear-gradient(0deg, rgba(35, 79, 109, 0.35) 0%, #3b3b3b 100%);
+	background: rgba(59, 59, 59, 0.4);
   }
