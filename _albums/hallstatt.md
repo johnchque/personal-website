@@ -3,6 +3,7 @@ layout: project
 title: "Hallstatt"
 description: ""
 thumbnail: /hallstatt_2021/johnchque_hallstatt2021_1.jpg
+banner_image: albums/hallstatt_2021/thumbnail.jpg
 date: 24-09-2021
 category: Software
 order: 1
