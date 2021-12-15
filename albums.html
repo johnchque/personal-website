@@ -17,8 +17,8 @@ layout: default
 		<div class="col-12 col-lg-10 col-xl-8">
 			{% assign ordered_albums = site.albums | sort:"order" %}
 			{% for album in ordered_albums %}
-			<a href="{{ site.baseurl }}{{ album.url }}" class="mb-3">
-				<div class="card text-white card-has-bg click-col"
+			<a href="{{ site.baseurl }}{{ album.url }}">
+				<div class="card text-white card-has-bg click-col mb-3"
 					style="background-image:url('/assets/images/albums/{{ album.thumbnail }}');">
 					<img class="card-img d-none" src="/assets/images/albums/{{ album.thumbnail }}"
 						alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
