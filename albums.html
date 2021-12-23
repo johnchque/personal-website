@@ -15,7 +15,7 @@ layout: default
 	</div>
 	<div class="row justify-content-center mb-4">
 		<div class="col-12 col-lg-10 col-xl-8">
-			{% assign ordered_albums = site.albums | sort:"order" %}
+			{% assign ordered_albums = site.albums | sort:"order" | reverse %}
 			{% for album in ordered_albums %}
 			<a href="{{ site.baseurl }}{{ album.url }}">
 				<div class="card text-white card-has-bg click-col mb-3"
