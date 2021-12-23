@@ -32,3 +32,5 @@ camera: Nikon D5300
 ![alt text]({{site.baseurl}}/assets/images/albums/bled_2021/johnchque_bled2021_10.jpg "Bled"){:.img-fluid}
 
 ![alt text]({{site.baseurl}}/assets/images/albums/bled_2021/johnchque_bled2021_11.jpg "Bled"){:.img-fluid}
+
+![alt text]({{site.baseurl}}/assets/images/albums/bled_2021/johnchque_bled2021_12.jpg "Bled"){:.img-fluid}
