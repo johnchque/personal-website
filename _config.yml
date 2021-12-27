@@ -52,7 +52,11 @@ pagination:
 autopages:
   enabled: false
 
-image: /assets/images/thumbnail.jpg
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/thumbnail.jpg
 
 twitter:
     username:          johnchque
