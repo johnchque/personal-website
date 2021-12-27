@@ -53,5 +53,5 @@ autopages:
   enabled: false
 
 twitter:
-  username: johnchque
-  card: summary_large_image
+    username:          johnchque
+    card:              summary_large_image
