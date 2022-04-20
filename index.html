@@ -18,22 +18,22 @@ layout: default
 	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
-				<a class="nav-link page-scroll" href="/albums">Photography</a>
+				<a class="nav-link page-scroll" href="/projects">Work</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link page-scroll" href="/blog">Blog</a>
+				<a class="nav-link page-scroll" href="/blog">Writings</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link page-scroll" href="/albums">Photos</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link page-scroll" href="/podcast">Podcast</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link page-scroll" href="/about">About</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link page-scroll" href="/projects">Projects</a>
-			</li>
-			<li class="nav-item">
 				<a class="nav-link page-scroll" href="/weekly-realizations">Newsletter</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link page-scroll" href="/about">About</a>
 			</li>
 		</ul>
 	</div>
@@ -43,24 +43,64 @@ layout: default
 <div class="container">
 	<div class="row mb-5">
 		<div class="col-md-12 ml-top-padding">
-			<div class="heading-title">
+			<div class="heading-title text-center">
 				<h1>Hi, I'm John</h1>
-				<p>Learning about productivity, mental health, and personal growth to live a full life.</p>
+				<p class="p-large">I'm a multi-disciplinary software developer, innovator, and artist based in Denmark.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="row mb-5">
+		<div class="col-12">
+			<div class="card-columns">
+				<a href="/projects">
+				<div class="card">
+					<img class="card-img-top" src="/assets/images/index-work.jpg" alt="Card image top">
+					<div class="card-img-overlay ">
+						<h3 class="card-title text-white">Work</h3>
+						<p class="card-text text-white">This is what I do</p>
+					</div>
+				</div>
+				</a>
+				<a href="/blog">
+				<div class="card">
+					<img class="card-img-top" src="/assets/images/index-writings.jpg" alt="Card image top">
+					<div class="card-img-overlay">
+						<h3 class="card-title text-white">Writings</h3>
+						<p class="card-text text-white">This is what I learn</p>
+					</div>
+				</div>
+				</a>
+				<a href="/albums.html">
+				<div class="card">
+					<img class="card-img-top" src="/assets/images/index-photos.jpg" alt="Card image top">
+					<div class="card-img-overlay white">
+						<h3 class="card-title text-white">Photos</h3>
+						<p class="card-text text-white">This is what I see</p>
+					</div>
+				</div>
+				</a>
+				<a href="/about.html">
+					<div class="card">
+						<img class="card-img-top" src="/assets/images/index-about.jpg" alt="Card image top">
+						<div class="card-img-overlay">
+							<h3 class="card-title text-white">About</h3>
+							<p class="card-text text-white">This is who I am </p>
+						</div>
+					</div>
+				</a>
 			</div>
 		</div>
 	</div>
 	<div class="row mb-5">
 		<div class="col-12 mb-4">
-			<h2>The #livingfully blog</h2>
-			<p>Sharing resources to live a full life.</p>
-			<a href="/blog">
-				Visit the #livingfully blog
-			</a>
+			<h2>Writings</h2>
+			To read more articles click <a href="/blog">here</a>.
 		</div>
 		<div class="col-12">
 			<div class="row">
 				{% for post in site.posts limit:3 %}
-				<div class="col-lg-4 col-md-6 col-xs-12 mb-5 post">
+				<div class="col-4 col-xs-12 mb-5 post">
 					<div class="h-100">
 						<div class="post-thumbnail mb-3">
 							<a href="{{ site.baseurl }}{{ post.url }}">
@@ -76,9 +116,6 @@ layout: default
 								<li class="date">{{ post.date | date: "%B %-d, %Y" }}</li>
 							</ul>
 						</div>
-						<div class="post-info">
-							<p>{{ post.description }}</p>
-						</div>
 						<div class="text-center">
 							<a href="{{ site.baseurl }}{{ post.url }}" class="btn btn-solid-reg">
 								Read More
@@ -87,18 +124,6 @@ layout: default
 					</div>
 				</div>
 				{% endfor %}
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-12 col-lg-10 col-xl-8">
-					<h3>More articles</h3>
-					{% for post in site.posts offset:3 %}
-					<div class="row">
-						<div class="col-12 col-md-3">{{ post.date | date: "%B %-d, %Y" }}</div>
-						<div class="col"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
-					</div>
-					<hr>
-					{% endfor %}
-				</div>
 			</div>
 		</div>
 	</div>

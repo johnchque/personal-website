@@ -15,14 +15,14 @@ pagination:
 	<div class="row mb-4">
 		<div class="col-md-12 ml-top-padding">
 			<div class="heading-title">
-				<h2>The #freetodream Blog</h2>
-				<p>On this blog we share resources about productivity, peace of mind, and learning tools.</p>
+				<h1>Writings</h1>
+				<p>Sharing resources about productivity, peace of mind, and learning tools.</p>
 			</div>
 		</div>
 	</div>
 	<div class="row mb-4">
 		{% for post in paginator.posts %}
-		<div class="col-lg-4 col-md-6 col-xs-12 mb-5 post">
+		<div class="col-6 col-xs-12 mb-5 post">
 			<div class="h-100">
 				<div class="post-thumbnail mb-3">
 					<a href="{{ site.baseurl }}{{ post.url }}">
@@ -37,9 +37,6 @@ pagination:
 					<ul class="text-center p-0">
 						<li class="date">{{ post.date | date: "%B %-d, %Y" }}</li>
 					</ul>
-				</div>
-				<div class="post-info">
-					<p>{{ post.description }}</p>
 				</div>
 				<div class="text-center">
 					<a href="{{ site.baseurl }}{{ post.url }}" class="btn btn-solid-reg">

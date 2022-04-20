@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+{% include navigation.html %}
+
+<div class="container">
+	<div class="row justify-content-center mb-4">
+		<div class="col-12 col-lg-10 col-xl-8 ml-top-padding">
+			<div class="heading-title">
+				<h1>Photos</h1>
+				<p>Perceptions of reality.</p>
+			</div>
+		</div>
+	</div>
+	<div class="row justify-content-center mb-4">
+		<div class="col-12 col-lg-10 col-xl-8">
+			{% assign ordered_albums = site.albums | sort:"order" | reverse %}
+			{% for album in ordered_albums %}
+			<a href="{{ site.baseurl }}{{ album.url }}">
+				<div class="card text-white card-has-bg click-col mb-3"
+					style="background-image:url('/assets/images/albums/{{ album.thumbnail }}');">
+					<img class="card-img d-none" src="/assets/images/albums/{{ album.thumbnail }}"
+						alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+					<div class="card-img-overlay d-flex flex-column">
+						<div class="card-body">
+							<small class="card-meta mb-2">{{ album.country }}</small>
+							<h4 class="card-title mt-0 text-white">{{ album.title }}</h4>
+							<small><i class="far fa-clock"></i>{{ album.date | date: "%Y" }}</small>
+						</div>
+					</div>
+				</div>
+			</a>
+			{% endfor %}
+		</div>
+	</div>
+</div>
