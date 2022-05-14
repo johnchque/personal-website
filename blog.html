@@ -22,26 +22,17 @@ pagination:
 	</div>
 	<div class="row mb-4">
 		{% for post in paginator.posts %}
-		<div class="col-6 col-xs-12 mb-5 post">
-			<div class="h-100">
-				<div class="post-thumbnail mb-3">
-					<a href="{{ site.baseurl }}{{ post.url }}">
-						<img src="/assets/images/{{ post.banner_image }}" class="img-fluid img-top-teaser"
-							alt="">
-					</a>
+		<div class="col-12 col-sm-6 col-lg-4 mb-4 post">
+			<div class="single-entry mb-5">
+				<div class="entry-thumb mb-4">
+					<a href="{{ site.baseurl }}{{ post.url }}"> <img src="/assets/images/{{ post.banner_image }}" class="img-fluid" alt="blog"></a>
 				</div>
-				<div class="post-meta">
-					<h3 class="text-center">
-						<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-					</h3>
-					<ul class="text-center p-0">
-						<li class="date">{{ post.date | date: "%B %-d, %Y" }}</li>
-					</ul>
-				</div>
-				<div class="text-center">
-					<a href="{{ site.baseurl }}{{ post.url }}" class="btn btn-solid-reg">
-						Read More
+				<div class="entry-content">
+					<span class="post-meta text-muted">{{ post.date | date: "%B %-d, %Y" }}</span>
+					<a href="{{ site.baseurl }}{{ post.url }}" class="text-decoration-none">
+						<h3>{{ post.title }}</h3>
 					</a>
+					<a href="{{ site.baseurl }}{{ post.url }}">Read more</a>
 				</div>
 			</div>
 		</div>

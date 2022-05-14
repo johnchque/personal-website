@@ -3,39 +3,38 @@ layout: default
 ---
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
-	<!-- Image Logo -->
-	<a class="navbar-brand logo-image" href="index.html"><img src="/assets/images/icon-simple.svg"
-			alt="alternative"></a>
-
-	<!-- Mobile Menu Toggle Button -->
-	<button class="navbar-toggler px-0" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-		aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-		Menu
-	</button>
-	<!-- end of mobile menu toggle button -->
-
-	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-		<ul class="navbar-nav ml-auto">
-			<li class="nav-item">
-				<a class="nav-link page-scroll" href="/projects">Work</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link page-scroll" href="/blog">Writings</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link page-scroll" href="/albums">Photos</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link page-scroll" href="/podcast">Podcast</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link page-scroll" href="/weekly-realizations">Newsletter</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link page-scroll" href="/about">About</a>
-			</li>
-		</ul>
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top" id="fixed-top">
+	<div class="container-fluid">
+		<!-- Image Logo -->
+		<a class="navbar-brand logo-image" href="index.html"><img src="/assets/images/icon-simple.svg"
+				alt="alternative"></a>
+		<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+			data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+			aria-label="Toggle navigation" id="">
+			Menu
+		</button>
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<ul class="navbar-nav ms-auto">
+				<li class="nav-item">
+					<a class="nav-link page-scroll" href="/projects">Work</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link page-scroll" href="/blog">Writings</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link page-scroll" href="/albums">Photos</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link page-scroll" href="/podcast">Podcast</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link page-scroll" href="/weekly-realizations">Newsletter</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link page-scroll" href="/about">About</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 </nav> <!-- end of navbar -->
 <!-- end of navigation -->
@@ -50,47 +49,43 @@ layout: default
 			</div>
 		</div>
 	</div>
-	<div class="row mb-5">
-		<div class="col-12">
-			<div class="card-columns">
-				<a href="/projects">
-				<div class="card">
-					<img class="card-img-top" src="/assets/images/index-work.jpg" alt="Card image top">
-					<div class="card-img-overlay ">
-						<h3 class="card-title text-white">Work</h3>
-						<p class="card-text text-white">This is what I do</p>
-					</div>
+	<div class="row mb-5" data-masonry='{"percentPosition": true }'>
+		<a href="/projects" class="col-sm-6 col-lg-4 mb-4">
+			<div class="card">
+				<img class="card-img-top" src="/assets/images/index-work.jpg" alt="Card image top">
+				<div class="card-img-overlay ">
+					<h3 class="card-title text-white">Works</h3>
+					<p class="card-text text-white">What I do</p>
 				</div>
-				</a>
-				<a href="/blog">
-				<div class="card">
-					<img class="card-img-top" src="/assets/images/index-writings.jpg" alt="Card image top">
-					<div class="card-img-overlay">
-						<h3 class="card-title text-white">Writings</h3>
-						<p class="card-text text-white">This is what I learn</p>
-					</div>
-				</div>
-				</a>
-				<a href="/albums.html">
-				<div class="card">
-					<img class="card-img-top" src="/assets/images/index-photos.jpg" alt="Card image top">
-					<div class="card-img-overlay white">
-						<h3 class="card-title text-white">Photos</h3>
-						<p class="card-text text-white">This is what I see</p>
-					</div>
-				</div>
-				</a>
-				<a href="/about.html">
-					<div class="card">
-						<img class="card-img-top" src="/assets/images/index-about.jpg" alt="Card image top">
-						<div class="card-img-overlay">
-							<h3 class="card-title text-white">About</h3>
-							<p class="card-text text-white">This is who I am </p>
-						</div>
-					</div>
-				</a>
 			</div>
-		</div>
+		</a>
+		<a href="/blog" class="col-sm-6 col-lg-4 mb-4">
+			<div class="card">
+				<img class="card-img-top" src="/assets/images/index-writings.jpg" alt="Card image top">
+				<div class="card-img-overlay">
+					<h3 class="card-title text-white">Writings</h3>
+					<p class="card-text text-white">What I learn</p>
+				</div>
+			</div>
+		</a>
+		<a href="/about.html" class="col-sm-6 col-lg-4 mb-4">
+			<div class="card">
+				<img class="card-img-top" src="/assets/images/index-about.jpg" alt="Card image top">
+				<div class="card-img-overlay">
+					<h3 class="card-title text-white">About</h3>
+					<p class="card-text text-white">Who I am </p>
+				</div>
+			</div>
+		</a>
+		<a href="/albums.html" class="col-sm-6 col-lg-4 mb-4">
+			<div class="card">
+				<img class="card-img-top" src="/assets/images/index-photos.jpg" alt="Card image top">
+				<div class="card-img-overlay white">
+					<h3 class="card-title text-white">Photos</h3>
+					<p class="card-text text-white">What I see</p>
+				</div>
+			</div>
+		</a>
 	</div>
 	<div class="row mb-5">
 		<div class="col-12 mb-4">
@@ -100,26 +95,17 @@ layout: default
 		<div class="col-12">
 			<div class="row">
 				{% for post in site.posts limit:3 %}
-				<div class="col-4 col-xs-12 mb-5 post">
-					<div class="h-100">
-						<div class="post-thumbnail mb-3">
-							<a href="{{ site.baseurl }}{{ post.url }}">
-								<img src="/assets/images/{{ post.banner_image }}" class="img-fluid img-top-teaser"
-									alt="">
-							</a>
+				<div class="col-12 col-sm-6 col-lg-4 mb-4 post">
+					<div class="single-entry mb-5">
+						<div class="entry-thumb mb-4">
+							<a href="{{ site.baseurl }}{{ post.url }}"> <img src="/assets/images/{{ post.banner_image }}" class="img-fluid" alt="blog"></a>
 						</div>
-						<div class="post-meta">
-							<h3 class="text-center">
-								<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-							</h3>
-							<ul class="text-center p-0">
-								<li class="date">{{ post.date | date: "%B %-d, %Y" }}</li>
-							</ul>
-						</div>
-						<div class="text-center">
-							<a href="{{ site.baseurl }}{{ post.url }}" class="btn btn-solid-reg">
-								Read More
+						<div class="entry-content">
+							<span class="post-meta text-muted">{{ post.date | date: "%B %-d, %Y" }}</span>
+							<a href="{{ site.baseurl }}{{ post.url }}" class="text-decoration-none">
+								<h3>{{ post.title }}</h3>
 							</a>
+							<a href="{{ site.baseurl }}{{ post.url }}">Read more</a>
 						</div>
 					</div>
 				</div>
