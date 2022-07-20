@@ -29,14 +29,6 @@ button {
 	margin-bottom: 10px;
 	padding-bottom: 20px;
 }
-.intro {
-	margin-top: 8%;
-}
-@media (min-width: 768px){
-	.intro{
-		margin-top: 5%;
-	}
-}
 .messageWrapper {
 	min-height: 20px;
     padding-top: 19px;
