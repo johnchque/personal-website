@@ -16,19 +16,13 @@ layout: default
 		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 			<ul class="navbar-nav ms-auto">
 				<li class="nav-item">
-					<a class="nav-link page-scroll" href="/projects">Work</a>
+					<a class="nav-link page-scroll" href="/blog">The Garden</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link page-scroll" href="/blog">Writings</a>
+					<a class="nav-link page-scroll" href="/work">Work</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link page-scroll" href="/albums">Photos</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link page-scroll" href="/podcast">Podcast</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link page-scroll" href="/weekly-realizations">Newsletter</a>
+					<a class="nav-link page-scroll" href="/art">Art</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link page-scroll" href="/about">About</a>
@@ -39,14 +33,14 @@ layout: default
 </nav> <!-- end of navbar -->
 <!-- end of navigation -->
 
-<div class="container">
+<section class="container">
 	<div class="row mb-5">
-		<div class="col-md-12 ml-top-padding">
-			<div class="heading-title text-center">
-				<h1>Hi, I'm John</h1>
-				<p class="p-large">I'm a multi-disciplinary software developer, innovator, and artist based in Denmark.
-				</p>
-			</div>
+		<div class="heading-title ml-top-padding">
+			<h1 class="mb-5"><strong>John</strong> writes about art, software development, AI ethics, and
+				philosophy.</h1>
+			<p class="p-large">Social entrepreneur, software developer, and artist.</p>
+			<p class="p-large">Currently doing a Master's in Digital Communication Leadership at Aalborg Univeristy
+				in Denmark.</p>
 		</div>
 	</div>
 	<div class="row mb-5" data-masonry='{"percentPosition": true }'>
@@ -54,7 +48,7 @@ layout: default
 			<div class="card">
 				<img class="card-img-top" src="/assets/images/index-work.jpg" alt="Card image top">
 				<div class="card-img-overlay ">
-					<h3 class="card-title text-white">Works</h3>
+					<h3 class="card-title text-white">Work</h3>
 					<p class="card-text text-white">What I do</p>
 				</div>
 			</div>
@@ -63,7 +57,7 @@ layout: default
 			<div class="card">
 				<img class="card-img-top" src="/assets/images/index-writings.jpg" alt="Card image top">
 				<div class="card-img-overlay">
-					<h3 class="card-title text-white">Writings</h3>
+					<h3 class="card-title text-white">The Garden</h3>
 					<p class="card-text text-white">What I learn</p>
 				</div>
 			</div>
@@ -81,36 +75,46 @@ layout: default
 			<div class="card">
 				<img class="card-img-top" src="/assets/images/index-photos.jpg" alt="Card image top">
 				<div class="card-img-overlay white">
-					<h3 class="card-title text-white">Photos</h3>
-					<p class="card-text text-white">What I see</p>
+					<h3 class="card-title text-white">Art</h3>
+					<p class="card-text text-white">What I create</p>
 				</div>
 			</div>
 		</a>
 	</div>
-	<div class="row mb-5">
-		<div class="col-12 mb-4">
-			<h2>Writings</h2>
-			To read more articles click <a href="/blog">here</a>.
-		</div>
-		<div class="col-12">
-			<div class="row">
-				{% for post in site.posts limit:3 %}
-				<div class="col-12 col-sm-6 col-lg-4 mb-4 post">
-					<div class="single-entry mb-5">
-						<div class="entry-thumb mb-4">
-							<a href="{{ site.baseurl }}{{ post.url }}"> <img src="/assets/images/{{ post.banner_image }}" class="img-fluid" alt="blog"></a>
-						</div>
-						<div class="entry-content">
-							<span class="post-meta text-muted">{{ post.date | date: "%B %-d, %Y" }}</span>
-							<a href="{{ site.baseurl }}{{ post.url }}" class="text-decoration-none">
-								<h3>{{ post.title }}</h3>
-							</a>
-							<a href="{{ site.baseurl }}{{ post.url }}">Read more</a>
-						</div>
+	<div class="row mb-5 justify-content-center">
+		<h2>The Garden</h2>
+		<div class="col-12 col-lg-8">
+			<h3>Essays</h3>
+			<p>Long opinionated forms of text.</p>
+			<div class="col-12">
+				<div class="row">
+					{% for post in site.posts limit:4 %}
+					<div class="col-12 col-sm-6 mb-4 post">
+						<a href="{{ site.baseurl }}{{ post.url }}" class="text-decoration-none">
+							<div class="single-entry mb-5">
+								<div class="entry-thumb mb-4">
+									<img src="/assets/images/{{ post.banner_image }}" class="img-fluid" alt="blog">
+								</div>
+								<div class="entry-content">
+									<h3>{{ post.title }}</h3>
+									<p>{{ post.category }} - <span class="text-muted">Updated on {{ post.date | date: "%B %-d, %Y" }}</span></p>
+								</div>
+							</div>
+						</a>
 					</div>
+					{% endfor %}
 				</div>
-				{% endfor %}
 			</div>
 		</div>
+		<div class="col-12 col-lg-4">
+			<h3>Notes</h3>
+			<p>Unopinionated notes on things I'm learning about.</p>
+		</div>
+
 	</div>
-</div>
+
+
+
+
+
+	</div>

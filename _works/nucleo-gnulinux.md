@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: work
 title: "Nucleo GNU/Linux"
 description: "Workshops, Talks and Events organization. Part of the organization group with a community of 1000+ members."
 banner_image: project/nlg_banner.png

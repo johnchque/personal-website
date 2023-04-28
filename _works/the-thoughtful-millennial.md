@@ -1,12 +1,12 @@
 ---
-layout: project
-title: "#historiasquenovemos"
-description: "#historiasquenovemos is a Bolivian organisation that seeks to normalise male emotional and sentimental expression in Latin American societies. So that more men can show their vulnerability and give the necessary attention to their mental health."
+layout: work
+title: "The Thoughtful Millennial"
+description: "TTM is a podcast I host along Halime Lone, a friend with great insights about sustainability. We have casual talks about Mental Health, Sustainability, and entrepreneurship."
 banner_image: project/oss_banner.png
 thumbnail: oss_thumbnail.png
 external_url: https://www.historiasquenovemos.org/
 category: Education
-order: 3
+order: 4
 type: current
 ---
 

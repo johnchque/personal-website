@@ -33,9 +33,9 @@ instagram_username:
 linkedin_username: "john-choque-condori"
 
 collections:
-  projects:
+  works:
     output: true
-    permalink: /projects/:name
+    permalink: /work/:name
   albums:
     output: true
     permalink: /albums/:name

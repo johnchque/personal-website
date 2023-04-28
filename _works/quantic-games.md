@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: work
 title: "Quantic Games"
 description: 'Project manager. Website development. The team was accepted in an Incubator of the City Hall of La Paz during 2019. The game “Puma Punku" won the award for “Best Audio” at ExpoBix 2019.'
 banner_image: project/quanticgames_banner.png

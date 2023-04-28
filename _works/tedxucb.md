@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: work
 title: "TEDxUCB"
 description: "Technical management for talk recordings. Stage design and venue organisation. Technical director of speaker presentations and introduction. Website development."
 banner_image: project/tedxucb_banner.png

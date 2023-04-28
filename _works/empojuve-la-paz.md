@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: work
 title: "Empoderando Juventudes La Paz"
 description: "I am the co-founder of Empoderando Juventudes La Paz. The organization aims to create impact of Gender Equality, Human Rights and Environment. I spent 6 months in the lead group and I created their website, organised many webinars."
 banner_image: project/empojuve_banner.png

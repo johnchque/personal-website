@@ -1,13 +1,13 @@
 ---
-layout: project
-title: "Letting Go Comics"
+layout: work
+title: "IAESTE Bolivia"
 description: "Community leader for Events organization and applicants monitoring. Guide for foreign interns about the local culture and transportation. During my time as Local Comitee Leader there have been more than 7 students that were accepted to internships abroad."
 banner_image: project/iaesteb_banner.png
 thumbnail: iaesteb_thumbnail.png
 external_url: https://www.facebook.com/iaestebolivia
 category: Community
-order: 100
-type: old
+order: 7
+type: current
 ---
 Since 1948 IAESTE has been providing young science and engineering students from around the world with paid, course related work experience. Similarly, IAESTE has been a source of high quality trainees for companies and institutions in more than 80 countries worldwide.
 

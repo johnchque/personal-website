@@ -1,12 +1,12 @@
 ---
-layout: project
-title: "Medito"
-description: "For the past few months, I've been volunteering for the Medito Foundation to record guided meditations in Spanish. I am part of a group of talented voice artists that record the translated meditations to multiple languages."
+layout: work
+title: "Subconscious Fallout"
+description: "#historiasquenovemos is a Bolivian organisation that seeks to normalise male emotional and sentimental expression in Latin American societies. So that more men can show their vulnerability and give the necessary attention to their mental health."
 banner_image: project/oss_banner.png
 thumbnail: oss_thumbnail.png
 external_url: https://www.historiasquenovemos.org/
-category: Education
-order: 5
+category: music
+order: 3
 type: current
 ---
 
