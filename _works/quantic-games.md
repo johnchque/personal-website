@@ -6,7 +6,7 @@ banner_image: project/quanticgames_banner.png
 thumbnail: quanticgames_thumbnail.png
 external_url: https://www.facebook.com/quanticgames
 category: Videogames
-order: 102
+order: 202
 type: old
 ---
 

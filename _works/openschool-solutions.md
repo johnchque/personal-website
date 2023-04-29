@@ -6,7 +6,7 @@ banner_image: project/oss_banner.png
 thumbnail: oss_thumbnail.png
 external_url: https://www.openschoolsolutions.com/
 category: Education
-order: 1
+order: 101
 type: current
 ---
 

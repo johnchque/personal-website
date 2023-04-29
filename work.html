@@ -6,13 +6,9 @@ layout: default
 
 <div class="container">
 	<div class="row justify-content-center mb-4">
-		<div class="col-12 col-lg-10 col-xl-8 ml-top-padding">
+		<div class="col-12 col-lg-8 col-xl-7 ml-top-padding">
 			<h1>Work</h1>
 			<p class="p-large">The full list of projects, initiatives, and volunteering work I have been part of.</p>
-		</div>
-	</div>
-	<div class="row justify-content-center mb-4">
-		<div class="col-12 col-lg-10 col-xl-8">
 			<h2>Active projects</h2>
 			<ul>
 				{% assign ordered_projects = site.works | sort:"order" %}
@@ -22,7 +18,7 @@ layout: default
 					<div class="font-weight-bold"><a class="underline"
 							href="{{ site.baseurl }}{{ project.url }}">{{project.title}}</a>
 					</div>
-					<div class="font-italic">{{project.category}}</div>
+					<div class="font-italic"><i>{{project.category}}</i></div>
 					<div>{{project.description}}</div>
 				</li>
 				{% endif %}
@@ -35,7 +31,22 @@ layout: default
 				{% if project.type == 'old' %}
 				<li class="mb-2">
 					<div class="font-weight-bold"><a class="underline"
-							href="{{ site.baseurl }}{{ project.external_url }}" target="_blank">{{project.title}}</a>
+						href="{{ site.baseurl }}{{ project.url }}">{{project.title}}</a>
+					</div>
+					<div class="font-italic">{{project.category}}</div>
+					<div>{{project.description}}</div>
+				</li>
+				{% endif %}
+				{% endfor %}
+			</ul>
+			<h2>Volunteering</h2>
+			<ul>
+				{% assign ordered_projects = site.works | sort:"order" %}
+				{% for project in ordered_projects %}
+				{% if project.type == 'volunteering' %}
+				<li class="mb-2">
+					<div class="font-weight-bold"><a class="underline"
+						href="{{ site.baseurl }}{{ project.url }}">{{project.title}}</a>
 					</div>
 					<div class="font-italic">{{project.category}}</div>
 					<div>{{project.description}}</div>

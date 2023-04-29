@@ -1,12 +1,12 @@
 ---
 layout: work
-title: "TEDxUCB"
+title: "Sustainability Advocates"
 description: "Technical management for talk recordings. Stage design and venue organisation. Technical director of speaker presentations and introduction. Website development."
 banner_image: project/tedxucb_banner.png
 thumbnail: tedxucb_thumbnail.png
 external_url: https://www.facebook.com/TedxUcb
 category: Community
-order: 302
+order: 301
 type: volunteering
 ---
 

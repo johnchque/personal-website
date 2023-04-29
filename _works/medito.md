@@ -6,8 +6,8 @@ banner_image: project/oss_banner.png
 thumbnail: oss_thumbnail.png
 external_url: https://www.historiasquenovemos.org/
 category: Education
-order: 5
-type: current
+order: 305
+type: volunteering
 ---
 
 OPENschool Solutions is a startup with base in Austria that aims to foster individual learning with a tailored experience. With the current education system, the students are meant to follow the instructions of a teacher. By not being able to organise their learning themselves, they hinder their creativity and don't have the opportunity to learn more about their interests. OPENschool tackles that by creating an structure for individual learning by creating a platform with competency based learning. OPENSchool allows the students to foster their creativity by implementing a dynamic model. Each student can decide what to learn first and why. They are assessed by the teachers who define whether a student has mastered or not a competence. The teacher serve as a coach that will guide the students towards the right use of their knowledge in real life.
