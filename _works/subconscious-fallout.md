@@ -8,6 +8,7 @@ external_url: https://open.spotify.com/album/5O1JSfrtV8ShEzqoOJL9cx?si=HvJS2nYpT
 category: Music
 order: 103
 type: current
+tags: [art, music]
 ---
 
 Subconscious Fallout is an album made in collaboration with Vishay Khxl. Together we worked for six months on an album that mixes rap, pop, and metal.
@@ -34,3 +35,7 @@ While working on this album I contributed in the following ways:
 
 ## Achievements
 - So far the album got more than 1.5k streams.
+
+<div class="spotify-embeds mb-4">
+	<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/5O1JSfrtV8ShEzqoOJL9cx?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>

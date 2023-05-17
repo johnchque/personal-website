@@ -39,6 +39,9 @@ collections:
   albums:
     output: true
     permalink: /albums/:name
+  notes:
+    output: true
+    permalink: /garden/:name
 
 gems:
   - jekyll-paginate-v2

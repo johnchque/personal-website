@@ -6,7 +6,7 @@ layout: default
 
 <div class="container">
 	<div class="row justify-content-center mb-4">
-		<div class="col-12 col-lg-10 col-xl-8 ml-top-padding">
+		<div class="col-12 col-lg-8 col-xl-6 ml-top-padding">
 			<div class="heading-title">
 				<h1>Art</h1>
 				<p class="p-large">Things I create, observe, and listen.</p>
@@ -14,26 +14,64 @@ layout: default
 			</div>
 			<h2>Music</h2>
 			<p>Music has been always part of my life.</p>
-			<h3>Silent Moment</h3>
-			<h2>Videography</h2>
-			<h2>Photography</h3>
-			<h2>Poetry</h2>
-			{% assign ordered_albums = site.albums | sort:"order" | reverse %}
+			{% assign ordered_albums = site.works | sort:"order" | reverse %}
 			{% for album in ordered_albums %}
+			{% if album.tags contains 'music' %}
 			<a href="{{ site.baseurl }}{{ album.url }}">
-				<div class="card text-white card-has-bg click-col mb-3"
-					style="background-image:url('/assets/images/albums/{{ album.thumbnail }}');">
-					<img class="card-img d-none" src="/assets/images/albums/{{ album.thumbnail }}"
-						alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-					<div class="card-img-overlay d-flex flex-column">
-						<div class="card-body">
-							<small class="card-meta mb-2">{{ album.country }}</small>
-							<h4 class="card-title mt-0 text-white">{{ album.title }}</h4>
-							<small><i class="far fa-clock"></i>{{ album.date | date: "%Y" }}</small>
-						</div>
+				<div class="card mb-3">
+					<div class="card-body">
+						<h4>{{ album.title }}</h4>
+					</div>
+					<div class="card-text">
 					</div>
 				</div>
 			</a>
+			{% endif %}
+			{% endfor %}
+			<h2>Videography</h2>
+			{% assign ordered_albums = site.works | sort:"order" | reverse %}
+			{% for album in ordered_albums %}
+			{% if album.tags contains 'videography' %}
+			<a href="{{ site.baseurl }}{{ album.url }}">
+				<div class="card mb-3">
+					<div class="card-body">
+						<h4>{{ album.title }}</h4>
+					</div>
+					<div class="card-text">
+					</div>
+				</div>
+			</a>
+			{% endif %}
+			{% endfor %}
+			<h2>Photography</h3>
+				{% assign ordered_albums = site.works | sort:"order" | reverse %}
+			{% for album in ordered_albums %}
+			{% if album.tags contains 'photography' %}
+			<a href="{{ site.baseurl }}{{ album.url }}">
+				<div class="card mb-3">
+					<div class="card-body">
+						<h4>{{ album.title }}</h4>
+					</div>
+					<div class="card-text">
+					</div>
+				</div>
+			</a>
+			{% endif %}
+			{% endfor %}
+			<h2>Graphic design</h2>
+			{% assign ordered_albums = site.works | sort:"order" | reverse %}
+			{% for album in ordered_albums %}
+			{% if album.tags contains 'design' %}
+			<a href="{{ site.baseurl }}{{ album.url }}">
+				<div class="card mb-3">
+					<div class="card-body">
+						<h4>{{ album.title }}</h4>
+					</div>
+					<div class="card-text">
+					</div>
+				</div>
+			</a>
+			{% endif %}
 			{% endfor %}
 		</div>
 	</div>

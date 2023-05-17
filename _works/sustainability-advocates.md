@@ -8,6 +8,7 @@ external_url: https://www.facebook.com/TedxUcb
 category: Community
 order: 301
 type: volunteering
+tags: [volunteering, sustainability, photography]
 ---
 
 TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection. These local, self-organized events are branded TEDx, where x = an independently organized TED event. The TED Conference provides general guidance, rules and regulations for the TEDx program.

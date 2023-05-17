@@ -8,6 +8,7 @@ external_url: https://www.facebook.com/quanticgames
 category: Videogames
 order: 202
 type: old
+tags: [development, games, drawing]
 ---
 
 Quantic Games is a video game studio based in Bolivia. It is formed by a group of multi-discplinary artists who share their passion for video games. The main task of the studio is to create games with stories worth remembering. Working together, each of the members has equal rights to contribute creatively with the ideas and games that are created.
@@ -27,7 +28,7 @@ At Quantic Games, I am in charge of:
 - In 2020, the studio got an scholarship provided by the Bolivian Videogame Association for attending to GameLab organised online and initially setup to happen in Barcelona, Spain. We used the opportunity to promote our project Puma Punku.
 
 ## Gallery
-![alt text]({{site.baseurl}}/assets/images/project/quantic_1.jpg "ExpoBix winners"){:.image-holder}
+![alt text]({{site.baseurl}}/assets/images/project/quantic_1.jpg "ExpoBix winners"){:.img-fluid}
 
 Below you can check the Intro and Gameplay of the first version of the videogame.
 

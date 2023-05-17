@@ -8,6 +8,7 @@ external_url: https://www.empojuvelapaz.org/
 category: Community
 order: 201
 type: old
+tags: [initiative, sustainability]
 ---
 
 Empoderando Juventudes (Empowering Youth) is an organization that has the firm conviction to encourage Latin American youth to actively and cooperatively fight for peace, equity and social and environmental justice in our communities and our region through projects, activities where knowledge, skills, dreams and struggles are combined and strengthened.

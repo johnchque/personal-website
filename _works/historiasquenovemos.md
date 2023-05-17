@@ -8,6 +8,7 @@ external_url: https://www.historiasquenovemos.org/
 category: Initiative
 order: 102
 type: current
+tags: [initiatives, mentalhealth, design]
 ---
 
 #historiasquenovemos is an organization that aims to normalise the emotional expression of men in Latin American societies.
