@@ -42,6 +42,9 @@ collections:
   notes:
     output: true
     permalink: /garden/:name
+  art:
+    output: true
+    permalink: /art/:name
 
 gems:
   - jekyll-paginate-v2

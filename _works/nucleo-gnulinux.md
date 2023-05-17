@@ -1,7 +1,7 @@
 ---
 layout: work
 title: "Nucleo GNU/Linux"
-description: "Workshops, Talks and Events organization. Part of the organization group with a community of 1000+ members."
+description: "A study group for FOSS technologies based in La Paz, Bolivia."
 banner_image: project/nlg_banner.png
 thumbnail: ngl_thumbnail.png
 external_url: https://www.facebook.com/nucleognulinux

@@ -1,7 +1,7 @@
 ---
 layout: work
 title: "Medito"
-description: "For the past few months, I've been volunteering for the Medito Foundation to record guided meditations in Spanish. I am part of a group of talented voice artists that record the translated meditations to multiple languages."
+description: "An open platform that offers free guided meditations."
 banner_image: project/oss_banner.png
 thumbnail: oss_thumbnail.png
 external_url: https://www.historiasquenovemos.org/

@@ -1,7 +1,7 @@
 ---
 layout: work
-title: "Subconscious Fallout"
-description: "Subconscious Fallout is a music album that mixes rap, pop, and metal."
+title: "Silent Moment"
+description: "Music written with a mix of metal, rap, and bolivian folkloric music."
 banner_image: project/oss_banner.png
 thumbnail: oss_thumbnail.png
 external_url: https://open.spotify.com/album/5O1JSfrtV8ShEzqoOJL9cx?si=HvJS2nYpTlKclF4030KBiQ

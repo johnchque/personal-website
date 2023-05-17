@@ -1,7 +1,7 @@
 ---
 layout: work
 title: "Sustainability Advocates"
-description: "Technical management for talk recordings. Stage design and venue organisation. Technical director of speaker presentations and introduction. Website development."
+description: "Program run by Stadion.dk to develop sustainable projects in Copenhagen."
 banner_image: project/tedxucb_banner.png
 thumbnail: tedxucb_thumbnail.png
 external_url: https://www.facebook.com/TedxUcb

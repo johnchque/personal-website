@@ -13,65 +13,15 @@ layout: default
 				<p>This page is an index of the artistic work I made in my <a href="/work">projects</a>.</p>
 			</div>
 			<h2>Music</h2>
-			<p>Music has been always part of my life.</p>
-			{% assign ordered_albums = site.works | sort:"order" | reverse %}
-			{% for album in ordered_albums %}
-			{% if album.tags contains 'music' %}
-			<a href="{{ site.baseurl }}{{ album.url }}">
+			{% assign ordered_art = site.art | sort:"order" | reverse %}
+			{% for art in ordered_art %}
+			<a href="{{ site.baseurl }}{{ art.url }}">
 				<div class="card mb-3">
 					<div class="card-body">
-						<h4>{{ album.title }}</h4>
-					</div>
-					<div class="card-text">
+						<h4>{{ art.title }}</h4>
 					</div>
 				</div>
 			</a>
-			{% endif %}
-			{% endfor %}
-			<h2>Videography</h2>
-			{% assign ordered_albums = site.works | sort:"order" | reverse %}
-			{% for album in ordered_albums %}
-			{% if album.tags contains 'videography' %}
-			<a href="{{ site.baseurl }}{{ album.url }}">
-				<div class="card mb-3">
-					<div class="card-body">
-						<h4>{{ album.title }}</h4>
-					</div>
-					<div class="card-text">
-					</div>
-				</div>
-			</a>
-			{% endif %}
-			{% endfor %}
-			<h2>Photography</h3>
-				{% assign ordered_albums = site.works | sort:"order" | reverse %}
-			{% for album in ordered_albums %}
-			{% if album.tags contains 'photography' %}
-			<a href="{{ site.baseurl }}{{ album.url }}">
-				<div class="card mb-3">
-					<div class="card-body">
-						<h4>{{ album.title }}</h4>
-					</div>
-					<div class="card-text">
-					</div>
-				</div>
-			</a>
-			{% endif %}
-			{% endfor %}
-			<h2>Graphic design</h2>
-			{% assign ordered_albums = site.works | sort:"order" | reverse %}
-			{% for album in ordered_albums %}
-			{% if album.tags contains 'design' %}
-			<a href="{{ site.baseurl }}{{ album.url }}">
-				<div class="card mb-3">
-					<div class="card-body">
-						<h4>{{ album.title }}</h4>
-					</div>
-					<div class="card-text">
-					</div>
-				</div>
-			</a>
-			{% endif %}
 			{% endfor %}
 		</div>
 	</div>

@@ -1,7 +1,7 @@
 ---
 layout: work
 title: "The Thoughtful Millennial"
-description: "TTM is a podcast where we have casual talks about mental health, sustainability, and entrepreneurship."
+description: "Podcast with casual talks about mental health, sustainability, and entrepreneurship."
 banner_image: project/oss_banner.png
 thumbnail: oss_thumbnail.png
 external_url: https://www.historiasquenovemos.org/

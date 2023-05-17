@@ -1,7 +1,7 @@
 ---
 layout: work
 title: "OPENSchool Solutions"
-description: "OPENschool Solutions is a startup with base in Austria that aims to foster individual learning with a tailored experience."
+description: "Startup based in Austria that aims to foster individual learning with a tailored experience with the school classroom."
 banner_image: project/oss_banner.png
 thumbnail: oss_thumbnail.png
 external_url: https://www.openschoolsolutions.com/

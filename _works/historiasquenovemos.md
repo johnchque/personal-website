@@ -1,7 +1,7 @@
 ---
 layout: work
 title: "#historiasquenovemos"
-description: "An organization that aims to normalise the emotional expression of men in Latin American societies."
+description: "Organization that aims to normalise the emotional expression of men in Latin American societies."
 banner_image: project/oss_banner.png
 thumbnail: oss_thumbnail.png
 external_url: https://www.historiasquenovemos.org/
