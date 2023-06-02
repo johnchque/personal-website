@@ -8,13 +8,13 @@ layout: default
 
 <div class="container">
 	<div class="row justify-content-center">
-		<div class="col-12 col-lg-8 col-xl-7 ml-top-padding">
+		<div class="col-12 col-lg-8 col-xl-6 ml-top-padding">
 			<div class="heading-title mb-3">
 				<a href="/work">
 					<i class="ri-arrow-left-line"></i> Work
 				</a>
-				<h1>{{ page.title }}</h1>
-				<p>{{ page.date | date: "%B %-d, %Y" }}</p>
+				<h1 class="my-3">{{ page.title }}</h1>
+				<p class="text-muted">{{ page.date | date: "%B, %Y" }}</p>
 			</div>
 			<div class="mb-3">
 				{{ content }}
