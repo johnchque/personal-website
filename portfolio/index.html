@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+{% include navigation.html %}
+
+<div class="container">
+	<div class="row justify-content-center mb-4">
+		<div class="col-12 ml-top-padding">
+			<div class="heading-title">
+				<h1>Portfolio</h1>
+				<p class="p-large">Things I observe and create.</p>
+			</div>
+			<div class="row">
+				{% for item in site.pages %}
+				{% assign item_crumbs = item.url | remove_first: page.dir | split: '/' %}
+
+				{% if item_crumbs.size == 1 and item.name == 'index.html' %}
+				<div class="col-12 col-md-6">
+					<a href="{{ item.url | relative_url }}" class="text-decoration-none">
+						<div class="card text-center mb-3">
+							<img src="{{ item.thumbnail }}" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">{{ item.title }}</h5>
+							</div>
+						</div>
+					</a>
+				</div>
+				{% endif %}
+				{% endfor %}
+
+
+				{% assign ordered_art = site.art | sort:"order" | reverse %}
+				{% for art in ordered_art %}
+				<div class="col-12 col-md-6">
+					<a href="{{ site.baseurl }}{{ art.url }}" class="text-decoration-none">
+						<div class="card text-center mb-3">
+							<img src="{{ art.thumbnail }}" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">{{ art.title }}</h5>
+							</div>
+						</div>
+					</a>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>

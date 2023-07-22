@@ -1,9 +1,9 @@
 ---
 layout: art
-title: "Videography"
+title: "Design"
 description: "My work as a videographer in organizations, music, and events."
 banner_image: project/tedxucb_banner.png
-thumbnail: /assets/images/thumbnails/videography.png
+thumbnail: /assets/images/thumbnails/design.jpg
 category: Community
 order: 302
 ---

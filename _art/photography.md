@@ -3,7 +3,7 @@ layout: art
 title: "Photography"
 description: "My work as a photographer in organizations, music, and events."
 banner_image: project/tedxucb_banner.png
-thumbnail: tedxucb_thumbnail.png
+thumbnail: /assets/images/thumbnails/photography.jpg
 category: Community
 order: 302
 ---
