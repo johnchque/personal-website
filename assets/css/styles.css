@@ -192,6 +192,10 @@ a:hover.back-to-top {
 	height: 100%;
 }
 
+.photos img {
+	width: 100%;
+}
+
 footer .btn-solid-reg {
 	width: 100%
 }
