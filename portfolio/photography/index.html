@@ -18,11 +18,20 @@ order: 302
 				<p class="p-large">Things I observe and create.</p>
 			</div>
 			<div class="row justify-content-center">
-				<a>Landscape</a>
-				<a>Wedding</a>
-				<a>Events</a>
-				<h3>La Paz</h3>
-				{% include image-gallery.html folder="/assets/images/portfolio_photography/" %}
+				{% for item in site.pages %}
+				{% assign item_crumbs = item.url | remove_first: page.dir | split: '/' %}
+				{% if item_crumbs.size == 1 and item.name != 'index.html' %}
+				<a href="{{ item.url | relative_url }}" class="col-12 col-lg-6 mb-4">
+					<div class="card">
+						<img class="card-img-top" src="{{ item.thumbnail }}" alt="Card image top">
+						<div class="card-img-overlay">
+							<h3 class="card-title text-white">{{ item.title }}</h3>
+							<p class="card-text text-white">Landscape</p>
+						</div>
+					</div>
+				</a>
+				{% endif %}
+				{% endfor %}
 			</div>
 		</div>
 	</div>
