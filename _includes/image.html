@@ -1,0 +1,8 @@
+{% assign filenameparts = include.file | split: "/" %}
+{% assign filename = filenameparts | last %}
+
+<a data-fslightbox href="{{ image | relative_url }}" title="{{ filename }}" class="{{ include.class }}">
+    <img class="img-fluid"
+        src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ include.file | relative_url }}&w=750&h=750&output=jpg&q=70"
+        alt="{{ filename }}" title="{{ filename }}" />
+</a>
