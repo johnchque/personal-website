@@ -79,10 +79,10 @@ a:hover.back-to-top {
 }
 
 .navbar-custom {
-	background-color: #fff;
 	box-shadow: 0 .75rem 1.5rem rgba(18, 38, 63, .03);
 	transition: all .2s;
 	font: 400 14px/.875rem "Lato", sans-serif;
+	background-color: var(--bs-body-bg);
 }
 
 .navbar-custom .navbar-brand.logo-image img {
@@ -96,7 +96,7 @@ a:hover.back-to-top {
 
 .navbar-custom .nav-item .nav-link {
 	padding: 1rem .75rem 1rem .75rem;
-	color: #3b3b3b;
+	/**color: #3b3b3b;**/
 	text-decoration: none;
 	transition: all .2s ease;
 	text-transform: uppercase;
@@ -131,11 +131,11 @@ a:hover.back-to-top {
 	.navbar-custom.top-nav-collapse {
 		padding: .5rem 1.5rem .5rem 2rem;
 		box-shadow: 0 .75rem 1.5rem rgba(18, 38, 63, .03);
-		background-color: #fff
+		background-color: var(--bs-body-bg);
 	}
 
 	.navbar-custom.top-nav-collapse .nav-item .nav-link {
-		color: #3b3b3b;
+		/**color: #3b3b3b;**/
 		opacity: 1
 	}
 
@@ -158,7 +158,8 @@ a:hover.back-to-top {
 	}
 
 	.navbar-custom.top-nav-collapse {
-		padding: .5rem 5rem .5rem 5rem
+		padding: .5rem 5rem .5rem 5rem;
+		background-color: var(--bs-body-bg);
 	}
 
 	.p-heading {

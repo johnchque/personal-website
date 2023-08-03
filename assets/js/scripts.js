@@ -38,3 +38,43 @@ function trackScroll() {
         });
     }
 }
+
+(() => {
+    'use strict'
+
+    const getStoredTheme = () => localStorage.getItem('theme')
+    const setStoredTheme = theme => localStorage.setItem('theme', theme)
+
+    const getPreferredTheme = () => {
+        const storedTheme = getStoredTheme()
+        if (storedTheme) {
+            return storedTheme
+        }
+        return 'dark'
+    }
+
+    const setTheme = theme => {
+        if (theme == 'dark') {
+            document.getElementById('btnSwitch').querySelector('i').setAttribute('class', 'ri-sun-line')
+        }
+        else {
+            document.getElementById('btnSwitch').querySelector('i').setAttribute('class', 'ri-moon-line')
+        }
+        document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+
+    setTheme(getPreferredTheme())
+
+    document.getElementById('btnSwitch').addEventListener('click',()=>{    
+        if (getPreferredTheme() == 'dark') {
+            setStoredTheme('white')
+            document.getElementById('btnSwitch').querySelector('i').setAttribute('class', 'ri-moon-line')
+            document.documentElement.setAttribute('data-bs-theme', 'white')
+        }
+        else {
+            setStoredTheme('dark')
+            document.getElementById('btnSwitch').querySelector('i').setAttribute('class', 'ri-sun-line')
+            document.documentElement.setAttribute('data-bs-theme', 'dark')
+        }
+    });
+})()
