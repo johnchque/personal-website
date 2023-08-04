@@ -41,7 +41,7 @@ collections:
     permalink: /albums/:name
   notes:
     output: true
-    permalink: /garden/:name
+    permalink: /garden/:title
   art:
     output: true
     permalink: /art/:name
