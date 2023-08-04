@@ -18,8 +18,7 @@ layout: default
 						<img src="/assets/images/{{ note.banner_image }}" class="card-img-top" alt="...">
 						<div class="card-body">
 							<h3 class="card-title">{{ note.title }}</h3>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk
-								of the card's content.</p>
+							<p class="card-text text-muted">{{ note.category }} - Updated {{ note.updated }}</p>
 						</div>
 					</div>
 					{% elsif note.category == "Notes" %}
@@ -34,16 +33,14 @@ layout: default
 					<div class="card">
 						<div class="card-body">
 							<h3 class="card-title">{{ note.title }}</h3>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk
-								of the card's content.</p>
+							<p class="card-text">{{ note.description }}</p>
+							<p class="card-text text-muted">{{ note.category }} - Updated {{ note.updated }}</p>
+
 						</div>
 					</div>
 					{% endif %}
-
-					
 				</a>
 				{% endfor %}
-
 			</div>
 		</div>
 	</div>
