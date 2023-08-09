@@ -6,7 +6,7 @@ file.extname == '.jpeg' or file.extname == '.JPG' or file.extname == '.JPEG' %}
 split: "/" %}{% assign filename = filenameparts | last | replace: file.extname,"" %}
 <a data-fslightbox href="{{ file.path | relative_url }}" title="{{ filename }}" class="{{ include.class }}">
     <img class="img-fluid"
-        src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ file.path | relative_url }}&w=500&h=500&output=jpg&q=60"
+        src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ file.path | relative_url }}&q=75"
         alt="{{ filename }}" title="{{ filename }}" />
 </a>
 {% endif %}
