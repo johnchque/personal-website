@@ -1,3 +1,5 @@
 _site
 .sass-cache
 .jekyll-cache
+# vscode_markdown_chat extension dir
+__vscode_markdown_chat__
