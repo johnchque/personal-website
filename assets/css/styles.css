@@ -1,3 +1,13 @@
+[data-bs-theme=dark] {
+    color-scheme: dark;
+    --bs-body-bg: #1b1b1b;
+	--bs-link-color-rgb: 48,127,150;
+}
+
+:root {
+	--bs-link-color-rgb: 48,127,150;
+}
+
 body,
 html {
 	width: 100%;
@@ -18,6 +28,7 @@ h6 {
 body,
 p {
 	font-family: "Hind" !important;
+	line-height: 1.5;
 }
 
 .p-large {
@@ -29,7 +40,6 @@ p {
 }
 
 a {
-	color: #307f96;
 	transition: .3s;
 }
 

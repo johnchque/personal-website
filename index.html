@@ -16,13 +16,10 @@ layout: default
 		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 			<ul class="navbar-nav ms-auto">
 				<li class="nav-item">
-					<a class="nav-link page-scroll" href="/garden">The Garden</a>
+					<a class="nav-link page-scroll" href="https://www.notes.johnchque.com">Notes</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link page-scroll" href="/project">Projects</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link page-scroll" href="/portfolio">Portfolio</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link page-scroll" href="/about">About</a>
@@ -84,49 +81,4 @@ layout: default
 			</div>
 		</a>
 	</div>
-	<div class="row mb-5 justify-content-center">
-		<h2>The Garden</h2>
-		<div class="col-12 col-lg-8">
-			<h3>Essays</h3>
-			<p>Long opinionated forms of text.</p>
-			<div class="col-12">
-				<div class="row">
-					{% for post in site.posts limit:4 %}
-					<div class="col-12 col-sm-6 mb-4 post">
-						<a href="{{ site.baseurl }}{{ post.url }}" class="text-decoration-none">
-							<div class="single-entry mb-5">
-								<div class="entry-thumb mb-4">
-									<img src="/assets/images/{{ post.banner_image }}" class="img-fluid" alt="blog">
-								</div>
-								<div class="entry-content">
-									<h3>{{ post.title }}</h3>
-									<p>{{ post.category }} - <span class="text-muted">Updated on {{ post.date | date:
-											"%B %-d, %Y" }}</span></p>
-								</div>
-							</div>
-						</a>
-					</div>
-					{% endfor %}
-				</div>
-			</div>
-		</div>
-		<div class="col-12 col-lg-4">
-			<h3>Notes</h3>
-			<p>Unopinionated notes on things I'm learning about.</p>
-			<div>
-				{% assign ordered_notes = site.notes | sort:"updated" | reverse %}
-				{% for note in ordered_notes limit:4 %}
-				{% if note.category == "Notes" %}
-				<a href="{{ site.baseurl }}{{ note.url }}" class="text-decoration-none">
-					<div class="card mb-3">
-						<div class="card-body">
-							<h3>{{ note.title }}</h3>
-						</div>
-					</div>
-				</a>
-				{% endif %}
-				{% endfor %}
-			</div>
-		</div>
-	</div>
-	</div>
+</section>

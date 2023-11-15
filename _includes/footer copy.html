@@ -1,5 +1,28 @@
 <footer>
 	<div class="container">
+		<div class="row pt-3">
+			<div class="col-md-6 col-sm-6 col-xs-12 my-3">
+				<div id="text-2" class="widget widget_text">
+					<h3>About</h3>
+					<div class="textwidget">
+						<p>
+							Social entrepreneur, software developer, and artist.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12 my-3">
+				<div id="recent-posts-3" class="widget widget_recent_entries">
+					<h3>Recent Posts</h3>
+					<ul class="recent-wrapper module-white">
+						{% for post in site.posts limit:3 %}
+						<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+							<span>{{ post.date | date: "%B %-d, %Y" }}</span></li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
 		<div class="row py-3 border-top">
 			<div class="col-md-6 col-sm-6 col-xs-12 text-center text-md-start">
 				<p>© John Choque 2022.</p>
