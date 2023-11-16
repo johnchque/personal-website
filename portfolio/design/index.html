@@ -1,0 +1,38 @@
+---
+layout: default
+title: "Photography"
+description: "My work as a photographer in organizations, music, and events."
+banner_image: project/tedxucb_banner.png
+thumbnail: /assets/images/thumbnails/photography.jpg
+category: Community
+order: 302
+---
+
+{% include navigation.html %}
+
+<div class="container">
+	<div class="row justify-content-center mb-4">
+		<div class="col-12 ml-top-padding">
+			<div class="heading-title">
+				<h1>Photography</h1>
+				<p class="p-large">Things I observe and create.</p>
+			</div>
+			<div class="row justify-content-center">
+				{% for item in site.pages %}
+				{% assign item_crumbs = item.url | remove_first: page.dir | split: '/' %}
+				{% if item_crumbs.size == 1 and item.name != 'index.html' %}
+				<a href="{{ item.url | relative_url }}" class="col-12 col-lg-4 mb-4">
+					<div class="card">
+						<img class="card-img-top" src="{{ item.thumbnail }}" alt="Card image top">
+						<div class="card-img-overlay">
+							<h3 class="card-title text-white">{{ item.title }}</h3>
+							<p class="card-text text-white">{{ item.category }}</p>
+						</div>
+					</div>
+				</a>
+				{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
