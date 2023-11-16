@@ -14,7 +14,7 @@ layout: default
 
 			<h2>Photography</h2>
 			<div class="row justify-content-center">
-				{% for item in site.pages %} {% if item.parent_url == 'photography' %}
+				{% for item in site.pages %} {% if item.parent_url == 'photography' limit:3 %}
 				<a href="{{ item.url | relative_url }}" class="col-12 col-lg-4 mb-4">
 					<div class="card">
 						<img class="card-img-top" src="{{ item.thumbnail }}" alt="Card image top" />
@@ -28,7 +28,7 @@ layout: default
 			</div>
 			<h2>Graphic Design</h2>
 			<div class="row justify-content-center">
-				{% for item in site.pages %} {% if item.parent_url == 'design' %}
+				{% for item in site.pages %} {% if item.parent_url == 'design' limit:3 %}
 				<a href="{{ item.url | relative_url }}" class="col-12 col-lg-4 mb-4">
 					<div class="card">
 						<img class="card-img-top" src="{{ item.thumbnail }}" alt="Card image top" />
