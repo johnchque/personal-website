@@ -11,23 +11,34 @@ layout: default
 				<h1>Portfolio</h1>
 				<p class="p-large">Things I observe and create.</p>
 			</div>
-			<div class="row">
-				{% for item in site.pages %}
-				{% assign item_crumbs = item.url | remove_first: page.dir | split: '/' %}
 
-				{% if item_crumbs.size == 1 and item.name == 'index.html' %}
-				<div class="col-12 col-md-6">
-					<a href="{{ item.url | relative_url }}" class="text-decoration-none">
-						<div class="card text-center mb-3">
-							<img src="{{ item.thumbnail }}" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">{{ item.title }}</h5>
-							</div>
+			<h2>Photography</h2>
+			<div class="row justify-content-center">
+				{% for item in site.pages %} {% if item.parent_url == 'photography' %}
+				<a href="{{ item.url | relative_url }}" class="col-12 col-lg-4 mb-4">
+					<div class="card">
+						<img class="card-img-top" src="{{ item.thumbnail }}" alt="Card image top" />
+						<div class="card-img-overlay">
+							<h3 class="card-title text-white">{{ item.title }}</h3>
+							<p class="card-text text-white">{{ item.category }}</p>
 						</div>
-					</a>
-				</div>
-				{% endif %}
-				{% endfor %}
+					</div>
+				</a>
+				{% endif %} {% endfor %}
+			</div>
+			<h2>Graphic Design</h2>
+			<div class="row justify-content-center">
+				{% for item in site.pages %} {% if item.parent_url == 'design' %}
+				<a href="{{ item.url | relative_url }}" class="col-12 col-lg-4 mb-4">
+					<div class="card">
+						<img class="card-img-top" src="{{ item.thumbnail }}" alt="Card image top" />
+						<div class="card-img-overlay">
+							<h3 class="card-title text-white">{{ item.title }}</h3>
+							<p class="card-text text-white">{{ item.category }}</p>
+						</div>
+					</div>
+				</a>
+				{% endif %} {% endfor %}
 			</div>
 		</div>
 	</div>
