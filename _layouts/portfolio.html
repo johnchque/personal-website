@@ -12,21 +12,11 @@ layout: default
 			<div class="row justify-content-center mb-4">
 				<div class="col-12 col-md-8 col-lg-6 mb-4">
 					<div class="heading-title">
-						<a href="/portfolio/{{ page.parent }}/">
-							<i class="ri-arrow-left-line"></i> {{ page.parent }}
+						<a href="/portfolio/{{ page.parent_url }}/">
+							<i class="ri-arrow-left-line"></i> {{ page.parent_label }}
 						</a>
 						<h1>{{ page.title }}</h1>
-						<p class="p-large">Landscape</p>
-					</div>
-					<div class="row">
-						<div class="col-6">
-							<div class="text-uppercase text-muted">Location</div>
-							<div>{{ page.location }}</div>
-						</div>
-						<div class="col-6">
-							<div class="text-uppercase text-muted">Date</div>
-							<div>{{ page.date }}</div>
-						</div>
+						<p class="p-large">{{ page.description }}</p>
 					</div>
 				</div>
 			</div>

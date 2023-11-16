@@ -1,11 +1,17 @@
+:root {
+	--bs-nav-link-padding-y: 0;
+}
+
 [data-bs-theme=dark] {
     color-scheme: dark;
     --bs-body-bg: #1b1b1b;
 	--bs-link-color-rgb: 48,127,150;
+	--bs-body-color: #fff;
 }
 
-:root {
+[data-bs-theme=white] {
 	--bs-link-color-rgb: 48,127,150;
+	--bs-body-color: #000;
 }
 
 body,
@@ -74,8 +80,10 @@ a:hover.back-to-top {
 	padding-top: 140px
 }
 
-.ri {
-	vertical-align: middle
+i[class^="ri"],
+span {
+  display: inline-block;
+  vertical-align: text-top;
 }
 
 .navbar-custom .navbar-toggler {
