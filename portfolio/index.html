@@ -11,8 +11,9 @@ layout: default
 				<h1>Portfolio</h1>
 				<p class="p-large">Things I observe and create.</p>
 			</div>
-
-			<h2>Photography</h2>
+			<h2 class="text-truncate">
+				Photography
+			</h2>
 			<div class="row justify-content-center">
 				{% for item in site.pages %} {% if item.parent_url == 'photography' limit:3 %}
 				<a href="{{ item.url | relative_url }}" class="col-12 col-lg-4 mb-4">

@@ -7,11 +7,13 @@
     --bs-body-bg: #1b1b1b;
 	--bs-link-color-rgb: 48,127,150;
 	--bs-body-color: #fff;
+	--bs-primary-rgb: 48,127,150;
 }
 
 [data-bs-theme=white] {
 	--bs-link-color-rgb: 48,127,150;
 	--bs-body-color: #000;
+	--bs-primary-rgb: 48,127,150;
 }
 
 body,
