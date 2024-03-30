@@ -11,7 +11,7 @@ else %} {% assign full_url = include.file %} {% endif %}
 >
   <img
     class="img-fluid"
-    src="//images.weserv.nl/?url={{ full_url | replace: 'http://','' | replace: 'https://','' }}{{ include.file | relative_url }}&output=jpg&q=70"
+    src="//images.weserv.nl/?url={{ full_url | replace: 'http://','' | replace: 'https://','' }}&output=jpg&q=70"
     alt="{{ filename }}"
     title="{{ filename }}"
   />
