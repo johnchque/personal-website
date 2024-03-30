@@ -1,8 +1,18 @@
-{% assign filenameparts = include.file | split: "/" %}
-{% assign filename = filenameparts | last %}
+{% assign filenameparts = include.file | split: "/" %} {% assign filename =
+filenameparts | last %} {% assign first_char = include.file | slice: 0 %} {% if
+first_char == '/' %} {% assign full_url = site.url | append: include.file %} {%
+else %} {% assign full_url = include.file %} {% endif %}
 
-<a data-fslightbox href="{{ include.file | relative_url }}" title="{{ filename }}" class="{{ include.class }}">
-    <img class="img-fluid"
-        src="//images.weserv.nl/?url={{ site.url | replace: 'http://','' | replace: 'https://','' }}{{ include.file | relative_url }}&output=jpg&q=75"
-        alt="{{ filename }}" title="{{ filename }}" />
+<a
+  data-fslightbox
+  href="{{ include.file | relative_url }}"
+  title="{{ filename }}"
+  class="{{ include.class }}"
+>
+  <img
+    class="img-fluid"
+    src="//images.weserv.nl/?url={{ full_url | replace: 'http://','' | replace: 'https://','' }}{{ include.file | relative_url }}&output=jpg&q=70"
+    alt="{{ filename }}"
+    title="{{ filename }}"
+  />
 </a>
