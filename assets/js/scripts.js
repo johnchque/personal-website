@@ -21,7 +21,7 @@ goTopBtn.addEventListener("click", () => {
 });
 
 function trackScroll() {
-    var scrolled = window.pageYOffset;
+    var scrolled = window.scrollY;
     var coords = document.documentElement.clientHeight / 2;
     if (scrolled >= coords) {
         goTopBtn.style.visibility = "visible";
@@ -78,18 +78,3 @@ function trackScroll() {
         }
     });
 })()
-
-setTimeout(function () {
-    var msnry = new Masonry('.grid');
-    msnry.layout();
-  }, 100);
-  
-  setTimeout(function () {
-    var msnry = new Masonry('.grid');
-    msnry.layout();
-  }, 300);
-  
-  setTimeout(function () {
-    var msnry = new Masonry('.grid');
-    msnry.layout();
-  }, 1000);
