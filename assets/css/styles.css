@@ -5,7 +5,7 @@
 [data-bs-theme=dark] {
     color-scheme: dark;
     --bs-body-bg: #1b1b1b;
-	--bs-link-color-rgb: 48,127,150;
+	--bs-link-color-rgb: 52, 160, 191;
 	--bs-body-color: #fff;
 	--bs-primary-rgb: 48,127,150;
 }

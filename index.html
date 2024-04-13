@@ -31,6 +31,9 @@ layout: default
             >Notes</a
           >
         </li>
+				<li class="nav-item">
+					<a class="nav-link page-scroll" href="/world">World</a>
+				</li>
         <li class="nav-item">
           <a class="nav-link page-scroll" href="/project">Projects</a>
         </li>
@@ -53,67 +56,55 @@ layout: default
 <!-- end of navigation -->
 
 <section class="container">
-  <div class="row mb-5 ml-top-padding">
-    <div class="heading-title col-12 col-lg-6">
-      <h1 class="mb-5">Hi! I'm <strong>John</strong> Choque</h1>
+  <div class="row justify-content-center mb-5 ml-top-padding">
+    <div class="heading-title col-12 col-lg-8">
+      <h1 class="mb-5">Hi! I'm John Choque</h1>
       <p class="p-large">
         I'm a social entrepreneur, software developer, and artist.
       </p>
       <p>
         The core of my work lies somewhere between social entrepreneurship,
-        programming and philosophy. The combination of these fields has allowed
-        me to explore multiple areas of knowledge that I would never have
-        thought to explore otherwise.
+        software development and art. This combination has allowed me to explore
+        diverse areas of knowledge that I would not have otherwise.
       </p>
       <p>
         My passions come from the goal of ensuring that technology is best used
         to advance society in an inclusive and empowering way. In this way, my
-        work falls into the categories of ed-tech, mental health advocacy,
-        social sustainability, open source software, knowledge management, and
-        computer ethics.
+        work falls into the categories of ed-tech, computer ethics, pro-feminist
+        anti-patriarchical work, sustainability, free and open source software,
+        knowledge management, and community management.
+      </p>
+      <p>
+        I am an advocate of multidisciplinarity and collaboration. I have taken
+        part of multiple projects as a lead developer, project manager, podcast
+        host, product designer, media production lead, and speaker. You can see
+        all my previous projects
+        <a href="/project">here</a>.
       </p>
       <p>
         I did a Master's in
         <a href="https://dclead.eu/" target="_blank"
           >Digital Communication Leadership</a
         >
-        at Aalborg University in Denmark. My thesis aimed to understand the
-        ethics behind algorithms and what are the implications of such matters
-        in society. Before enrolling in this master's program, I worked for
-        around 5 years as a software developer at
+        at Aalborg University in Denmark. My thesis analysed transformer models
+        with theories of justice from philosophy to propose a framework for the
+        implementation of justice in algorithmic systems. Before enrolling in
+        this master's program, I worked for around 5 years as a software
+        developer at
         <a href="https://www.md-systems.ch/en" target="_blank"
           >MD Systems GmbH</a
         >, the top <a href="https://www.drupal.org/">Drupal</a> contributor in
         Switzerland.
       </p>
-      <p>
-        I am an advocate of multidisciplinarity and collaboration. This allowed
-        me to create my own initiatives related to mental health awareness,
-        sustainability, music, video production, and game design. You can see
-        all my previous projects <a href="/project">here</a>.
-      </p>
+
       <p class="mb-5">
         I also have experience with photography, videography, graphic design,
         and music writing. You can find my portfolio
         <a href="/portfolio/">here</a>.
       </p>
-      <h2>Recent writing</h2>
-      <div class="mb-5">
-        {% for post in site.notes limit:3 %}
-        <a href="{{ post.note_url }}" class="card text-decoration-none border-0 mb-3">
-          <div class="card-">
-            <h5 class="card-title text-primary">{{ post.title }}</h5>
-            <p class="card-text mb-1">{{ post.description }}</p>
-            <small class="card-text text-muted">
-              {{ post.date | date: "%B %-d, %Y" }}
-			</small>
-          </div>
-        </a>
-        {% endfor %}
-      </div>
     </div>
-    <div class="col-12 col-lg-6">
-      <img src="/assets/images/index-about.jpg" class="img-fluid" />
+    <div class="col-12 col-lg-12">
+      <img src="/assets/images/home.jpg" class="img-fluid" />
     </div>
   </div>
 </section>
