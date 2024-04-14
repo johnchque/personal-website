@@ -5,58 +5,88 @@ layout: default
 {% include navigation.html %}
 
 <div class="container">
-	<div class="row justify-content-center mb-4">
-		<div class="col-12 ml-top-padding">
-			<div class="heading-title">
-				<h1>Portfolio</h1>
-				<p class="p-large">Things I observe and create.</p>
-			</div>
-			<h2 class="text-truncate">
-				Video Production
-			</h2>
-			<div class="row justify-content-center">
-				{% for item in site.pages %} {% if item.parent_url == 'video' limit:3 %}
-				<a href="{{ item.url | relative_url }}" class="col-12 col-lg-4 mb-4">
-					<div class="card">
-						<img class="card-img-top" src="{{ item.thumbnail }}" alt="Card image top" />
-						<div class="card-img-overlay">
-							<h3 class="card-title text-white">{{ item.title }}</h3>
-							<p class="card-text text-white">{{ item.category }}</p>
-						</div>
-					</div>
-				</a>
-				{% endif %} {% endfor %}
-			</div>
-			<h2 class="text-truncate">
-				Photography
-			</h2>
-			<div class="row justify-content-center">
-				{% for item in site.pages %} {% if item.parent_url == 'photography' limit:3 %}
-				<a href="{{ item.url | relative_url }}" class="col-12 col-lg-4 mb-4">
-					<div class="card">
-						<img class="card-img-top" src="{{ item.thumbnail }}" alt="Card image top" />
-						<div class="card-img-overlay">
-							<h3 class="card-title text-white">{{ item.title }}</h3>
-							<p class="card-text text-white">{{ item.category }}</p>
-						</div>
-					</div>
-				</a>
-				{% endif %} {% endfor %}
-			</div>
-			<h2>Graphic Design</h2>
-			<div class="row justify-content-center">
-				{% for item in site.pages %} {% if item.parent_url == 'design' limit:3 %}
-				<a href="{{ item.url | relative_url }}" class="col-12 col-lg-4 mb-4">
-					<div class="card">
-						<img class="card-img-top" src="{{ item.thumbnail }}" alt="Card image top" />
-						<div class="card-img-overlay">
-							<h3 class="card-title text-white">{{ item.title }}</h3>
-							<p class="card-text text-white">{{ item.category }}</p>
-						</div>
-					</div>
-				</a>
-				{% endif %} {% endfor %}
-			</div>
-		</div>
-	</div>
+  <div class="row justify-content-center mb-4">
+    <div class="col-12 ml-top-padding">
+      <div class="heading-title">
+        <h1>Portfolio</h1>
+        <p class="p-large">Things I observe and create.</p>
+      </div>
+      <h2 class="text-truncate">Coding</h2>
+      <div class="row justify-content-center">
+        {% assign filtered_items = site.pages | where: "parent_url", "coding" |
+        limit: 3 %} {% for item in filtered_items %}
+        <a href="{{ item.url | relative_url }}" class="col-12 col-lg-4 mb-4">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="{{ item.thumbnail }}"
+              alt="Card image top"
+            />
+            <div class="card-img-overlay">
+              <h3 class="card-title text-white">{{ item.title }}</h3>
+              <p class="card-text text-white">{{ item.category }}</p>
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+      <h2 class="text-truncate">Video Production</h2>
+      <div class="row justify-content-center">
+        {% assign filtered_items = site.pages | where: "parent_url", "video" |
+        limit: 3 %} {% for item in filtered_items %}
+        <a href="{{ item.url | relative_url }}" class="col-12 col-lg-4 mb-4">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="{{ item.thumbnail }}"
+              alt="Card image top"
+            />
+            <div class="card-img-overlay">
+              <h3 class="card-title text-white">{{ item.title }}</h3>
+              <p class="card-text text-white">{{ item.category }}</p>
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+      <h2 class="text-truncate">Photography</h2>
+      <div class="row justify-content-center">
+        {% assign filtered_items = site.pages | where: "parent_url",
+        "photography" | limit: 3 %} {% for item in filtered_items %}
+        <a href="{{ item.url | relative_url }}" class="col-12 col-lg-4 mb-4">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="{{ item.thumbnail }}"
+              alt="Card image top"
+            />
+            <div class="card-img-overlay">
+              <h3 class="card-title text-white">{{ item.title }}</h3>
+              <p class="card-text text-white">{{ item.category }}</p>
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+      <h2>Graphic Design</h2>
+      <div class="row justify-content-center">
+        {% assign filtered_items = site.pages | where: "parent_url", "design" |
+        limit: 3 %} {% for item in filtered_items %}
+        <a href="{{ item.url | relative_url }}" class="col-12 col-lg-4 mb-4">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="{{ item.thumbnail }}"
+              alt="Card image top"
+            />
+            <div class="card-img-overlay">
+              <h3 class="card-title text-white">{{ item.title }}</h3>
+              <p class="card-text text-white">{{ item.category }}</p>
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>

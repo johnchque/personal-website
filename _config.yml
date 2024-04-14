@@ -33,18 +33,12 @@ instagram_username:
 linkedin_username: "john-choque-condori"
 
 collections:
-  projects:
+  experiences:
     output: true
-    permalink: /project/:name
-  albums:
-    output: true
-    permalink: /albums/:name
+    permalink: /experiences/:name
   notes:
     output: true
     permalink: /garden/:title
-  art:
-    output: true
-    permalink: /art/:name
 
 gems:
   - jekyll-paginate-v2

@@ -1,16 +1,16 @@
 ---
 layout: work
 title: "The Thoughtful Millennial"
-description: "Podcast with casual talks about mental health, sustainability, and entrepreneurship."
-banner_image: project/oss_banner.png
-thumbnail: oss_thumbnail.png
-external_url: https://www.historiasquenovemos.org/
-category: Education
-order: 104
-type: current
-tags: [initiative, design]
+description: |
+    - Planning and curating podcast content, ensuring engaging and informative episodes.
+    - Edited audio recordings, enhancing the overall quality and coherence of podcast episodes.
+    - Spearheaded the development of the podcast website.
+date_start: 06/2021
+date_end: 01/2022
+external_url: https://www.openschoolsolutions.com/
+category: personal
+tags: [development, education]
 ---
-
 
 ## Responsabilities
 At OPENschool, I am in charge of:
@@ -24,4 +24,3 @@ At OPENschool, I am in charge of:
 <div class="spotify-embeds mb-4">
 	<iframe src="https://open.spotify.com/embed/episode/5Qn3f1nG8JuqAEnPZnBn8K" width="100%" height="232" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 </div>
-

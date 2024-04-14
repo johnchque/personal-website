@@ -1,14 +1,15 @@
 ---
 layout: work
 title: "Nucleo GNU/Linux"
-description: "A study group for FOSS technologies based in La Paz, Bolivia."
-banner_image: project/nlg_banner.png
-thumbnail: ngl_thumbnail.png
+description: |
+    - Orchestrated logistics for gathering 15 participant stories for website and social media accounts.
+    - Crafted social media content for more than 15 books and podcasts recommendations.
+role: Organiser
+date_start: 05/2021
+date_end: 2021-12-30
 external_url: https://www.facebook.com/nucleognulinux
-category: Software
-order: 304
-type: volunteering
-tags: [volunteering, opensource]
+category: volunteering
+tags: [development, education]
 ---
 The study group Nucleo GNU/Linux was created by students of the Mayor de San Andres University. It serves the community as an introduction to Free Software to the students of the same university. The group is actively working with established professionals to give talks, workshops and competences, all around Free Software. The group is run by students and has all its material for free.
 

@@ -11,7 +11,7 @@ layout: default
 			<p class="p-large">The full list of projects, initiatives, and volunteering work I have been part of.</p>
 			<h2>Active projects</h2>
 			<ul>
-				{% assign ordered_projects = site.projects | sort:"order" %}
+				{% assign ordered_projects = site.experiences | sort:"order" %}
 				{% for project in ordered_projects %}
 				{% if project.type == 'current' %}
 				<li class="mb-2">
@@ -26,7 +26,7 @@ layout: default
 			</ul>
 			<h2>Previous projects</h2>
 			<ul>
-				{% assign ordered_projects = site.projects | sort:"order" %}
+				{% assign ordered_projects = site.experiences | sort:"order" %}
 				{% for project in ordered_projects %}
 				{% if project.type == 'old' %}
 				<li class="mb-2">
@@ -41,7 +41,7 @@ layout: default
 			</ul>
 			<h2>Volunteering</h2>
 			<ul>
-				{% assign ordered_projects = site.projects | sort:"order" %}
+				{% assign ordered_projects = site.experiences | sort:"order" %}
 				{% for project in ordered_projects %}
 				{% if project.type == 'volunteering' %}
 				<li class="mb-2">

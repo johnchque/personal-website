@@ -1,14 +1,16 @@
 ---
 layout: work
 title: "Empoderando Juventudes La Paz"
-description: "Organization that aims to create impact of Gender Equality, Human Rights and Environment."
-banner_image: project/empojuve_banner.png
-thumbnail: empojuve_thumbnail.png
+description: |
+    - Interviewed 30 applicants for volunteering roles. Lead a team of 8 volunteers.
+    - Lead website development to effectively showcase project outcomes and 10 blogposts from team members.
+    - Organised a successful photography contest, resulting in a growth of Facebook followers from 800 to 2000.
+role: Environmental Coordinator
+date_start: 07/2019
+date_end: 12/2023
 external_url: https://www.empojuvelapaz.org/
-category: Community
-order: 201
-type: old
-tags: [initiative, sustainability]
+category: personal
+tags: [development, education]
 ---
 
 Empoderando Juventudes (Empowering Youth) is an organization that has the firm conviction to encourage Latin American youth to actively and cooperatively fight for peace, equity and social and environmental justice in our communities and our region through projects, activities where knowledge, skills, dreams and struggles are combined and strengthened.

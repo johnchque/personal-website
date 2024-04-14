@@ -1,14 +1,16 @@
 ---
 layout: work
-title: "Drupal"
-description: "Open Source content management used to create websites."
-banner_image: project/drupal_banner.png
-thumbnail: drupal_thumbnail.png
-external_url: https://www.drupal.org/u/johnchque
-category: Software
-order: 204
-type: old
-tags: [development, opensource]
+title: "MD Systems GmbH"
+description: |
+    - Authored 100+ contributions to Drupal modules through code patches and code documentation.
+    - Recognised for being the top 15th contributor to Drupal worldwide and received a full grant to attend DrupalCon Nashville 2018.
+    - Presented 2 conference talks in Darmstadt, Germany 2018 and Davos, Switzerland 2019.
+role: Drupal Developer
+date_start: 01/2018
+date_end: 2019-04-30
+external_url: https://www.md-systems.ch/
+category: professional
+tags: [development, education]
 ---
 
 Drupal is content management software. It's used to make many of the websites and applications you use every day. Drupal has great standard features, like easy content authoring, reliable performance, and excellent security. But what sets it apart is its flexibility; modularity is one of its core principles. Its tools help you build the versatile, structured content that dynamic web experiences need.

@@ -1,14 +1,15 @@
 ---
 layout: work
-title: "TEDxUCB"
-description: "A local TED event organised in association to Universidad Catolica in La Paz, Bolivia.."
-banner_image: project/tedxucb_banner.png
-thumbnail: tedxucb_thumbnail.png
+title: "Sustainability Advocates"
+description: |
+    - Collaborated with sustainable organizations and companies to deliver interactive workshops for the team members and volunteers.
+    - Recruited volunteers for the leadership team and project teams.
+role: HR and Events Manager
+date_start: 05/2021
+date_end: 2021-12-30
 external_url: https://www.facebook.com/TedxUcb
-category: Community
-order: 302
-type: volunteering
-tags: [volunteering, videography]
+category: volunteering
+tags: [development, education]
 ---
 
 TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection. These local, self-organized events are branded TEDx, where x = an independently organized TED event. The TED Conference provides general guidance, rules and regulations for the TEDx program.

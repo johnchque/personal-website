@@ -1,14 +1,15 @@
 ---
 layout: work
 title: "Quantic Games"
-description: 'Awarded videogame studio based in Bolivia.'
-banner_image: project/quanticgames_banner.png
-thumbnail: quanticgames_thumbnail.png
+description: |
+    - Directed project development, created the team's website, and designed press kits. Successfully secured acceptance into the City Hall of La Paz Incubator in 2019.
+    - Achieved the "Best Audio" award for the game "Puma Punku" at ExpoBix 2019 for 21000 BOB.
+role: Lead Developer
+date_start: 01.05.2019
+date_end: 2021-03-30
 external_url: https://www.facebook.com/quanticgames
-category: Videogames
-order: 202
-type: old
-tags: [development, games, drawing]
+category: professional
+tags: [development, education]
 ---
 
 Quantic Games is a video game studio based in Bolivia. It is formed by a group of multi-discplinary artists who share their passion for video games. The main task of the studio is to create games with stories worth remembering. Working together, each of the members has equal rights to contribute creatively with the ideas and games that are created.

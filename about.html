@@ -13,40 +13,25 @@ title: About
       </div>
       <section class="mb-4">
         <p>
-          I was born and raised in El Alto, Bolivia. I grew up surrounded by
-          mountains in a young city at 4000 metres above sea level.
-        </p>
-        <p>
-          I graduated from Del Valle University in La Paz, Bolivia, with a
-          Bachelor's degree in Computer Systems Engineering, and in 2014 I
-          received an exchange scholarship to Tokyo, Japan. This first
-          experience changed the way I looked at things and how I understood
-          other cultures. I started learning Japanese and was allowed to teach
-          English on campus.
+          I was born and raised in El Alto, Bolivia. I graduated from Del Valle
+          University in La Paz, Bolivia, with a Bachelor's degree in Computer
+          Systems Engineering, and in 2014 I received an exchange scholarship to
+          Tokyo, Japan.
         </p>
         <p>
           In 2016, I was accepted as an intern in Switzerland and moved to
-          Zurich to work for 7 months. During this time, I discovered my passion
-          for open source technologies and community building. This experience
-          led me to connect with Drupal communities around the world and create
-          bonds with other communities. After returning to Bolivia, I joined
-          Nucleo GNU/Linux, a free software study group. This community opened
-          up new worlds for me to help others work with open source and free
-          technologies abroad.
+          Zurich to work for 7 months. There, I learned about the value of open
+          source communities.
+        </p>
+        <p>
+          After returning to Bolivia, I joined Nucleo GNU/Linux, a free software
+          study group. Along with the community we organised myltiple events and
+          talks.
         </p>
         <p>
           My passion for sustainability was later strengthened when I was
-          selected for the Young Sustainable Impact programme in Norway. Out of
-          more than 8000 applicants, 24 people were selected. Meeting so many
-          motivated people gave me a new perspective on life. I was sure that I
-          wanted to become an advocate for sustainable causes.
-        </p>
-        <p>
-          Since then, I have started several projects to use all the skills I
-          have learned. I co-founded organisations working on mental health,
-          sustainability and gender equality. I volunteered in organisations as
-          a videographer, photographer, HR manager and community manager. And
-          created my own podcast and songs.
+          selected for the Young Sustainable Impact programme in Norway. I
+          started OPENschool with the team from the programme.
         </p>
         <p>
           After living in 5 different countries, I am trying to find my place in
@@ -60,9 +45,66 @@ title: About
           >. If you like longer texts, you can send me an email at
           hello@johnchque.com.
         </p>
+        <h2>Professional Experience</h2>
+        {% assign ordered_projects = site.experiences | sort: 'date_end' |
+        reverse %} {% for project in ordered_projects %} {% if project.category
+        == 'professional' %}
+        <div class="row mb-3">
+          <div class="col-12 col-md-3 text-muted">
+            {{ project.date_start | date: "%b, %Y" }} - {{ project.date_end |
+            date: "%b, %Y" }}
+          </div>
+          <div class="col-12 col-md-9">
+            <a href="{{ project.url }}">{{project.role}} - {{project.title}}</a>
+            <p class="mb-0">{{project.description | newline_to_br}}</p>
+            <small class="text-muted">
+              {{ project.skills | join: " • " }}
+            </small>
+          </div>
+        </div>
+        {% endif %} {% endfor %}
+
+        <h2>Other Experience</h2>
+        {% for project in ordered_projects %} {% if project.category ==
+        'personal' %}
+        <div class="row mb-3">
+          <div class="col-12 col-md-3 text-muted">
+            {{ project.date_start | date: "%b, %Y" }} - {{ project.date_end |
+            date: "%b, %Y" }}
+          </div>
+          <div class="col-12 col-md-9">
+            <a href="{{ project.url }}">{{project.role}} - {{project.title}}</a>
+            <p class="mb-0">{{project.description | newline_to_br}}</p>
+            <small class="text-muted">React • Next</small>
+          </div>
+        </div>
+        {% endif %} {% endfor %}
+
+        <h2>Volunteering</h2>
+        {% for project in ordered_projects %} {% if project.category ==
+        'volunteering' %}
+        <div class="row mb-3">
+          <div class="col-12 col-md-3 text-muted">
+            {{ project.date_start | date: "%b, %Y" }} - {{ project.date_end |
+            date: "%b, %Y" }}
+          </div>
+          <div class="col-12 col-md-9">
+            <a href="{{ project.url }}">{{project.role}} - {{project.title}}</a>
+            <p class="mb-0">{{project.description | newline_to_br}}</p>
+            <small class="text-muted">React • Next</small>
+          </div>
+        </div>
+        {% endif %} {% endfor %}
         <h2>Key achievements</h2>
         <p>The list of selected achievements I am the most proud of.</p>
         <ul>
+          <li>
+            <a href="https://unleash.org/rwanda/"
+              >Participant at UNLEASH Rwanda</a
+            >
+            as one of 1000 talents with a full scholarship to attend the program
+            (2023, Kigali - Rwanda).
+          </li>
           <li>
             <a href="https://dclead.eu/student-life/students-and-alumni/"
               >Erasmus Master Scholarship</a
@@ -157,7 +199,7 @@ title: About
       </section>
     </div>
     <div class="col-12 col-lg-6 ps-lg-5">
-      <img src="/assets/images/index-about.jpg" class="img-fluid" />
+      <img src="/assets/images/about.jpg" class="img-fluid" />
     </div>
   </div>
 </div>
