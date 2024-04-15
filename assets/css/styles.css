@@ -11,8 +11,9 @@
 }
 
 [data-bs-theme=white] {
+	--bs-body-bg: #f9f9f9;
 	--bs-link-color-rgb: 48,127,150;
-	--bs-body-color: #000;
+	--bs-body-color: #111;
 	--bs-primary-rgb: 48,127,150;
 }
 
