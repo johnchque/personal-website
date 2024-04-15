@@ -6,7 +6,7 @@
     color-scheme: dark;
     --bs-body-bg: #1b1b1b;
 	--bs-link-color-rgb: 52, 160, 191;
-	--bs-body-color: #fff;
+	--bs-body-color: #f3f4f6;
 	--bs-primary-rgb: 48,127,150;
 }
 
@@ -17,8 +17,8 @@
 }
 
 @font-face {
-    font-family: 'Geist'; /* Use a custom name for your font */
-    src: url('../fonts/GeistVF.woff') format('woff'); /* Adjust the path as necessary */
+    font-family: 'Geist';
+    src: url('../fonts/GeistVF.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
