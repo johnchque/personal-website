@@ -1,7 +1,9 @@
 ---
 layout: work
 title: "ai:textbooks"
-description: "Knowledge bases."
+description: |
+    - Engineered the frontend design and implementation, incorporating NextJS to improve usability.
+    - Led the frontend development and design of the main product, a Chrome extension, utilizing NextJS to deliver a responsive, user-friendly interface.
 role: Frontend Developer
 date_start: 01.09.2023
 date_end: 2024-02-28
@@ -11,7 +13,7 @@ tags: [development, education]
 skills:
     - NextJS
     - ReactJS
-    - UED
+    - UID
     - UXD
     - JS
 ---
