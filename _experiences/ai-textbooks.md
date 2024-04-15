@@ -2,19 +2,21 @@
 layout: work
 title: "ai:textbooks"
 description: |
-    - Engineered the frontend design and implementation, incorporating NextJS to improve usability.
-    - Led the frontend development and design of the main product, a Chrome extension, utilizing NextJS to deliver a responsive, user-friendly interface.
+    - Led the frontend development and design of the main product, a Chrome extension, using NextJS to deliver a responsive, user-friendly interface.
+    - Developed website and pitch decks for sharing the project with potential partners and clients.
 role: Frontend Developer
-date_start: 01.09.2023
+date_start: 2023-09-01
 date_end: 2024-02-28
 external_url: https://www.openschoolsolutions.com/
 category: professional
 tags: [development, education]
 skills:
+    - Entrepreneurship
+    - Project Management
     - NextJS
     - ReactJS
     - UID
-    - UXD
+    - UED
     - JS
 ---
 

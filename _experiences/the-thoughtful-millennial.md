@@ -5,11 +5,16 @@ description: |
     - Planning and curating podcast content, ensuring engaging and informative episodes.
     - Edited audio recordings, enhancing the overall quality and coherence of podcast episodes.
     - Spearheaded the development of the podcast website.
-date_start: 06/2021
-date_end: 01/2022
+role: Podcast Host
+date_start: 2021-06-01
+date_end: 2022-01-30
 external_url: https://www.openschoolsolutions.com/
 category: personal
 tags: [development, education]
+skills:
+    - Project Management
+    - Audio Production
+    - Jekyll
 ---
 
 ## Responsabilities

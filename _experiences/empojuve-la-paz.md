@@ -6,11 +6,17 @@ description: |
     - Lead website development to effectively showcase project outcomes and 10 blogposts from team members.
     - Organised a successful photography contest, resulting in a growth of Facebook followers from 800 to 2000.
 role: Environmental Coordinator
-date_start: 07/2019
-date_end: 12/2023
+date_start: 2020-02-01
+date_end: 2020-06-30
 external_url: https://www.empojuvelapaz.org/
 category: personal
 tags: [development, education]
+skills:
+    - Social Impact
+    - Project Management
+    - Community Management
+    - Software Development
+    - Jekyll
 ---
 
 Empoderando Juventudes (Empowering Youth) is an organization that has the firm conviction to encourage Latin American youth to actively and cooperatively fight for peace, equity and social and environmental justice in our communities and our region through projects, activities where knowledge, skills, dreams and struggles are combined and strengthened.

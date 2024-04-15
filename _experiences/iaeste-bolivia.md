@@ -6,11 +6,13 @@ description: |
     - Provided guidance and support to foreign interns, facilitating their adaptation to the local culture.
     - Assisted in the successful placement of 7 students in international internships, contributing to their professional development and cross-cultural experience.
 role: Local Comitee Leader
-date_start: 05/2021
-date_end: 2021-12-30
+date_start: 2019-01-01
+date_end: 2021-09-30
 external_url: https://www.facebook.com/iaestebolivia
 category: volunteering
 tags: [development, education]
+skills:
+    - Community Management
 ---
 Since 1948 IAESTE has been providing young science and engineering students from around the world with paid, course related work experience. Similarly, IAESTE has been a source of high quality trainees for companies and institutions in more than 80 countries worldwide.
 

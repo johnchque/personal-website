@@ -10,6 +10,8 @@ date_end: 2021-12-30
 external_url: https://www.facebook.com/nucleognulinux
 category: volunteering
 tags: [development, education]
+skills:
+    - Community Management
 ---
 The study group Nucleo GNU/Linux was created by students of the Mayor de San Andres University. It serves the community as an introduction to Free Software to the students of the same university. The group is actively working with established professionals to give talks, workshops and competences, all around Free Software. The group is run by students and has all its material for free.
 

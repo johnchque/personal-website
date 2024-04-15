@@ -10,6 +10,11 @@ date_end: 2021-03-30
 external_url: https://www.facebook.com/quanticgames
 category: professional
 tags: [development, education]
+skills:
+    - Entrepreneurship
+    - Project Management
+    - Video Production
+    - Jekyll
 ---
 
 Quantic Games is a video game studio based in Bolivia. It is formed by a group of multi-discplinary artists who share their passion for video games. The main task of the studio is to create games with stories worth remembering. Working together, each of the members has equal rights to contribute creatively with the ideas and games that are created.

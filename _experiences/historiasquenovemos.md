@@ -5,11 +5,16 @@ description: |
     - Orchestrated logistics for gathering 15 participant stories for website and social media accounts.
     - Crafted social media content for more than 15 books and podcasts recommendations.
 role: Project Lead
-date_start: 05/2021
+date_start: 2021-05-01
 date_end: 2021-12-30
 external_url: https://www.historiasquenovemos.org/
 category: personal
 tags: [development, education]
+skills:
+    - Entrepreneurship
+    - Social Impact
+    - Project Management
+    - Jekyll
 ---
 
 #historiasquenovemos is an organization that aims to normalise the emotional expression of men in Latin American societies.

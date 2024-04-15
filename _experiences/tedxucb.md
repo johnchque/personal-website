@@ -5,11 +5,16 @@ description: |
     - Conceptualized and executed event venue and stage layouts while leading the audiovisual production.
     - Coordinated logistics for video and audio systems, managing event technical requirements and collaborating closely with 16 speakers to refine presentations for the events in 2019 and 2020.
 role: Production Lead
-date_start: 05/2021
-date_end: 2021-12-30
+date_start: 2019-07-01
+date_end: 2020-12-30
 external_url: https://www.facebook.com/TedxUcb
 category: volunteering
 tags: [development, education]
+skills:
+    - Social Impact
+    - Project Management
+    - Video Production
+    - Jekyll
 ---
 
 TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection. These local, self-organized events are branded TEDx, where x = an independently organized TED event. The TED Conference provides general guidance, rules and regulations for the TEDx program.

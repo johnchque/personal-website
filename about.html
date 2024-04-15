@@ -11,7 +11,7 @@ title: About
       <div class="heading-title">
         <h1>About</h1>
       </div>
-      <section class="mb-4">
+      <section class="mb-5">
         <p>
           I was born and raised in El Alto, Bolivia. I graduated from Del Valle
           University in La Paz, Bolivia, with a Bachelor's degree in Computer
@@ -25,7 +25,7 @@ title: About
         </p>
         <p>
           After returning to Bolivia, I joined Nucleo GNU/Linux, a free software
-          study group. Along with the community we organised myltiple events and
+          study group. Along with the community we organised multiple events and
           talks.
         </p>
         <p>
@@ -37,19 +37,29 @@ title: About
           After living in 5 different countries, I am trying to find my place in
           Copenhagen, Denmark. I enjoy an active life.
         </p>
-        <p>
-          You can find me on
-          <a href="https://twitter.com/johnchque" target="_blank">Twitter</a>
-          and
-          <a href="https://instagram.com/johnchque" target="_blank">Instagram</a
-          >. If you like longer texts, you can send me an email at
-          hello@johnchque.com.
-        </p>
+        <div class="row mb-2">
+          <div class="col-12 col-md-3 text-muted">GitHub</div>
+          <div class="col-12 col-md-9"><a target="_blank" href="https://github.com/johnchque">@johnchque</a></div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-12 col-md-3 text-muted">Instagram</div>
+          <div class="col-12 col-md-9"><a target="_blank" href="https://instagram.com/johnchque">@johnchque</a></div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-12 col-md-3 text-muted">YouTube</div>
+          <div class="col-12 col-md-9"><a target="_blank" href="https://go.johnchque.com/youtube">@johnchque</a></div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-12 col-md-3 text-muted">LinkedIn</div>
+          <div class="col-12 col-md-9"><a target="_blank" href="https://www.linkedin.com/in/johnchque">/johnchque</a></div>
+        </div>
+      </section>
+      <section class="mb-5">
         <h2>Professional Experience</h2>
         {% assign ordered_projects = site.experiences | sort: 'date_end' |
         reverse %} {% for project in ordered_projects %} {% if project.category
         == 'professional' %}
-        <div class="row mb-3">
+        <div class="row mb-4">
           <div class="col-12 col-md-3 text-muted">
             {{ project.date_start | date: "%b, %Y" }} - {{ project.date_end |
             date: "%b, %Y" }}
@@ -75,7 +85,9 @@ title: About
           <div class="col-12 col-md-9">
             <a href="{{ project.url }}">{{project.role}} - {{project.title}}</a>
             <p class="mb-0">{{project.description | newline_to_br}}</p>
-            <small class="text-muted">React • Next</small>
+            <small class="text-muted">
+              {{ project.skills | join: " • " }}
+            </small>
           </div>
         </div>
         {% endif %} {% endfor %}
@@ -91,7 +103,9 @@ title: About
           <div class="col-12 col-md-9">
             <a href="{{ project.url }}">{{project.role}} - {{project.title}}</a>
             <p class="mb-0">{{project.description | newline_to_br}}</p>
-            <small class="text-muted">React • Next</small>
+            <small class="text-muted">
+              {{ project.skills | join: " • " }}
+            </small>
           </div>
         </div>
         {% endif %} {% endfor %}
