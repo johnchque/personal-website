@@ -16,6 +16,13 @@
 	--bs-primary-rgb: 48,127,150;
 }
 
+@font-face {
+    font-family: 'Geist'; /* Use a custom name for your font */
+    src: url('../fonts/GeistVF.woff') format('woff'); /* Adjust the path as necessary */
+    font-weight: normal;
+    font-style: normal;
+}
+
 body,
 html {
 	width: 100%;
@@ -35,7 +42,8 @@ h6 {
 
 body,
 p {
-	font-family: "Hind" !important;
+	font-family: "Geist" !important;
+	font-size: 15px;
 	line-height: 1.5;
 }
 
@@ -101,7 +109,7 @@ span {
 .navbar-custom {
 	box-shadow: 0 .75rem 1.5rem rgba(18, 38, 63, .03);
 	transition: all .2s;
-	font: 400 14px/.875rem "Hind", sans-serif;
+	font: 400 14px/.875rem "Geist", sans-serif;
 	background-color: var(--bs-body-bg);
 }
 
