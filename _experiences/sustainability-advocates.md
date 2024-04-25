@@ -7,7 +7,7 @@ description: |
 role: HR and Events Manager
 date_start: 2022-08-01
 date_end: 2023-08-30
-external_url: https://www.facebook.com/TedxUcb
+external_url: https://www.sustainabilityadvocates.dk/
 category: volunteering
 tags: [development, education]
 skills:

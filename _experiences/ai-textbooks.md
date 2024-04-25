@@ -7,7 +7,7 @@ description: |
 role: Frontend Developer
 date_start: 2023-09-01
 date_end: 2024-02-28
-external_url: https://www.openschoolsolutions.com/
+external_url: https://ai-textbooks.com/
 category: professional
 tags: [development, education]
 skills:

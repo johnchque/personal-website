@@ -8,7 +8,7 @@ description: |
 role: Podcast Host
 date_start: 2021-06-01
 date_end: 2022-01-30
-external_url: https://www.openschoolsolutions.com/
+external_url: https://podcasters.spotify.com/pod/show/thethoughtfulmillennial
 category: personal
 tags: [development, education]
 skills:

@@ -4,7 +4,7 @@ title: "Letting Go Comics"
 description: "Comics about breakups, emotions, and the healing process after."
 banner_image: project/iaesteb_banner.png
 thumbnail: iaesteb_thumbnail.png
-external_url: https://www.facebook.com/iaestebolivia
+external_url: https://www.webtoons.com/en/challenge/letting-go-comics/list?title_no=628509
 category: Community
 order: 203
 type: old

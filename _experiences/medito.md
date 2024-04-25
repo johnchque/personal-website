@@ -4,7 +4,7 @@ title: "Medito"
 description: "An open platform that offers free guided meditations."
 banner_image: project/oss_banner.png
 thumbnail: oss_thumbnail.png
-external_url: https://www.historiasquenovemos.org/
+external_url: https://meditofoundation.org/
 category: Education
 order: 305
 type: volunteering
