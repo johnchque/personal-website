@@ -9,16 +9,13 @@
 title: "John Choque"
 
 # A description of your site for social meta tag, search engines, and feed.xml
-description: "A digital garden about art, software development, AI ethics, and philosophy.."
+description: "I am a social entrepreneur, software developer, and artist."
 
 # The subpath of your site, e.g. /blog, for generating urls
 baseurl:  ""
 
-sass:
-  sass_dir: _sass
-
 # The base hostname & protocol of your site for where absolute urls are needed
-url: "https://johnchque.com/"
+url: "https://johnchque.com"
 
 # The shortname for your Disqus site to enable comments.
 disqus:
@@ -55,3 +52,9 @@ autopages:
 twitter:
     username:          johnchque
     card:              summary_large_image
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/home.jpg
