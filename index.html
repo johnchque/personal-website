@@ -2,62 +2,14 @@
 layout: default
 ---
 
-<!-- Navigation -->
-<nav
-  class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top"
-  id="fixed-top"
->
-  <div class="container-fluid">
-    <!-- Image Logo -->
-    <a class="navbar-brand logo-image" href="index.html"
-      ><img src="/assets/images/icon-simple.svg" alt="alternative"
-    /></a>
-    <button
-      class="navbar-toggler collapsed"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarsExampleDefault"
-      aria-controls="navbarsExampleDefault"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-      id=""
-    >
-      Menu
-    </button>
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link page-scroll" href="https://www.notes.johnchque.com"
-            >Notes</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link page-scroll" href="/world">World</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link page-scroll" href="/portfolio/">Portfolio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link page-scroll" href="/about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link page-scroll" href="#" id="btnSwitch"
-            ><i class="ri-moon-line"></i
-          ></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<!-- end of navbar -->
-<!-- end of navigation -->
+{% include navigation.html %}
 
-<section class="container">
+<section class="container-md">
   <div class="row justify-content-center mb-5 ml-top-padding">
-    <div class="heading-title col-12 col-lg-8">
+    <div class="heading-title col-12 col-lg-6">
       <h1 class="mb-5">Hi! I'm John Choque</h1>
       <p class="lead">
-        I'm a social entrepreneur, software developer, and artist.
+        I am a social entrepreneur, software developer, and artist.
       </p>
       <p>
         The core of my work lies somewhere between social entrepreneurship,
@@ -72,38 +24,26 @@ layout: default
         knowledge management.
       </p>
       <p>
-        I am an advocate of multidisciplinarity and collaboration. I have taken
-        part of multiple projects as a lead developer, project manager, podcast
-        host, product designer, media production lead, and community manager.
-        You can see all my previous experience
-        <a href="/about">here</a>.
-      </p>
-      <p>
-        I am currently a Senior Frontend Developer at <a href="https://dk.ecco.com/" target="_blank">ECCO</a>. Prior to this role,
-        I worked for about 5 years as a Software Developer at
+        I am currently a Senior Frontend Developer at
+        <a href="https://dk.ecco.com/" target="_blank">ECCO</a>. Prior to this
+        role, I worked for about 5 years as a Software Developer at
         <a href="https://www.md-systems.ch/en" target="_blank"
           >MD Systems GmbH</a
         >, the top <a href="https://www.drupal.org/">Drupal</a> contributor in
-        Switzerland.
+        Switzerland. You can see all my previous experience
+        <a href="/about">here</a>.
       </p>
       <p>
-        I did a Master's in
-        <a href="https://dclead.eu/" target="_blank"
-          >Digital Communication Leadership</a
-        >
-        at Aalborg University in Denmark. My thesis analysed transformer models
-        with theories of justice from philosophy to propose a framework for the
-        implementation of justice in algorithmic systems.
-      </p>
-
-      <p class="mb-5">
         I also have experience with photography, videography, graphic design,
         and music writing. You can find my portfolio
         <a href="/portfolio/">here</a>.
       </p>
+      <p>
+        In my free time, I like to <a href="/notes">research independently</a>, <a href="/world/">travel around the world</a>, and write poetry.
+      </p>
     </div>
-    <div class="col-12 col-lg-12">
-      <img src="/assets/images/home.jpg" class="img-fluid" />
+    <div class="col-12 col-lg-6 ps-lg-5">
+      <img src="/assets/images/home.jpg" class="img-fluid responsive" />
     </div>
   </div>
 </section>

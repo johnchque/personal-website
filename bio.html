@@ -5,12 +5,13 @@ title: About
 
 {% include navigation.html %}
 
-<div class="container">
+<div class="container-md">
   <div class="row justify-content-center mb-4 ml-top-padding">
     <div class="heading-title col-12 col-lg-6">
-      <div class="heading-title">
-        <h1>About</h1>
-      </div>
+      <h1 class="mb-5">Bio</h1>
+      <p class="lead">
+        I am an advocate of multidisciplinarity and collaboration.
+      </p>
       <section class="mb-5">
         <p>
           I was born and raised in El Alto, Bolivia. I graduated from Del Valle
@@ -82,7 +83,9 @@ title: About
             "%b, %Y" }}{% endif %}
           </div>
           <div class="col-12 col-md-9">
-            <a href="{{ project.external_url }}">{{project.role}} - {{project.title}}</a>
+            <a href="{{ project.external_url }}"
+              >{{project.role}} - {{project.title}}</a
+            >
             <p class="mb-0">{{project.description | newline_to_br}}</p>
             <small class="text-muted">
               {{ project.skills | join: " • " }}
@@ -230,7 +233,7 @@ title: About
       </section>
     </div>
     <div class="col-12 col-lg-6 ps-lg-5">
-      <img src="/assets/images/about.jpg" class="img-fluid" />
+      <img src="/assets/images/about.jpg" class="img-fluid responsive" />
     </div>
   </div>
 </div>

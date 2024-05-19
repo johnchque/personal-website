@@ -1,0 +1,49 @@
+---
+layout: default
+title: About
+---
+
+{% include navigation.html %}
+<div class="container-md">
+  <div class="row justify-content-start mb-4 ml-top-padding">
+    <div class="heading-title col-12 col-lg-8">
+      <h1 class="heading-title">Notes</h1>
+      <p class="lead">Things I am independently learning and researching.</p>
+      <ul>
+        <li>
+          Social Entrepreneurship
+        </li>
+        <li>
+          AI
+          <ul>
+            <li>
+              AI Ethics
+            </li>
+            <li>RAG Systems</li>
+          </ul>
+        </li>
+        <li>Photography</li>
+        <li>Music</li>
+        <li>Software Development</li>
+        <li>Knowledge Systems</li>
+      </ul>
+
+
+
+      <div class="related-wrapper">
+        {% assign note_items = site.notes | sort: "date" | reverse %} {% for
+        note_items in note_items %} {%- if note_items.feed == "show" -%}
+        <div class="notelist-feed">
+          <a href="{{ site.baseurl }}{{note_items.url}}">
+            <h6>{{ note_items.title }}</h6>
+            <p class="excerpt">
+              {{ note_items.content | strip_html | strip | remove: "[[" | remove: "]]"
+              | remove: "-" | escape | truncate: 200 }}
+            </p>
+          </a>
+        </div>
+        {%- endif -%} {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 ---
+feed: show
 layout: post
 title: "§What's top of mind"
 date: 2021-05-26

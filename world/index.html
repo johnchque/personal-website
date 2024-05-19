@@ -4,28 +4,21 @@ layout: default
 
 {% include navigation.html %}
 
-<div class="container">
-  <div class="row justify-content-center mb-4">
-    <div class="col-12 col-lg-8 col-xl-6 ml-top-padding">
+<div class="container-md">
+  <div class="row mb-4">
+    <div class="col-12 col-lg-8 ml-top-padding">
       <div class="heading-title mb-5">
-        <h1>World</h1>
-        <p class="lead">
-          Photos I have taken throughout the world.
-        </p>
-      </div>
-      <div>
+        <h1 class="mb-5">World</h1>
+        <p class="lead">Photos and videos I have taken throughout the world.</p>
         {% for item in site.pages %} {% assign item_crumbs = item.url |
         remove_first: page.dir | split: '/' %} {% if item_crumbs.size == 1 and
         item.name != 'index.html' %}
         <div class="row">
+          <div class="col-12 col-md-3">{{ item.date | date: "%B, %Y" }}</div>
           <div class="col">
             <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
           </div>
-          <div class="col-12 col-md-3 text-md-end">
-            {{ item.date | date: "%B, %Y" }}
-          </div>
         </div>
-        <hr />
         {% endif %} {% endfor %}
       </div>
     </div>

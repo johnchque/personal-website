@@ -4,7 +4,7 @@ layout: default
 
 {% include navigation.html %}
 
-<div class="container">
+<section class="container-md">
   <div class="row justify-content-center mb-4">
     <div class="col-12 ml-top-padding">
       <div class="heading-title">
@@ -12,10 +12,10 @@ layout: default
         <p class="p-large">Things I observe and create.</p>
       </div>
       <h2 class="text-truncate">Coding</h2>
-      <div class="row justify-content-center">
+      <div class="row">
         {% assign filtered_items = site.pages | where: "parent_url", "coding" |
         limit: 3 %} {% for item in filtered_items %}
-        <a href="{{ item.url | relative_url }}" class="col-12 col-lg-4 mb-4">
+        <a href="{{ item.url | relative_url }}" class="col-12 col-sm-6 col-lg-4 mb-4">
           <div class="card">
             <img
               class="card-img-top"
@@ -31,10 +31,10 @@ layout: default
         {% endfor %}
       </div>
       <h2 class="text-truncate">Video Production</h2>
-      <div class="row justify-content-center">
+      <div class="row">
         {% assign filtered_items = site.pages | where: "parent_url", "video" |
         limit: 3 %} {% for item in filtered_items %}
-        <a href="{{ item.url | relative_url }}" class="col-12 col-lg-4 mb-4">
+        <a href="{{ item.url | relative_url }}" class="col-12 col-sm-6 col-lg-4 mb-4">
           <div class="card">
             <img
               class="card-img-top"
@@ -50,10 +50,10 @@ layout: default
         {% endfor %}
       </div>
       <h2 class="text-truncate">Photography</h2>
-      <div class="row justify-content-center">
+      <div class="row">
         {% assign filtered_items = site.pages | where: "parent_url",
         "photography" | limit: 3 %} {% for item in filtered_items %}
-        <a href="{{ item.url | relative_url }}" class="col-12 col-lg-4 mb-4">
+        <a href="{{ item.url | relative_url }}" class="col-12 col-sm-6 col-lg-4 mb-4">
           <div class="card">
             <img
               class="card-img-top"
@@ -69,10 +69,10 @@ layout: default
         {% endfor %}
       </div>
       <h2>Graphic Design</h2>
-      <div class="row justify-content-center">
+      <div class="row">
         {% assign filtered_items = site.pages | where: "parent_url", "design" |
         limit: 3 %} {% for item in filtered_items %}
-        <a href="{{ item.url | relative_url }}" class="col-12 col-lg-4 mb-4">
+        <a href="{{ item.url | relative_url }}" class="col-12 col-sm-6 col-lg-4 mb-4">
           <div class="card">
             <img
               class="card-img-top"
@@ -89,4 +89,4 @@ layout: default
       </div>
     </div>
   </div>
-</div>
+</section>
