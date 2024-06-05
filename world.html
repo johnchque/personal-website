@@ -11,9 +11,9 @@ layout: default
         <h1 class="mb-5">World</h1>
         <p class="lead">Photos and videos I have taken throughout the world.</p>
         {% for item in site.pages %} {% assign item_crumbs = item.url |
-        remove_first: page.dir | split: '/' %} {% if item_crumbs.size == 1 and
-        item.name != 'index.html' %}
-        <div class="row">
+        remove_first: page.dir | split: '/' %} {% if item_crumbs.size == 2 and
+        item_crumbs.first == 'world' %}
+        <div class="row mb-3 mb-md-0">
           <div class="col-12 col-md-3">{{ item.date | date: "%B, %Y" }}</div>
           <div class="col">
             <a href="{{ item.url | relative_url }}">{{ item.title }}</a>

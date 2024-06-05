@@ -3,3 +3,15 @@ _site
 .jekyll-cache
 # vscode_markdown_chat extension dir
 __vscode_markdown_chat__
+
+# to exclude Obsidian workspace settings (including plugin and hotkey configurations)
+_notes/.obsidian/*
+_notes/notes/*
+# Exclude Untitled Notes
+_notes/Untitled*
+# Exclude "bad" names
+_notes/null*
+
+# Add below lines to exclude OS settings and caches
+.trash/
+.DS_Store
