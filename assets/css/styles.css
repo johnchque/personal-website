@@ -1,6 +1,5 @@
 :root {
 	--bs-nav-link-padding-y: 0;
-	--bs-container-xl: 64em;
 }
 
 [data-bs-theme=dark] {
@@ -76,12 +75,21 @@ a.back-to-top {
 	background: #3b3b3b url(../images/up-arrow.png) no-repeat center 47%;
 	background-size: 1.125rem 1.125rem;
 	text-indent: -9999px;
-	visibility: hidden;
-	transition: opacity .3s;
 }
 
 a:hover.back-to-top {
 	background-color: #696969
+}
+
+#btt-button {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+#btt-button.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
 .ml-top-padding {
@@ -104,7 +112,7 @@ i[class^="ri"] {
 }
 
 .navbar-custom {
-	box-shadow: 0 .75rem 1.5rem rgba(18, 38, 63, .03);
+	box-shadow: none;
 	transition: all .2s;
 	font: 400 14px/.875rem "Geist", sans-serif;
 	background-color: var(--bs-body-bg);
@@ -136,7 +144,6 @@ i[class^="ri"] {
 	.navbar-custom {
 		padding-top: 2.125rem;
 		padding-bottom: 2.125rem;
-		box-shadow: none;
 	}
 
 	.navbar-custom .navbar-nav {
@@ -184,12 +191,6 @@ i[class^="ri"] {
 }
 
 @media (min-width:1200px) {
-	.navbar-custom.top-nav-collapse {
-		padding-top: .5rem;
-		padding-bottom: .5rem;
-		background-color: var(--bs-body-bg);
-	}
-
 	.p-heading {
 		width: 55%
 	}
