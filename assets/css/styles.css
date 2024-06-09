@@ -88,8 +88,7 @@ a:hover.back-to-top {
 	padding-top: 140px
 }
 
-i[class^="ri"],
-span {
+i[class^="ri"] {
   display: inline-block;
   vertical-align: text-top;
 }

@@ -35,7 +35,7 @@ collections:
     permalink: /experiences/:name
   notes:
     output: true
-    permalink: /garden/:title
+    permalink: /notes/:title
 
 gems:
   - jekyll-paginate-v2
