@@ -134,7 +134,8 @@ i[class^="ri"] {
 
 @media (min-width:992px) {
 	.navbar-custom {
-		padding: 2.125rem 1.5rem 2.125rem 2rem;
+		padding-top: 2.125rem;
+		padding-bottom: 2.125rem;
 		box-shadow: none;
 	}
 
@@ -153,7 +154,8 @@ i[class^="ri"] {
 	}
 
 	.navbar-custom.top-nav-collapse {
-		padding: .5rem 1.5rem .5rem 2rem;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
 		box-shadow: 0 .75rem 1.5rem rgba(18, 38, 63, .03);
 		background-color: var(--bs-body-bg);
 	}
@@ -182,12 +184,9 @@ i[class^="ri"] {
 }
 
 @media (min-width:1200px) {
-	.navbar-custom {
-		padding: 2.125rem 5rem 2.125rem 5rem
-	}
-
 	.navbar-custom.top-nav-collapse {
-		padding: .5rem 5rem .5rem 5rem;
+		padding-top: .5rem;
+		padding-bottom: .5rem;
 		background-color: var(--bs-body-bg);
 	}
 

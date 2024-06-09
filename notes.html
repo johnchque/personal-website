@@ -10,39 +10,34 @@ title: About
       <h1 class="heading-title">Notes</h1>
       <p class="lead">Things I am independently learning and researching.</p>
       <ul>
-        <li>Software Developemt
+        <li>
+          Software Developemt
           <ul>
             <li>
               <a href="/notes/course-docker">My Docker notes</a>
-
             </li>
             <li>
               <a href="/notes/course-graphql">My GraphQL notes</a>
-              
+            </li>
+            <li>
+              <a href="/notes/course-react">My React notes</a>
             </li>
           </ul>
         </li>
       </ul>
       <ul>
-        <li>
-          Social Entrepreneurship
-        </li>
+        <li>Social Entrepreneurship</li>
         <li>
           AI
           <ul>
-            <li>
-              AI Ethics
-            </li>
+            <li>AI Ethics</li>
             <li>RAG Systems</li>
           </ul>
         </li>
         <li>Photography</li>
         <li>Music</li>
-        <li>Software Development</li>
         <li>Knowledge Systems</li>
       </ul>
-
-
 
       <div class="related-wrapper">
         {% assign note_items = site.notes | sort: "date" | reverse %} {% for
@@ -51,8 +46,8 @@ title: About
           <a href="{{ site.baseurl }}{{note_items.url}}">
             <h6>{{ note_items.title }}</h6>
             <p class="excerpt">
-              {{ note_items.content | strip_html | strip | remove: "[[" | remove: "]]"
-              | remove: "-" | escape | truncate: 200 }}
+              {{ note_items.content | strip_html | strip | remove: "[[" |
+              remove: "]]" | remove: "-" | escape | truncate: 200 }}
             </p>
           </a>
         </div>
