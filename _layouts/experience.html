@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+{% include navigation.html %}
+
+<!-- Blog Detail Start -->
+
+<div class="container-md">
+  <div class="row justify-content-start">
+    <div class="col-12 ml-top-padding post">
+      <div class="heading-title">
+        <p class="text-uppercase text-bold">
+          <i class="ri ri-mail-open-fill ri-fw turquoise"></i> {{ page.category
+          }}
+        </p>
+        <h1>{{ page.title }}</h1>
+        <p class="lead text-muted">{{ page.description }}</p>
+        <p class="post-meta text-muted">
+          Planted: {{ page.date | date: "%B %-d, %Y" }} • Last updated: {{
+          page.updated | date: "%B %-d, %Y" }}
+        </p>
+      </div>
+      <img
+        src="/assets/images/{{ page.banner_image }}"
+        class="img-fluid mb-3"
+        alt=""
+      />
+      <section class="content">{{content}}</section>
+    </div>
+  </div>
+</div>

@@ -6,27 +6,19 @@ layout: default
 
 <!-- Blog Detail Start -->
 
-<div class="container">
-	<div class="row justify-content-center">
-		<div class="col-12 col-lg-8 col-xl-6 ml-top-padding">
-			<div class="heading-title mb-3">
-				<p class="text-muted">Project</p>
-				<h1>{{ page.title }}</h1>
-				<p>{{ page.date | date: "%B %-d, %Y" }}</p>
-			</div>
-			<div class="mb-3">
-				{{ content }}
-			</div>
-		</div>
-	</div>
-</div>
-<div class="container text-center my-4">
-	<div class="row">
-		<div class="col">
-			<a href="/albums" class="blog-nav">
-				<span>Albums</span>
-			</a>
-			<span> / {{ page.title }}</span>
-		</div>
-	</div>
+<div class="container-md">
+  <div class="row">
+    <div class="col-12 ml-top-padding">
+      <div class="heading-title mb-5">
+        <a href="/projects"> <i class="ri-arrow-left-line"></i>Projects</a>
+        <h1>{{ page.title }}</h1>
+        <p class="lead text-muted">{{ page.description }}</p>
+        <p class="text-muted">
+          Last updated: {{ page.updated | date: "%B %-d, %Y" }} • Planted: {{
+          page.date | date: "%B %-d, %Y" }}
+        </p>
+      </div>
+      <section class="content">{{content}}</section>
+    </div>
+  </div>
 </div>

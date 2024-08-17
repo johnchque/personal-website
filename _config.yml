@@ -30,6 +30,9 @@ instagram_username:
 linkedin_username: "john-choque-condori"
 
 collections:
+  projects:
+    output: true
+    permalink: /projects/:name
   experiences:
     output: true
     permalink: /experiences/:name

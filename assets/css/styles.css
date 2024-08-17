@@ -180,10 +180,6 @@ i[class^="ri"] {
 		width: 65%
 	}
 
-	.ml-top-padding {
-		padding-top: 170px
-	}
-
 	img.responsive {
 		aspect-ratio: 3/4;
 		object-fit: cover;
@@ -227,4 +223,17 @@ footer .btn-solid-reg {
 footer .social-icons ul li {
 	display: inline-block;
 	margin-left: 15px
+}
+
+.container-md {
+	max-width: 64rem;
+}
+p {
+	max-width: 34rem;
+}
+.content p,
+.content .measure-wide,
+.content .highlighter-rouge,
+.content ul li {
+	max-width: 34rem;
 }

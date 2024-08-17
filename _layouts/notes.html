@@ -7,17 +7,18 @@ layout: default
 <!-- Blog Detail Start -->
 
 <div class="container-md">
-	<div class="row">
-		<div class="col-12 col-lg-8 col-xl-6 ml-top-padding">
-			<div class="heading-title mb-5">
-				<p class="text-uppercase text-bold">Notes</p>
-				<h1 class="mb-4">{{ page.title }}</h1>
-				<p class="lead text-muted">{{ page.description }}</p>
-				<p class="text-muted">Last updated: {{ page.updated | date: "%B %-d, %Y" }} • Planted: {{ page.date | date: "%B %-d, %Y" }}</p>
-			</div>
-			<section class="content">
-				{{content}}
-			</section>
-		</div>
-	</div>
+  <div class="row">
+    <div class="col-12 ml-top-padding">
+      <div class="heading-title mb-5">
+        <a href="/notes"> <i class="ri-arrow-left-line"></i>Notes</a>
+        <h1>{{ page.title }}</h1>
+        <p class="lead text-muted">{{ page.description }}</p>
+        <p class="text-muted">
+          Last updated: {{ page.updated | date: "%B %-d, %Y" }} • Planted: {{
+          page.date | date: "%B %-d, %Y" }}
+        </p>
+      </div>
+      <section class="content">{{content}}</section>
+    </div>
+  </div>
 </div>

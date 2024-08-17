@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+{% include navigation.html %}
+
+<div class="container-md">
+  <div class="row justify-content-center mb-4">
+    <div class="col-12 ml-top-padding">
+      <h1>Projects</h1>
+      {% assign projects_by_year = site.projects | sort: 'date' | reverse %} {%
+      assign years = "" %} {% for project in projects_by_year %} {% assign year
+      = project.date | date: "%Y" %} {% unless years contains year %} {% assign
+      years = years | append: year | append: "," %} {% endunless %} {% endfor %}
+      {% assign years = years | split: "," | sort | reverse %} {% for year in
+      years %} {% unless year == "" %}
+      <h3>{{ year }}</h3>
+      <div class="row">
+        {% for project in projects_by_year %} {% assign project_year =
+        project.date | date: "%Y" %} {% if project_year == year %}
+
+        <a
+          href="{{ project.url | relative_url }}"
+          class="col-12 col-sm-6 col-lg-4 mb-4 text-decoration-none"
+        >
+          <img
+            class="card-img-top mb-2 rounded"
+            src="{{ project.thumbnail }}"
+            alt="Card image top"
+          />
+          <div class="text-decoration-underline">{{ project.title }}</div>
+          <div class="text-secondary">{{ project.category }}</div>
+          <div class="text-primary fst-italic small">{{ project.type }}</div>
+        </a>
+        {% endif %} {% endfor %}
+      </div>
+      {% endunless %} {% endfor %}
+    </div>
+  </div>
+</div>

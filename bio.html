@@ -7,8 +7,8 @@ title: About
 
 <div class="container-md">
   <div class="row justify-content-center mb-4 ml-top-padding">
-    <div class="heading-title col-12 col-lg-6">
-      <h1 class="mb-5">Bio</h1>
+    <div class="heading-title col-12 col-lg-7 content">
+      <h1>Bio</h1>
       <p class="lead">
         I am an advocate of multidisciplinarity and collaboration.
       </p>
@@ -76,7 +76,7 @@ title: About
         {% assign ordered_projects = site.experiences | sort: 'date_end' |
         reverse %} {% for project in ordered_projects %} {% if project.category
         == 'professional' %}
-        <div class="row mb-4">
+        <div class="row mb-4 measure-wide">
           <div class="col-12 col-md-3 text-muted">
             {{ project.date_start | date: "%b, %Y" }} - {% if project.date_end
             == project.date_start %}Present{% else %}{{ project.date_end | date:
@@ -97,7 +97,7 @@ title: About
         <h2>Other Experience</h2>
         {% for project in ordered_projects %} {% if project.category ==
         'personal' %}
-        <div class="row mb-4">
+        <div class="row mb-4 measure-wide">
           <div class="col-12 col-md-3 text-muted">
             {{ project.date_start | date: "%b, %Y" }} - {{ project.date_end |
             date: "%b, %Y" }}
@@ -115,7 +115,7 @@ title: About
         <h2>Volunteering</h2>
         {% for project in ordered_projects %} {% if project.category ==
         'volunteering' %}
-        <div class="row mb-4">
+        <div class="row mb-4 measure-wide">
           <div class="col-12 col-md-3 text-muted">
             {{ project.date_start | date: "%b, %Y" }} - {{ project.date_end |
             date: "%b, %Y" }}
@@ -232,8 +232,13 @@ title: About
         </ul>
       </section>
     </div>
-    <div class="col-12 col-lg-6 ps-lg-5">
+    <div class="col-12 col-lg-5">
       <img src="/assets/images/about.jpg" class="img-fluid responsive" />
     </div>
   </div>
 </div>
+
+
+
+
+
