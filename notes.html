@@ -9,49 +9,31 @@ title: About
     <div class="heading-title col-12 col-lg-8">
       <h1 class="heading-title">Notes</h1>
       <p class="lead">Things I am independently learning and researching.</p>
-      <ul>
-        <li>
-          Software Developemt
-          <ul>
-            <li>
-              <a href="/notes/course-docker">My Docker notes</a>
-            </li>
-            <li>
-              <a href="/notes/course-graphql">My GraphQL notes</a>
-            </li>
-            <li>
-              <a href="/notes/course-react">My React notes</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>Social Entrepreneurship</li>
-        <li>
-          AI
-          <ul>
-            <li>AI Ethics</li>
-            <li>RAG Systems</li>
-          </ul>
-        </li>
-        <li>Photography</li>
-        <li>Music</li>
-        <li>Knowledge Systems</li>
-      </ul>
-
+      <p>
+        I'm not keen for chronological feeds because they
+        <a
+          href="https://stackingthebricks.com/how-blogs-broke-the-web/"
+          target="_blank"
+          >ruined the fun web</a
+        >. If you want to see my personal Table of Contents, check
+        <a href="/notes/toc">here</a>.
+      </p>
+      <p>
+        However, in this page you can see a list of all my public notes sorted
+        by last updated time. This ensures that the notes I am more actively
+        working on are shown first.
+      </p>
+      <p>I hope you can find something fun to read here.</p>
       <div class="related-wrapper">
         {% assign note_items = site.notes | sort: "date" | reverse %} {% for
-        note_items in note_items %} {%- if note_items.feed == "show" -%}
-        <div class="notelist-feed">
-          <a href="{{ site.baseurl }}{{note_items.url}}">
-            <h6>{{ note_items.title }}</h6>
-            <p class="excerpt">
-              {{ note_items.content | strip_html | strip | remove: "[[" |
-              remove: "]]" | remove: "-" | escape | truncate: 200 }}
-            </p>
-          </a>
+        note_items in note_items %}
+        <div class="row mb-3 mb-md-0">
+          <div class="col-12 col-md-3">{{ note_items.date | date: "%B, %Y" }}</div>
+          <div class="col">
+            <a href="{{ note_items.url | relative_url }}">{{ note_items.title }}</a>
+          </div>
         </div>
-        {%- endif -%} {%- endfor -%}
+        {%- endfor -%}
       </div>
     </div>
   </div>
