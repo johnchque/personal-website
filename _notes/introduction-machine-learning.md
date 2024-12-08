@@ -1,9 +1,9 @@
 ---
 layout: notes
-title: My notes for the Introduction to Machine Learning course by Andrew Ng
+title: Introduction to Machine Learning by Andrew Ng
 date: 2022-10-13
 updated: 2024-12-08
-description: Notes from the @NetNinja course in YouTube.
+description: My notes for the Introduction to Machine Learning course by Andrew Ng.
 ---
 [https://youtube.com/playlist?list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN](https://youtube.com/playlist?list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN)
 
