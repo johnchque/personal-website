@@ -35,22 +35,22 @@ description: My notes for the Introduction to Machine Learning course by Andrew 
     - x: input variables also called features.
     - y: Output variables, region to predict.
     - (x, y): A single training example.
-    - $(x^{(i)}, y^{(i)})$: to refer to a specific ith training example.
+    - \[(x^{(i)}, y^{(i)})\]: to refer to a specific ith training example.
     - Hypothesis, output of the learning algorithm. Function that takes inputs and output estimated value of y. Maps from x’s to y’s.
 - When deciding a learning algorithm we decide how do we represent the hypothesis.
-- To represent the hypothesis: $h(x) = \theta_0 + \theta_1x$
+- To represent the hypothesis: \[h(x) = \theta_0 + \theta_1x\]
 - Also called univariate lineal regression.
 - Cost function
     - How to fit the best possible straight line for our data.
-    - $\theta_{i's}$: Parameters of the model.
+    - \[\theta_{i's}\]: Parameters of the model.
     - How to choose the parameters?
         - With different choices of the parameters we get different hypothesis.
         - Come up with values for theta so the straight line corresponds to the training data.
         - IDEA: **Choose thetas so that the hypothesis is close to the y values for our training examples (x, y).**
         - Solve a minimization problem.
-        - Minimize $\theta_0$ and $\theta_1$. I want the difference between h(x) and y to be small.
+        - Minimize \[\theta_0\] and \[\theta_1\]. I want the difference between h(x) and y to be small.
         - Minimize the square difference between the output of the hypothesis and the actual y values of the training data. Squared error function.
-        - Cost function = $J(\theta_0, \theta_1)$ = $\frac1{2m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})^2$
+        - Cost function = \[(\theta_0, \theta_1)\] = \[\frac1{2m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})^2\]
         - Cost function is also called the Squared error function. Mostly used for linear regression problems.
     - What is the cost function doing
         - **Hypothesis is a function of the size of the house x.**
@@ -59,29 +59,29 @@ description: My notes for the Introduction to Machine Learning course by Andrew 
         - Between all the sums, the one of theta that is the lower in terms of J is the one that define the best values.
     - Cost function with contour plots
         - Axis x is theta 0 and Axis y is theta 1.
-        - Lines of the same color have the same value for $J(\theta_0, \theta_1)$.
+        - Lines of the same color have the same value for \[(\theta_0, \theta_1)\].
         - We want an automatic algorithm that finds the value of theta 0 and theta 1 that minimizes the value of J.
 - Gradient descent (algorithm to minimize the cost function J)
     - It is a general algorithm. Used to minimize other functions as well.
     - Outline
-        - Start with initial guesses for $\theta_0, \theta_1$. Doesn’t matter what they are.
-        - Keep changing $\theta_0, \theta_1$to reduce J until we end up at a minimum.
+        - Start with initial guesses for \[\theta_0, \theta_1\]. Doesn’t matter what they are.
+        - Keep changing \[\theta_0, \theta_1\]to reduce J until we end up at a minimum.
     - Repeat until convergence
-        - $\theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J(\theta_0,\theta_1)$
-        - $\alpha$, learning rate, controls how big the steps when updating theta.
+        - \[\theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J(\theta_0,\theta_1)\]
+        - \[\alpha\], learning rate, controls how big the steps when updating theta.
         - Derivative, what is the slope of the line that is just tangent to the function.
         - **Positive slope if it increases to the right. Negative if it decreases.**
-        - $\frac{\partial}{\partial \theta_j} J(\theta_0)= \alpha(negative/positive number)$
+        - \[\frac{\partial}{\partial \theta_j} J(\theta_0)= \alpha(negative/positive number)\]
     - We should update simultaneously both thetas.
     - If alpha is too small, gradient descent is slow. If it is too large, it can overshoot the minimum, mail fail to converge or diverge.
     - When the slope of a line is 0 then that might be a local optima. That might happen because:
-        - $\theta_j := \theta_j - \alpha 0$, so theta does not change values.
+        - \[\theta_j := \theta_j - \alpha 0\], so theta does not change values.
     - **As we approach a local minimum, gradient descent will automatically take smaller steps. No need to decrease alpha over time.**
     - Local minimum is when the derivative is zero.
 - Gradient descent for Linear regression
     - In order to apply the gradient descent algorithm, the key term is the derivative.
-    - $j = 0 : \frac{\partial}{\partial \theta_0} J(\theta_0,\theta_1) = \frac{1}{m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})$
-    - $j = 1 : \frac{\partial}{\partial \theta_1} J(\theta_0,\theta_1) = \frac{1}{m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})*x^{(i)}$
+    - \[ = 0 : \frac{\partial}{\partial \theta_0} J(\theta_0,\theta_1) = \frac{1}{m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})\]
+    - \[ = 1 : \frac{\partial}{\partial \theta_1} J(\theta_0,\theta_1) = \frac{1}{m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})*x^{(i)}\]
     - **The cost function for linear regression will always be a convex function. bowl-shaped function, it has no other local optima than the global optima.**
     - Batch Gradient Descent: in every step we use all the training examples. Looking at the batch of training samples.
 
@@ -124,20 +124,20 @@ description: My notes for the Introduction to Machine Learning course by Andrew 
 - Logistic regression ensures that the values are between 0 and 1.
 - Classification algorithm even when the name is regression.
 - Hypothesis representation
-    - $h_\theta(x) = g(\theta^Tx)$
-    - $g{(z)} = \frac{1}{1+e^{-z}}$
+    - \[h_\theta(x) = g(\theta^Tx)\]
+    - \[g{(z)} = \frac{1}{1+e^{-z}}\]
     - Sigmoid function or Logistic function, synonyms.
-    - $h_{\theta}(x) = \frac{1}{1+e^{-\theta^Tx}}$
+    - \[h_{\theta}(x) = \frac{1}{1+e^{-\theta^Tx}}\]
     - Pick a value to parameters theta to make predictions.
-    - $h_{\theta}(x)$ = estimated probability that y = 1 on input x.
-    - $h_{\theta}(x) = p(y = 1| x; \theta)$, probability that y is 1 give x parametrized by theta.
-    - $1 = p(y = 1| x; \theta) + p(y = 0| x; \theta)$
+    - \[h_{\theta}(x)\] = estimated probability that y = 1 on input x.
+    - \[h_{\theta}(x) = p(y = 1| x; \theta)\], probability that y is 1 give x parametrized by theta.
+    - \[1 = p(y = 1| x; \theta) + p(y = 0| x; \theta)\]
 - Decision boundary
     - When the hypothesis will make predictions that y = 1 and when is y = 0.
     - How does the hypothesis look if it has more than one feature.
     - Predict y = 1 if h(x) ≥ 0.5 and y = 0 if h(x) < 0.5
     - In the example graphic: g(z) ≥ 0.5 when z ≥ 0
-    - $h_\theta(x) = g(\theta^Tx) >= 0.5 whenever \theta^{T}x >= 0$
+    - \[h_\theta(x) = g(\theta^Tx) >= 0.5 whenever \theta^{T}x >= 0\]
     - Example
         - h(x) = g(theta0 + theta1x1 + theta2x2)
         - theta = [-3, 1, 1] (as a column)
@@ -157,11 +157,11 @@ description: My notes for the Introduction to Machine Learning course by Andrew 
         - X0 = 1. y is either 0 or 1.
         - The paremeters of the hypothesis is theta.
     - Given this training set how do we choose and how do we set the parameters theta?
-    - $J(\theta) = Cost(h_\theta(x^{(i)}), y^{(i)})^2 = \frac12(h_\theta(x^{(i)}) - y^{(i)})^2$ the cost function of a sum over our training set of our cost.
+    - \[(\theta) = Cost(h_\theta(x^{(i)}), y^{(i)})^2 = \frac12(h_\theta(x^{(i)}) - y^{(i)})^2\] the cost function of a sum over our training set of our cost.
     - This is the cost that we want the algorithm to pay if it outputs the value h(x) and the actual value is y. Or is 1 half the difference of the square difference.
     - **Because h is a non linear (sigmoid) function then the cost function is not a convex function. The problem with using the square cost function is that because the sigmoid function that appears in the cost function, J of theta ends up being a non convex function.**
     - For instance, we use the following cost function that is convex.
-    - $Cost(h_\theta(x^{(i)}), y^{(i)})^2 = -log(h_{\theta}(x))$ if y = 1, and $-log(1-h_{\theta}(x))$ if y = 0
+    - \[Cost(h_\theta(x^{(i)}), y^{(i)})^2 = -log(h_{\theta}(x))\] if y = 1, and \[-log(1-h_{\theta}(x))\] if y = 0
     - We just care about the part where z or h is 0 and 1.
         - If y = 1 and h(x) = 1, then the cost is 0.
         - As h(x) approaches 0, the cost goes to infinity.
@@ -174,17 +174,17 @@ description: My notes for the Introduction to Machine Learning course by Andrew 
 - Simplified cost function
     - For classification problems, y is always 0 or 1.
     - Because y is either 0 or 1. We can compress both into one equation.
-    - $Cost(h_\theta(x^{(i)}), y^{(i)})^2 = -y log(h_{\theta}(x)) - (1-y)log(1-h_{\theta}(x))$
+    - \[Cost(h_\theta(x^{(i)}), y^{(i)})^2 = -y log(h_{\theta}(x)) - (1-y)log(1-h_{\theta}(x))\]
         - If y = 1, the second term goes away.
         - If y = 0, the first term goes away.
     - This can be derived from the principle maximum likelihood estimation. It is convex.
     - In order to fit the parameters, we will try to find the parameters theta that minimize J of theta.
     - Our hypothesis is estimating the probability that y = 1. p(y=1|x;theta)
     - How to minimize j of theta as a function of theta.
-    - $J(\theta) = -\frac1m[\sum^m_{i=1}y^{(i)} log(h_{\theta}(x^{(i)}) + (1-y^{(i)})log(1-h_{\theta}(x^{(i)}))]$
+    - \[(\theta) = -\frac1m[\sum^m_{i=1}y^{(i)} log(h_{\theta}(x^{(i)}) + (1-y^{(i)})log(1-h_{\theta}(x^{(i)}))]\]
     - Repeat (Gradient descent)
-        - $\theta_j := \theta_j - \alpha\frac\partial{\partial\theta_j}J(\theta)$
-        - $\theta_j := \theta_j - \alpha \sum^m_{i=1}(h_{\theta}(x^{(i)})-y^{(i)})x^{(i)}_j$
+        - \[\theta_j := \theta_j - \alpha\frac\partial{\partial\theta_j}J(\theta)\]
+        - \[\theta_j := \theta_j - \alpha \sum^m_{i=1}(h_{\theta}(x^{(i)})-y^{(i)})x^{(i)}_j\]
     - The equation looks like the one in linear regression.
     - Linear regression and logistic regression are different because of the definition of the equation.
 - Advanced optimization
@@ -228,7 +228,7 @@ description: My notes for the Introduction to Machine Learning course by Andrew 
             - Housing, features: x1 (size), x2 (number of rooms), x3... x100.
             - Parameters: theta 0, theta 1, theta 2,...,theta 100. Hard to define which ones are the ones that are less relevant.
         - We modify the cost function to shrink all the parameters. Add a term at the end. A regularization term at the end. We don’t penalize theta 0.
-            - $J(\theta) = \frac1{2m}[\sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)}) + \lambda\sum_{j=1}^n \theta^2_j]$
+            - \[(\theta) = \frac1{2m}[\sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)}) + \lambda\sum_{j=1}^n \theta^2_j]\]
             - Lambda is the regularization parameter. It controls the trade off between the two different goals.
                 - Fit the training data well.
                 - Keep the parameters small.
@@ -236,12 +236,12 @@ description: My notes for the Introduction to Machine Learning course by Andrew 
 - Regularized linear regression
     - Previously we were using gradient descent for the original cost function.
     - Minimized the regularized cost function of j of theta.
-    - $\theta_j := \theta_j - \alpha[\frac1m \sum^m_{i=1}(h_{\theta}(x^{(i)})-y^{(i)})x^{(i)}_j - \frac{\lambda}m\theta_j]$
+    - \[\theta_j := \theta_j - \alpha[\frac1m \sum^m_{i=1}(h_{\theta}(x^{(i)})-y^{(i)})x^{(i)}_j - \frac{\lambda}m\theta_j]\]
     - **When we regularize linear regression we multiply theta j for a number that is slightly less than 1 and we perform a similar update as before.**
 - Regularized logistic regression
     - Can be prone to overfitting if you fit it with a high order polynomial.
     - Just add to the cost function the regularization term.
-        - $+ \frac{\lambda}{2m}\sum_{j=1}^n \theta^2_j$
+        - \[+ \frac{\lambda}{2m}\sum_{j=1}^n \theta^2_j\]
         - This has the effect of penalizing theta 1, 2, 3, etc.
         - Even though you are fitting a large order polynomial, you will get a better decision boundary.
 
@@ -279,23 +279,23 @@ description: My notes for the Introduction to Machine Learning course by Andrew 
         - Last layer is output.
         - Hidden layer are the ones in between.
     - Neural network
-        - $a^{(j)}_i$= activation of unit i in layer j. Activation is the value that is output of an specific unit.
-        - $\theta^{(j)}$ = A neural network is parametrized. A matrix of weight controlling function mapping from layer j to layer j + 1.
-        - $a_1^{(2)}=g(\theta^{(1)}_{10}x_0 + \theta^{(1)}_{11}x_1 + \theta^{(1)}_{12}x_2 + \theta^{(1)}_{13}x_3)$
+        - \[a^{(j)}_i\]= activation of unit i in layer j. Activation is the value that is output of an specific unit.
+        - \[\theta^{(j)}\] = A neural network is parametrized. A matrix of weight controlling function mapping from layer j to layer j + 1.
+        - \[a_1^{(2)}=g(\theta^{(1)}_{10}x_0 + \theta^{(1)}_{11}x_1 + \theta^{(1)}_{12}x_2 + \theta^{(1)}_{13}x_3)\]
             - a is the first hidden unit. Superscript is the layer. Underscript is the order in the same layer.
             - a is equal to a linear combination of features.
-            - $\theta_{21}^{(1)}$, (1) is the layer that is being activated. 21, 2 is the order of the unit and 1 is the order of the unit from the previous layer.
-        - $h_{\theta}(x) = a_1^{(3)}=g(\theta^{(2)}_{10}a_0^{(2)} + \theta^{(2)}_{11}a_1^{(2)} + \theta^{(2)}_{12}a_2^{(2)} + \theta^{(2)}_{13}a_3^{(2)})$
+            - \[\theta_{21}^{(1)}\], (1) is the layer that is being activated. 21, 2 is the order of the unit and 1 is the order of the unit from the previous layer.
+        - \[h_{\theta}(x) = a_1^{(3)}=g(\theta^{(2)}_{10}a_0^{(2)} + \theta^{(2)}_{11}a_1^{(2)} + \theta^{(2)}_{12}a_2^{(2)} + \theta^{(2)}_{13}a_3^{(2)})\]
         - 3 units, 3 hidden units.
         - If network has sj units in layer j, sj+1 units in layer j+1, then theta(j) will be of dimension s(j+1) x (sj + 1)
 - Model representation
     - Forward propagation: Vectorized implementation
-        - $a^{(2)}_1 = g(z^{(2)}_1)$ the superscript means that they are related to the second (hidden) layer.
-        - $z^{(2)} = \Theta^{(1)}x$ = $z^{(2)} = \Theta^{(1)}a^{(1)}$
-        - $a^{(2)} = g(z^{(2)})$, a and z are three dimensional vectors.
-        - $a^{(1)} = x$
-        - $z^{(3)} = \Theta^{(2)}a^{(2)}$
-        - $h_{\Theta}(x) = a^{(3)} = g(z^{(3)})$
+        - \[a^{(2)}_1 = g(z^{(2)}_1)\] the superscript means that they are related to the second (hidden) layer.
+        - \[z^{(2)} = \Theta^{(1)}x\] = \[z^{(2)} = \Theta^{(1)}a^{(1)}\]
+        - \[a^{(2)} = g(z^{(2)})\], a and z are three dimensional vectors.
+        - \[a^{(1)} = x\]
+        - \[z^{(3)} = \Theta^{(2)}a^{(2)}\]
+        - \[h_{\Theta}(x) = a^{(3)} = g(z^{(3)})\]
             - This process of computing h of x is called forward propagation.
     - Neural network learning its own features
         - A neural network is doing logistic regression. Is using the original features x, is using the a features.
@@ -332,7 +332,7 @@ description: My notes for the Introduction to Machine Learning course by Andrew 
         - We recognize more than 2 categories. If that is the case, we would build a NN with 4 output units. A vector of 4 numbers. Each output belongs to a class.
         - We have 4 logistic regression classifiers where each is trying to identify one class.
         - The training set is as follows:
-            - $(x^{(1)}, y^{(1)}),(x^{(2)}, y^{(2)}),...,(x^{(m)}, y^{(m)})$
+            - \[(x^{(1)}, y^{(1)}),(x^{(2)}, y^{(2)}),...,(x^{(m)}, y^{(m)})\]
             - Previously = y belongs to {1, 2, 3, 4}
             - y(i) one of 1 0 0 0, 0 1 0 0 ...
             - x(i), y(i) = x(i) is an image one of the objects and y(i) will be one of the vectors.
@@ -371,19 +371,19 @@ description: My notes for the Introduction to Machine Learning course by Andrew 
         - To compute the derivatives.
         - For each node, we compute delta_j^(l), error of node j in layer l.
         - For each output unit we will compute delta.
-            - $\delta_j^{(4)} = a_j^{(4)}-y_j$, for each output unit in layer L = 4. (delta term)
+            - \[\delta_j^{(4)} = a_j^{(4)}-y_j\], for each output unit in layer L = 4. (delta term)
                 - a is the activation of the unit, a can also be h(x)_j
                 - y is the actual value in the actual example
                 - This can also have a vectorized implementation
         - We compute the delta terms in the earlier layers of the network.
-            - $\delta_j^{(3)} = (\Theta^{(3)})^T\delta^{(4)}.* g'(z^{(3)})$
+            - \[\delta_j^{(3)} = (\Theta^{(3)})^T\delta^{(4)}.* g'(z^{(3)})\]
                 - .* element wise multiplication.
                 - g’ is the derivative of the activation function g eveluated at the input values given at z3. = a(3) .* (1-a(3)), 1 is a vector of 1s.
                 - .* = to value multiplication.
                 - No delta 1 because that is the input layer and has the features and no errors.
         - Backpropagation as a term comes from starting computing the delta term of the output layer backwards.
         - How to implement to compute derivatives in respect to out parameters with a large training set
-            - Set $\Delta_{ij}^{(l)} = 0$, for all l, i, j
+            - Set \[\Delta_{ij}^{(l)} = 0\], for all l, i, j
                 - Will be used to compute the partial derivative term respect to theta.
                 - Used as accumulators.
             - Loop through our training set
@@ -394,8 +394,8 @@ description: My notes for the Introduction to Machine Learning course by Andrew 
                 - Compute each delta.
                 - Delta, accumulate the partial derivative terms.
                     - It is possible to vectorize this too. Delta ij is a matrix.
-            - $D_{ij}^{(l)} := \frac1m\Delta_{ij}^{(l)}+\lambda\Theta_{ij}^{(l)}$ if j ≠ 0.
-            - $D_{ij}^{(l)} := \frac1m\Delta_{ij}^{(l)}$ if j = 0, corresponds to the bias term.
+            - \[D_{ij}^{(l)} := \frac1m\Delta_{ij}^{(l)}+\lambda\Theta_{ij}^{(l)}\] if j ≠ 0.
+            - \[D_{ij}^{(l)} := \frac1m\Delta_{ij}^{(l)}\] if j = 0, corresponds to the bias term.
             - Once we compute the D terms, that is the partial derivatives of the cost function with respect to each parameters. We can use this in gradient descent.
 - Backpropagation intuition
     - Forward propagation
@@ -414,7 +414,7 @@ description: My notes for the Introduction to Machine Learning course by Andrew 
         - How well is the network doing on example i?
     - Forward propagation
         - Back propagation is computing delta, the error of the activation value for unit j in layer l.
-        - Formally $\delta^{(l)}_j = \frac{\partial}{\partial z^{(l)}_j} cost(i)$ for j ≥ 0.
+        - Formally \[\delta^{(l)}_j = \frac{\partial}{\partial z^{(l)}_j} cost(i)\] for j ≥ 0.
         - If we alter z, l, j, this will affect the values that the neural network is outputting. Thus, changing the cost function.
         - Backpropagation
             - For the output layer we get the delta term. delta(4)_1 = y(i) - a(4)_1
@@ -482,17 +482,17 @@ description: My notes for the Introduction to Machine Learning course by Andrew 
             - This will give computational advantages.
         - If y = 0, the second term of the cost function applies.
             - The function, -log(1-(1/1+e^-z))
-        - for y = 1, the cost function is now called $cost_1(z)$
-        - For y = 0, the cost function is now called $cost_0(z)$
+        - for y = 1, the cost function is now called \[Cost_1(z)\]
+        - For y = 0, the cost function is now called \[Cost_0(z)\]
     - Support vector machine
-        - $\frac1m[\sum^m_{i=1}y^{(i)} (-log(h_{\theta}(x^{(i)})) + (1-y^{(i)})(-log(1-h_{\theta}(x^{(i)})))]$, in logistic regression
+        - \[\frac1m[\sum^m_{i=1}y^{(i)} (-log(h_{\theta}(x^{(i)})) + (1-y^{(i)})(-log(1-h_{\theta}(x^{(i)})))]\], in logistic regression
         - In SVM
-            - $\frac1m[\sum^m_{i=1}y^{(i)} cost_1(\theta^Tx^{(i)}) + (1-y^{(i)})cost_0(\theta^Tx^{(i)})] + \frac{\lambda}{2m}\sum^n_{i=0}\theta_j^2$
+            - \[\frac1m[\sum^m_{i=1}y^{(i)} cost_1(\theta^Tx^{(i)}) + (1-y^{(i)})cost_0(\theta^Tx^{(i)})] + \frac{\lambda}{2m}\sum^n_{i=0}\theta_j^2\]
             - Remove the 1/m term.
             - For logistic regression we get A + lambdaB, by setting values of lambda and we perform regularization. If we give lambda a high value, then B has a large weight.
             - In SVM, CA + B, if C is small, that gives larger weight to B. It is a different way to optimize.
             - C = 1/lambda
-            - $min C\sum^m_{i=1}[y^{(i)} cost_1(\theta^Tx^{(i)}) + (1-y^{(i)})cost_0(\theta^Tx^{(i)})] + \frac{1}2\sum^n_{i=0}\theta_j^2$
+            - \[min C\sum^m_{i=1}[y^{(i)} cost_1(\theta^Tx^{(i)}) + (1-y^{(i)})cost_0(\theta^Tx^{(i)})] + \frac{1}2\sum^n_{i=0}\theta_j^2\]
             - When we minimize this functions we get the parameters learned by the SVM.
         - SVM Hypothesis
             - **SVM doesn’t output a probability. We instead minimize the cost function the get the parameters theta.**
@@ -501,7 +501,7 @@ description: My notes for the Introduction to Machine Learning course by Andrew 
             - 0 otherwise.
 - Large Margin Intuition
     - Having the cost function
-        - If y = 1, we want $\theta^Tx>=1$, not just ≥ 0
+        - If y = 1, we want \[\theta^Tx>=1\], not just ≥ 0
         - Here it is plotting log based on z, in logistic regression is plotted based on h(x)
         - h(x) = g(z)
         - In logistic regression, the sigmoid function is just a side view where we get to see how they are using that function to separate values. In SVM, we use two of these to create the decision boundary. So both are also a side view.
@@ -559,7 +559,7 @@ description: My notes for the Introduction to Machine Learning course by Andrew 
                 - Having sigma square as 0.5, the bump remains similar but its width is narrower. The counturs shrink a bit too.
                 - Sigma square = 3, as you move away from l1, the value of the feature falls away slowly.
         - Given this definition of the features. Compute features f1, f2, f3.
-            - Hypothesis will predict 1 when $\theta_0 + \theta_1f_1 + \theta_2f_2 + \theta_3f_3 >= 0$
+            - Hypothesis will predict 1 when \[\theta_0 + \theta_1f_1 + \theta_2f_2 + \theta_3f_3 >= 0\]
             - Theta 0, -0.5, theta1 = 1, theta2, = 1, theta3 = 0.
             - If we have a training example close to l1.
                 - f1 is close to 1, f2 close to 0, f3 close to 0.
@@ -579,16 +579,16 @@ description: My notes for the Introduction to Machine Learning course by Andrew 
         - We create a feautre vector with f1, f2,... fm. f0 is always equals to 1.
         - Where f1 = similarity(x, l1) [l1 = x1]
         - For a training example (x(i), y(i))
-            - $f_1^{(i)} = sim(x^{(i)}, l^{(1)})$
-            - $f_2^{(i)} = sim(x^{(i)}, l^{(2)})$
+            - \[f_1^{(i)} = sim(x^{(i)}, l^{(1)})\]
+            - \[f_2^{(i)} = sim(x^{(i)}, l^{(2)})\]
             - .
-            - Somewhere here we will have one value where $f_i^{(i)} = sim(x^{(i)}, l^{(i)}) = exp(-0/2\sigma^2) = 1$ where l(i) will be equal to x(i). One will be equal to 1.
+            - Somewhere here we will have one value where \[f_i^{(i)} = sim(x^{(i)}, l^{(i)}) = exp(-0/2\sigma^2) = 1\] where l(i) will be equal to x(i). One will be equal to 1.
             - .
-            - $f_m^{(i)} = sim(x^{(i)}, l^{(m)})$
+            - \[f_m^{(i)} = sim(x^{(i)}, l^{(m)})\]
         - If we already have set of parameters theta, then given the value of x, compute features (all fs). Predict y =1 if theta transpose f ≥ 0.
         - To get the parameters theta we use the SVM learning algorithm. Which means to solve the minimization problem.
         - To make a prediction on the (i) training example, we use theta transpose f(i)
-            - $min C\sum^m_{i=1}[y^{(i)} cost_1(\theta^Tf^{(i)}) + (1-y^{(i)})cost_0(\theta^Tf^{(i)})] + \frac{1}2\sum^n_{i=0}\theta_j^2$
+            - \[min C\sum^m_{i=1}[y^{(i)} cost_1(\theta^Tf^{(i)}) + (1-y^{(i)})cost_0(\theta^Tf^{(i)})] + \frac{1}2\sum^n_{i=0}\theta_j^2\]
         - **By solving this minimization problem we get the parameters for the SVM.**
         - n = m, is it a sum from j equals to m.
     - Using kernels with logistic regression will be very slow.
@@ -667,13 +667,13 @@ description: My notes for the Introduction to Machine Learning course by Andrew 
         - p(x) = p(x1; miu1, sigma_1^2 ) p(x2 )... p(xn )
             - Assume that x1 is distributed accroding to a Gaussian distribution, with mean miu, and variance sigma2.
             - x3 = distributed to a Gaussian distribution, miu2, sigma2 2.
-            - = $\Pi_{j=1}^n p(x_j;\mu_j,\sigma_j^2)$, the product of p, parametrized by miu and sigma.
+            - = \[\Pi_{j=1}^n p(x_j;\mu_j,\sigma_j^2)\], the product of p, parametrized by miu and sigma.
     - Anomaly detection algorithm
         - 1. Choose features xi that might be indicative of anomalous examples. That describe general properties.
         - 2. Given the training set, fit the parameters mu1, ...mun, sigma21...sigma2n. It is also possible to come with vectorized versions.
             
-            - $\mu_j=\frac1m\sum^m_{i=1}x_j^{(2)}$, average value of the j feature.
-            - $\sigma^2_j = \frac1m\sum^m_{i=1}(x_j^{(i)}-\mu_j)^2$,
+            - \[\mu_j=\frac1m\sum^m_{i=1}x_j^{(2)}\], average value of the j feature.
+            - \[\sigma^2_j = \frac1m\sum^m_{i=1}(x_j^{(i)}-\mu_j)^2\],
         - 3. Given new example x, compute p(x) probability of the new example.
             
             - If p(x)< epsilon, you don’t flag this as a Gaussian anomally.
@@ -801,7 +801,7 @@ description: My notes for the Introduction to Machine Learning course by Andrew 
     - THere is an user that has not rated any movie.
     - n = 2, learn two features. We have to learn theta(5) for user 5.
     - We want to choose a vector theta so that the last regularization term is as small as possible.
-        - $\frac\lambda2[(\theta^{(5)}_1)^2 + (\theta^{(5)}_2)^2]$ the regularization term for user 5.
+        - \[\frac\lambda2[(\theta^{(5)}_1)^2 + (\theta^{(5)}_2)^2]\] the regularization term for user 5.
     - We will end up with 0 0 bceause the regularization term is encouraging us to that, as there is no data. theta tranpose x will be 0.
     - Mean normalization
         - Compute the average rating that each movie obtained, in a vector called miu.
