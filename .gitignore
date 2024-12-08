@@ -7,6 +7,7 @@ __vscode_markdown_chat__
 # to exclude Obsidian workspace settings (including plugin and hotkey configurations)
 _notes/.obsidian/*
 _notes/notes/*
+_notes/essays/*
 # Exclude Untitled Notes
 _notes/Untitled*
 # Exclude "bad" names

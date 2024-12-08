@@ -41,3 +41,10 @@ Below you can access the topics I'm mostly learning about.
         <li>Music</li>
         <li>Knowledge Systems</li>
       </ul>
+
+Knowledge society and eugenics
+Effectual thinking
+Scope 3 emissions
+SOLID Principles
+Utopian Authoritarianism
+Roko's Basilisc

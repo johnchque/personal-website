@@ -1,0 +1,899 @@
+---
+layout: notes
+title: My notes for the Introduction to Machine Learning course by Andrew Ng
+date: 2022-10-13
+updated: 2024-12-08
+description: Notes from the @NetNinja course in YouTube.
+---
+[https://youtube.com/playlist?list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN](https://youtube.com/playlist?list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN)
+
+### What is Machine Learning?
+- Field of study that gives computers the ability to learn without being explicitly programmed.
+- Tom Mitchel: A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.
+- Machine Learning algorithm
+    - Supervised learning: Teach to do something.
+    - Unsupervised learning: Learn by itself.
+    - Others: Reinforcement learning, recommender systems.
+- Supervised learning
+    - We gave the algorithm a dataset in which right answers were given.
+    - House pricing: Regression problem as it predicts continues valued output (price).
+    - Breast cancer: Classification as we predict a discrete value (label or label).
+        - Just used one feature to determine if the tumor is malignant or benign. Based on the tumor size.
+- Unsupervised learning
+    - We get data that has no labels. Can you find some structure on the data.
+    - Using sometimes clustering algorithms. Can you cluster this data.
+    - Use for large datasets. Used for: Organize computing clusters, social network analysis, market segmentation, astronomical data analysis.
+    - Cocktail party problem: Everyone is talking at the same time. Two people talk at the same time with two mics that are closer to each of the speakers.
+        - Find structure in this data.
+
+### Linear regression
+- Predict house prices.
+    - Supervised learning, given the right answer for each of our examples.
+    - Regression problem, predicting the price.
+- We have a training set.
+    - m: Number of training samples.
+    - x: input variables also called features.
+    - y: Output variables, region to predict.
+    - (x, y): A single training example.
+    - $(x^{(i)}, y^{(i)})$: to refer to a specific ith training example.
+    - Hypothesis, output of the learning algorithm. Function that takes inputs and output estimated value of y. Maps from x’s to y’s.
+- When deciding a learning algorithm we decide how do we represent the hypothesis.
+- To represent the hypothesis: $h(x) = \theta_0 + \theta_1x$
+- Also called univariate lineal regression.
+- Cost function
+    - How to fit the best possible straight line for our data.
+    - $\theta_{i's}$: Parameters of the model.
+    - How to choose the parameters?
+        - With different choices of the parameters we get different hypothesis.
+        - Come up with values for theta so the straight line corresponds to the training data.
+        - IDEA: **Choose thetas so that the hypothesis is close to the y values for our training examples (x, y).**
+        - Solve a minimization problem.
+        - Minimize $\theta_0$ and $\theta_1$. I want the difference between h(x) and y to be small.
+        - Minimize the square difference between the output of the hypothesis and the actual y values of the training data. Squared error function.
+        - Cost function = $J(\theta_0, \theta_1)$ = $\frac1{2m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})^2$
+        - Cost function is also called the Squared error function. Mostly used for linear regression problems.
+    - What is the cost function doing
+        - **Hypothesis is a function of the size of the house x.**
+        - **Cost function is a function of the parameters theta.**
+        - J(theta) = 0 if the line goes through every sample data. Which means that the cost is 0.
+        - Between all the sums, the one of theta that is the lower in terms of J is the one that define the best values.
+    - Cost function with contour plots
+        - Axis x is theta 0 and Axis y is theta 1.
+        - Lines of the same color have the same value for $J(\theta_0, \theta_1)$.
+        - We want an automatic algorithm that finds the value of theta 0 and theta 1 that minimizes the value of J.
+- Gradient descent (algorithm to minimize the cost function J)
+    - It is a general algorithm. Used to minimize other functions as well.
+    - Outline
+        - Start with initial guesses for $\theta_0, \theta_1$. Doesn’t matter what they are.
+        - Keep changing $\theta_0, \theta_1$to reduce J until we end up at a minimum.
+    - Repeat until convergence
+        - $\theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J(\theta_0,\theta_1)$
+        - $\alpha$, learning rate, controls how big the steps when updating theta.
+        - Derivative, what is the slope of the line that is just tangent to the function.
+        - **Positive slope if it increases to the right. Negative if it decreases.**
+        - $\frac{\partial}{\partial \theta_j} J(\theta_0)= \alpha(negative/positive number)$
+    - We should update simultaneously both thetas.
+    - If alpha is too small, gradient descent is slow. If it is too large, it can overshoot the minimum, mail fail to converge or diverge.
+    - When the slope of a line is 0 then that might be a local optima. That might happen because:
+        - $\theta_j := \theta_j - \alpha 0$, so theta does not change values.
+    - **As we approach a local minimum, gradient descent will automatically take smaller steps. No need to decrease alpha over time.**
+    - Local minimum is when the derivative is zero.
+- Gradient descent for Linear regression
+    - In order to apply the gradient descent algorithm, the key term is the derivative.
+    - $j = 0 : \frac{\partial}{\partial \theta_0} J(\theta_0,\theta_1) = \frac{1}{m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})$
+    - $j = 1 : \frac{\partial}{\partial \theta_1} J(\theta_0,\theta_1) = \frac{1}{m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})*x^{(i)}$
+    - **The cost function for linear regression will always be a convex function. bowl-shaped function, it has no other local optima than the global optima.**
+    - Batch Gradient Descent: in every step we use all the training examples. Looking at the batch of training samples.
+
+### Linear Algebra Review
+- Matrix: Rectangular array of numbers.
+    - Dimensions are written: number of rows x number of columns.
+- Vector: A matrix that has only one column.
+- Capitals for matrices, lowercase for scalars and vectors.
+- Matrix addition
+    - Add up the elements in the same position.
+    - We cannot add two matrices that are from different size.
+- Scalar multiplication
+    - Multiply the scalar for each item and place the result on the same position.
+    - Dividing is the same as multiplying by 1/x.
+- Matrix vector multiplication
+    - Number of columns of matrix has to match with the number of rows of the vector.
+- Matrix-matrix multiplication
+    - Rows by columns and adding the results.
+    - Properties
+        - A x B ≠ B x A (not commutative)
+        - A x B x C = A x (B x C) = (A x B) x C
+        - Identity matrix, has ones along the diagonals.
+        - A x I = I x A = A.
+- Matrix operations
+    - Inverse
+        - For any given number, there is a number that by multiplying gives 1 (the identity).
+        - AxA^(-1) = A^(-1)xA = Identity
+        - Matrices that don’t have an inverse are Singular or Degenerate
+    - Transpose
+        - A^T
+        - Bij = A ji
+
+### Classification problems with Logistic Regression
+- y we want to predict is discrete values.
+- Classification: Spam/Not spam, fraudulent y or n, malignant or benign.
+- y takes two values: 0 (negative class) or 1 (positive class).
+- The assignation of classes is arbitrary. 0 might be absence.
+- Multi-class classification problem y E {0, 1, 2, 3}
+- Apply linear regression to a classification problem is not a good idea.
+- Logistic regression ensures that the values are between 0 and 1.
+- Classification algorithm even when the name is regression.
+- Hypothesis representation
+    - $h_\theta(x) = g(\theta^Tx)$
+    - $g{(z)} = \frac{1}{1+e^{-z}}$
+    - Sigmoid function or Logistic function, synonyms.
+    - $h_{\theta}(x) = \frac{1}{1+e^{-\theta^Tx}}$
+    - Pick a value to parameters theta to make predictions.
+    - $h_{\theta}(x)$ = estimated probability that y = 1 on input x.
+    - $h_{\theta}(x) = p(y = 1| x; \theta)$, probability that y is 1 give x parametrized by theta.
+    - $1 = p(y = 1| x; \theta) + p(y = 0| x; \theta)$
+- Decision boundary
+    - When the hypothesis will make predictions that y = 1 and when is y = 0.
+    - How does the hypothesis look if it has more than one feature.
+    - Predict y = 1 if h(x) ≥ 0.5 and y = 0 if h(x) < 0.5
+    - In the example graphic: g(z) ≥ 0.5 when z ≥ 0
+    - $h_\theta(x) = g(\theta^Tx) >= 0.5 whenever \theta^{T}x >= 0$
+    - Example
+        - h(x) = g(theta0 + theta1x1 + theta2x2)
+        - theta = [-3, 1, 1] (as a column)
+        - Predict y = 1 if -3 + x1 + x2 ≥ 0
+        - -3 + x1 + x2 == theta^Tx
+        - x1 + x2 ≥ 3
+        - When plotted, the line will define that the ones that are greater than 3 are the y = 1 region and the other the y = 0.
+        - The decision boundary is a property of the hypothesis and the parameters of the hypothesis. Later on we will fit the parameters using the data.
+- Non-linear decision boundaries
+    - Adding polinomial terms will allow us to get more complex decision boundaries.
+    - The dataset might be used to set the parameters theta, not the decision boundary.
+    - High order polinomial features might make more complex the decision boundary.
+- Logistic regression cost function
+    - Example
+        - We have a training set with m examples.
+        - Each example is represented in a one dimensional vector x. Size m + 1.
+        - X0 = 1. y is either 0 or 1.
+        - The paremeters of the hypothesis is theta.
+    - Given this training set how do we choose and how do we set the parameters theta?
+    - $J(\theta) = Cost(h_\theta(x^{(i)}), y^{(i)})^2 = \frac12(h_\theta(x^{(i)}) - y^{(i)})^2$ the cost function of a sum over our training set of our cost.
+    - This is the cost that we want the algorithm to pay if it outputs the value h(x) and the actual value is y. Or is 1 half the difference of the square difference.
+    - **Because h is a non linear (sigmoid) function then the cost function is not a convex function. The problem with using the square cost function is that because the sigmoid function that appears in the cost function, J of theta ends up being a non convex function.**
+    - For instance, we use the following cost function that is convex.
+    - $Cost(h_\theta(x^{(i)}), y^{(i)})^2 = -log(h_{\theta}(x))$ if y = 1, and $-log(1-h_{\theta}(x))$ if y = 0
+    - We just care about the part where z or h is 0 and 1.
+        - If y = 1 and h(x) = 1, then the cost is 0.
+        - As h(x) approaches 0, the cost goes to infinity.
+    - If h(x) = 0, the chance of y = 1 is 0.
+    - If y = 1, we penalize the algorithm by a large cost.
+    - If y = 0
+        - Cost function goes up.
+        - If h(x) = 1 but y = 0 we add a very large cost.
+        - If y = 0 and h(x) = 0, then the cost is 0.
+- Simplified cost function
+    - For classification problems, y is always 0 or 1.
+    - Because y is either 0 or 1. We can compress both into one equation.
+    - $Cost(h_\theta(x^{(i)}), y^{(i)})^2 = -y log(h_{\theta}(x)) - (1-y)log(1-h_{\theta}(x))$
+        - If y = 1, the second term goes away.
+        - If y = 0, the first term goes away.
+    - This can be derived from the principle maximum likelihood estimation. It is convex.
+    - In order to fit the parameters, we will try to find the parameters theta that minimize J of theta.
+    - Our hypothesis is estimating the probability that y = 1. p(y=1|x;theta)
+    - How to minimize j of theta as a function of theta.
+    - $J(\theta) = -\frac1m[\sum^m_{i=1}y^{(i)} log(h_{\theta}(x^{(i)}) + (1-y^{(i)})log(1-h_{\theta}(x^{(i)}))]$
+    - Repeat (Gradient descent)
+        - $\theta_j := \theta_j - \alpha\frac\partial{\partial\theta_j}J(\theta)$
+        - $\theta_j := \theta_j - \alpha \sum^m_{i=1}(h_{\theta}(x^{(i)})-y^{(i)})x^{(i)}_j$
+    - The equation looks like the one in linear regression.
+    - Linear regression and logistic regression are different because of the definition of the equation.
+- Advanced optimization
+    - Optimization algorithms, can use more sophisticated processes than gradient descent to minimize the cost function.
+        - Gradient descent
+        - Conjugate gradient
+        - BFGS
+        - L-BFGS
+    - Advantages of alternative algorithms.
+        - No need to manually pick alpha. Automatically tries new alphas (learning search algorithm).
+        - Often faster than gradient descent.
+    - Disadvantage: more complex. Do not implement the algorithms ourselves.
+- Multiclass classification One vs. All.
+    - Classify email into different folders.
+    - y is each category.
+    - Create a new fake training set where class 2 and 3 are the negative side and class 1 is the positive side.
+    - We fit 3 classifiers for i 1, 2, 3. to estimate the probability that y is equal to class i.
+    - Train a logistic regression classifier for each class i to predict the probability that y = i.
+    - On a new input x, to make a prediction, pick the class i that maximizes the result. We pick the one that is higher.
+
+### Regularization, the problem of overfitting
+- Linear regression and logistic regression can run into overfitting. Regularization is a technique to reduce overfitting.
+- Overfitting
+    - An algorithm that does not fit the training set is underfitting. Or high bias. Is not even fitting the training data very well. Despite the data be different, still causes to write a line.
+    - High variance, if we are fitting a high order polynomial then hypothesis can fit any function.
+    - Overfitting: If we have too many features, the learned hypothesis may fit the training set very well but fail to generalize to new examples.
+    - Example: Logistic regression
+    - Addressing overfitting
+        - We might have problems where we have a lot of features. Each x is a feature of the house. It becomes much harder to plot the data.
+        - If we have a lot of features and really few training data then overfitting can become a problem.
+        - What to do
+            - Reduce the number of features. Manually select which ones to keep. Throwing away some features is throwing away some important info.
+            - Regularization, keep all features but reduce the values of theta. Works well when we have a lot of features.
+- Cost function
+    - Intuition
+        - If we have a high order polynomial with theta 3 x cube, and theta 4 x to the four, we penalize theta 3 and theta 4 making them as small as possible. They have to be as close as possible to zero.
+    - Regularization
+        - **Having small values for the parameters will mean having a simpler hypothesis that is less prone to overfitting.**
+        - Smaller values on the parameters mean smoother functions as well.
+        - Example
+            - Housing, features: x1 (size), x2 (number of rooms), x3... x100.
+            - Parameters: theta 0, theta 1, theta 2,...,theta 100. Hard to define which ones are the ones that are less relevant.
+        - We modify the cost function to shrink all the parameters. Add a term at the end. A regularization term at the end. We don’t penalize theta 0.
+            - $J(\theta) = \frac1{2m}[\sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)}) + \lambda\sum_{j=1}^n \theta^2_j]$
+            - Lambda is the regularization parameter. It controls the trade off between the two different goals.
+                - Fit the training data well.
+                - Keep the parameters small.
+        - **If we regularize too much and have lambda being too big, we might end up having a straight line as function. This is underfitting. Fails to fit the training set well.**
+- Regularized linear regression
+    - Previously we were using gradient descent for the original cost function.
+    - Minimized the regularized cost function of j of theta.
+    - $\theta_j := \theta_j - \alpha[\frac1m \sum^m_{i=1}(h_{\theta}(x^{(i)})-y^{(i)})x^{(i)}_j - \frac{\lambda}m\theta_j]$
+    - **When we regularize linear regression we multiply theta j for a number that is slightly less than 1 and we perform a similar update as before.**
+- Regularized logistic regression
+    - Can be prone to overfitting if you fit it with a high order polynomial.
+    - Just add to the cost function the regularization term.
+        - $+ \frac{\lambda}{2m}\sum_{j=1}^n \theta^2_j$
+        - This has the effect of penalizing theta 1, 2, 3, etc.
+        - Even though you are fitting a large order polynomial, you will get a better decision boundary.
+
+### Neural networks
+- Non Linear Hypothesis
+    - Non-linear classification
+        - We could add a logistic regression of high order.
+        - Example
+            - What is the probability that a house will be sold. We can come up with a lot of features.
+            - If we were to include the quadratic terms, we would end up with 5000 features. Closer to n square over 2. n^2/2.
+            - Only include a subset of features, the number of features can be not enough.
+            - Cubic features, n cube. This blows up the features.
+    - Computer vision
+        - We come with a labeled training set.
+        - To understand why we need some non-linear hypothesis
+            - We measure the intensity of two pixels. If we measure that we will have them splitted somewhere from our dataset.
+            - If our image is 50 x 50px, then our feature size is 2500.
+            - Including all quadratic features is will get close to 3 million features.
+- Neurons and the brain
+    - Neural rewiring experiments, if the same piece of physical brain tissue can process sight or touch, then maybe there is ONE learning algorithm that can do all.
+    - Maybe if we get a similar algorithm to the one of the brain we will be close to build truly intelligent machines.
+- Model representation
+    - Neuron model: Logistic unit
+        - Model a neuron as a logistic unit.
+        - We feed the neuron the input wires, the neuron makes the calculation and offers a value on the output wire.
+        - Whenever that is written and draw that represents a logistic regression model.
+        - When we draw a neural network we omit x0. This is the bias unit. It is always equals to 1.
+        - It is a neuron with a sigmoid activation function.
+        - Parameters are also called weights.
+    - Neural network
+        - It is a group of neurons strung together.
+        - Each neuron is a.
+        - A node in the final layer that outputs the value that the hypothesis computes.
+        - Layer 1 is input layer.
+        - Last layer is output.
+        - Hidden layer are the ones in between.
+    - Neural network
+        - $a^{(j)}_i$= activation of unit i in layer j. Activation is the value that is output of an specific unit.
+        - $\theta^{(j)}$ = A neural network is parametrized. A matrix of weight controlling function mapping from layer j to layer j + 1.
+        - $a_1^{(2)}=g(\theta^{(1)}_{10}x_0 + \theta^{(1)}_{11}x_1 + \theta^{(1)}_{12}x_2 + \theta^{(1)}_{13}x_3)$
+            - a is the first hidden unit. Superscript is the layer. Underscript is the order in the same layer.
+            - a is equal to a linear combination of features.
+            - $\theta_{21}^{(1)}$, (1) is the layer that is being activated. 21, 2 is the order of the unit and 1 is the order of the unit from the previous layer.
+        - $h_{\theta}(x) = a_1^{(3)}=g(\theta^{(2)}_{10}a_0^{(2)} + \theta^{(2)}_{11}a_1^{(2)} + \theta^{(2)}_{12}a_2^{(2)} + \theta^{(2)}_{13}a_3^{(2)})$
+        - 3 units, 3 hidden units.
+        - If network has sj units in layer j, sj+1 units in layer j+1, then theta(j) will be of dimension s(j+1) x (sj + 1)
+- Model representation
+    - Forward propagation: Vectorized implementation
+        - $a^{(2)}_1 = g(z^{(2)}_1)$ the superscript means that they are related to the second (hidden) layer.
+        - $z^{(2)} = \Theta^{(1)}x$ = $z^{(2)} = \Theta^{(1)}a^{(1)}$
+        - $a^{(2)} = g(z^{(2)})$, a and z are three dimensional vectors.
+        - $a^{(1)} = x$
+        - $z^{(3)} = \Theta^{(2)}a^{(2)}$
+        - $h_{\Theta}(x) = a^{(3)} = g(z^{(3)})$
+            - This process of computing h of x is called forward propagation.
+    - Neural network learning its own features
+        - A neural network is doing logistic regression. Is using the original features x, is using the a features.
+        - a1, a2, a3, they are learned as functions of the input.
+- Examples and Intuitions
+    - Neural network can be used to learn complex no linear hypothesis.
+    - Non-linear classification example
+    - Simple example: AND
+        - x1, x2 belongs to 0, 1
+        - y = x1 AND x2
+        - h(x) = g(-30 + 20x1 + 20x2), -30 = theta_10^(1), 20 = theta_11^(1)...
+        - Using the sigmoid function
+            - 0 AND 0 = g(-30) = 0
+            - 0 AND 1 = g(-10) = 0
+            - 1 AND 0 = g(-10) = 0
+            - 1 AND 1 = g(10) = 1
+        - This is how a neural network computes this.
+    - Example: OR function
+        - g(-10 + 20x1 + 20x2)
+        - Using the sigmoid function
+            - 0 0 = 0
+            - 0 1 = 1
+            - 1 0 = 1
+            - 1 1 = 1
+    - Negation
+        - h(x) = g(10 - 20x1)
+        - Then
+            - 0 = g(10) = 1
+            - 1 = g(-10) = 0
+    - Neural networks can compute pretty complicated functions because they can connect units in different layers. When you have multiple layers with even more complex functions every time.
+- MultiClass Classification
+    - Multiple output units: One-vs-all
+        - An extension of one vs all.
+        - We recognize more than 2 categories. If that is the case, we would build a NN with 4 output units. A vector of 4 numbers. Each output belongs to a class.
+        - We have 4 logistic regression classifiers where each is trying to identify one class.
+        - The training set is as follows:
+            - $(x^{(1)}, y^{(1)}),(x^{(2)}, y^{(2)}),...,(x^{(m)}, y^{(m)})$
+            - Previously = y belongs to {1, 2, 3, 4}
+            - y(i) one of 1 0 0 0, 0 1 0 0 ...
+            - x(i), y(i) = x(i) is an image one of the objects and y(i) will be one of the vectors.
+            - The idea is to have h(x) = y, both being 4 dimensional vectors.
+- Cost function
+    - To fit the parameters in the neural network given a training set.
+    - L is the total number of layers.
+    - s_l is the number of units on layer l.
+    - s1 = 3, s2 = 5...
+    - Binary classification
+        - 1 output unit. Computes h(x)
+        - h(x) E real number.
+        - The output layer has one unit.
+    - Multi-class classification
+        - K distinct classes.
+        - h(x) would output vectors that are k dimensional.
+        - K more than 3.
+    - Cost function
+        - A generalized of logistic regression.
+        - Instead of having one logistic regression output unit, we have k of them.
+        
+- Backpropagation algorithm
+    - Algorithm to minimize the cost function.
+    - We need to compute
+        - J(theta), for calculating this, we use the cost function.
+        - Partial derivatives of J(theta)
+    - Gradient computation
+        - Given one training example, we perform forward propagation to compute what the hypothesis outputs given x.
+        - a(1) = x.
+        - z(2) = theta(1)a(1)
+        - a(2) = g(z(2)) (add a0(2)), this is the activation for the first hidden layer, layer 2.
+        - We calculate again, z(3), a(3), z(4), a(4)
+        - a(4) is the output of the hypothesis.
+        - Forward propagation allows us to compute the activation values of all the neurons.
+    - Gradient computation: Back propagation algorithm
+        - To compute the derivatives.
+        - For each node, we compute delta_j^(l), error of node j in layer l.
+        - For each output unit we will compute delta.
+            - $\delta_j^{(4)} = a_j^{(4)}-y_j$, for each output unit in layer L = 4. (delta term)
+                - a is the activation of the unit, a can also be h(x)_j
+                - y is the actual value in the actual example
+                - This can also have a vectorized implementation
+        - We compute the delta terms in the earlier layers of the network.
+            - $\delta_j^{(3)} = (\Theta^{(3)})^T\delta^{(4)}.* g'(z^{(3)})$
+                - .* element wise multiplication.
+                - g’ is the derivative of the activation function g eveluated at the input values given at z3. = a(3) .* (1-a(3)), 1 is a vector of 1s.
+                - .* = to value multiplication.
+                - No delta 1 because that is the input layer and has the features and no errors.
+        - Backpropagation as a term comes from starting computing the delta term of the output layer backwards.
+        - How to implement to compute derivatives in respect to out parameters with a large training set
+            - Set $\Delta_{ij}^{(l)} = 0$, for all l, i, j
+                - Will be used to compute the partial derivative term respect to theta.
+                - Used as accumulators.
+            - Loop through our training set
+            - for i = 1 to m
+                - Set a(1) = x(i)
+                - Perform forward propagation to compute a(l) for l = 2, 3, ... L
+                - Using y(i), compute delta(L) = a(L) - y(i) (for the output layer)
+                - Compute each delta.
+                - Delta, accumulate the partial derivative terms.
+                    - It is possible to vectorize this too. Delta ij is a matrix.
+            - $D_{ij}^{(l)} := \frac1m\Delta_{ij}^{(l)}+\lambda\Theta_{ij}^{(l)}$ if j ≠ 0.
+            - $D_{ij}^{(l)} := \frac1m\Delta_{ij}^{(l)}$ if j = 0, corresponds to the bias term.
+            - Once we compute the D terms, that is the partial derivatives of the cost function with respect to each parameters. We can use this in gradient descent.
+- Backpropagation intuition
+    - Forward propagation
+        - When we do forward propagation we will have some example. x(i), y(i).
+        - x(i), the values we set the input layer to.
+        - When we forward propagated to the second layer, we compute z(2)_1 and z(2)_2. This are the weighed sum of input units.
+        - Then apply the logistic function, applied to the z value. Give us the activation values a.
+        - Do the same in the following layers.
+        - The weight to compute a(3)_1 is theta(2)_10
+        - The next line is theta(2)_11
+        - z(3)_1 = Theta(2)_10 + Theta(2)_11 a(2)_1 + Theta(2)_12 a(2)_2
+    - What is backpropagation doing?
+        - Having one example, one output unit, ignoring regularization
+            - cost(i) = y(i)logh(x(i)) + (1-y(i))log(1-h(x(i)))
+        - cost(i) is equivalent to (h(x(i)) - y(i))2
+        - How well is the network doing on example i?
+    - Forward propagation
+        - Back propagation is computing delta, the error of the activation value for unit j in layer l.
+        - Formally $\delta^{(l)}_j = \frac{\partial}{\partial z^{(l)}_j} cost(i)$ for j ≥ 0.
+        - If we alter z, l, j, this will affect the values that the neural network is outputting. Thus, changing the cost function.
+        - Backpropagation
+            - For the output layer we get the delta term. delta(4)_1 = y(i) - a(4)_1
+                - y is the actual value.
+                - a is the value predicted.
+            - Propagate this values backwards. Compute delta terms of the previous layer.
+            - Propagate further backward.
+            - Example
+            - Delta(2)_2
+                - = theta(2)_12 and theta(2)_22
+                - Delta(2)_2 = theta(1)_12 delta(3)_1 + theta(2)_22 delta (3)_2
+                - The sum of the weights by the errors.
+- Implementation Note Unrolling Parameters
+- Gradient checking
+    - If we run it with gradient descent, it may seem that it is working but it may not.
+    - Gradient checking eliminates most of these problems. Will help ensure that the implementation is correct.
+    - Having a function J(theta), estimate the derivative at that point.
+    - To numerically approximate to the derivative, create a triangle. Left theta - epsilon, right theta + epsilon. Then calculate:
+        - J(theta + epsilon) - J(theta - epsilon)/2 epsilon
+    - That is the approximation. Use a small value for epsilon. 10^-4.
+    - Parameter vector theta
+        - Theta is a vector with n elements.
+        - Calculate the estimate of the derivative for each theta.
+    - Backpropagation is less expensive than numerical gradient check.
+- Random initialization
+    - We need to set some inital value for the parameters theta.
+    - Setting all zeros does not work when training a neural network.
+    - If they are all 0s then the first two units of the first hidden layer will be computing the same thing.
+        - After each update, parameters corresponding to inputs going into each of two hidden units are identical.
+    - Random intialization: symmetry breaking.
+        - They will be randomly initialized.
+        - Random values close to 0.
+- Putting it together
+    - When training pick a network architecture. How to make this choice?
+        - Number of inputs is the dimension of the features.
+        - Number of output is determined by the number of classes.
+        - Reasonable default is to use a one single hidden layer.
+        - If more than one hidden layer, each one has the same amount of units.
+        - The more hidden units the better BUT it can be computationally expensive.
+    - Training a neural network
+        - Randomly initialize the weights.
+        - Implement forward propagation to get h(x) for any x
+        - Implement code to compute the cost function J(theta)
+        - Implement backprop to compute partial derivatives of J theta.
+            - Use a for.
+        - Use a gradient checking to compare the derivative we got with the numerical estimate of gradient. This will allow us to check that our backpropagation is correct.
+        - Use an optimization algorithm to minimize the cost function as a function of parameters theta.
+- ## Autonomous driving example
+    
+
+### Support vector machines
+- Optimization objective
+    - SVM gives a cleaner and powerful way of learning complex non linear functions.
+    - Supervised learning algorithm.
+    - Logistic regression, a different view
+        - If y=1, we hope h(x) is close to 1 (to correctly classify the example). This means that theta transpose x should be much larger than 0.
+            - When z is much larger than 0, it is much far to the right and the output becomes close to 1 in the sigmoid function.
+        - If y=0, we hope h(x) = 0, theta transpose x should be much less than 0. That makes it close to 0 in the sigmoid function.
+        - Cost of example
+            - Without the sum is what each training example will contribute to the overall cost function.
+        - if y=1, want theta transpose x >> 0. Where z = theta transpose x.
+            - The function, -log(1/1+e^-z)
+            - When z is large, it gives a small contribution to the cost function.
+            - Having two straight lines is a good aproximation. The new cost function.
+            - This will give computational advantages.
+        - If y = 0, the second term of the cost function applies.
+            - The function, -log(1-(1/1+e^-z))
+        - for y = 1, the cost function is now called $cost_1(z)$
+        - For y = 0, the cost function is now called $cost_0(z)$
+    - Support vector machine
+        - $\frac1m[\sum^m_{i=1}y^{(i)} (-log(h_{\theta}(x^{(i)})) + (1-y^{(i)})(-log(1-h_{\theta}(x^{(i)})))]$, in logistic regression
+        - In SVM
+            - $\frac1m[\sum^m_{i=1}y^{(i)} cost_1(\theta^Tx^{(i)}) + (1-y^{(i)})cost_0(\theta^Tx^{(i)})] + \frac{\lambda}{2m}\sum^n_{i=0}\theta_j^2$
+            - Remove the 1/m term.
+            - For logistic regression we get A + lambdaB, by setting values of lambda and we perform regularization. If we give lambda a high value, then B has a large weight.
+            - In SVM, CA + B, if C is small, that gives larger weight to B. It is a different way to optimize.
+            - C = 1/lambda
+            - $min C\sum^m_{i=1}[y^{(i)} cost_1(\theta^Tx^{(i)}) + (1-y^{(i)})cost_0(\theta^Tx^{(i)})] + \frac{1}2\sum^n_{i=0}\theta_j^2$
+            - When we minimize this functions we get the parameters learned by the SVM.
+        - SVM Hypothesis
+            - **SVM doesn’t output a probability. We instead minimize the cost function the get the parameters theta.**
+            - SVM makes a prediction of y being equal 1 or 0.
+            - Will predict 1 when theta transpose x ≥ 0
+            - 0 otherwise.
+- Large Margin Intuition
+    - Having the cost function
+        - If y = 1, we want $\theta^Tx>=1$, not just ≥ 0
+        - Here it is plotting log based on z, in logistic regression is plotted based on h(x)
+        - h(x) = g(z)
+        - In logistic regression, the sigmoid function is just a side view where we get to see how they are using that function to separate values. In SVM, we use two of these to create the decision boundary. So both are also a side view.
+    - If y = 1, we want theta transpose x ≥ 1 (not just ≥ 0)
+        - Cost_1(z) is 0 when z ≥ 1. If we have a possible example we want z to be 1.
+    - If y = 0, we want theta transpose x ≤ -1 (not just < 0)
+    - This gives an extra safety factor in the SVM.
+    - If C = 100 000, (very large) when minimizing the optimization objective we want to have the first term equal to 0.
+        - What would it take first term to be 0.
+        - minimize the first term as 0 + 1/2 sum...
+        - theta transpose x ≥ 1 if y = 1
+        - theta transpose x ≤ -1 if y = 0.
+    - When optimizing we get a decision boundary, SVM will choose a better decision boundary.
+    - The decision boundary selected by SVM has a larger margin.
+    - If using a large margin classifier, the classifier can be sensitive to outliers.
+        - If c is very large, the SVM will adapt to a bad decision boundary.
+        - If c is not too large it remains.
+        - If the data were not linearly separable will still do the right thing.
+- Mathematics behind large margin classification
+    - The decision boundary is perpendicular to the theta vector.
+    - The idea is to have big projections of all dots over the theta vector function.
+    - If ps are big, then normal theta can be small.
+- Kernels
+    - To develop non linear classifiers.
+    - Non-linear decision boundary.
+        - Usually come up with complex polynomial features. (Shape of an 8).
+        - A hypothesis can be seen as theta0 + theta1 f1 + theta2 f2 +
+        - f1 = x1, f2 = x2,...
+        - Is there a better choice of features?
+    - Kernel
+        - Given x, compute new feature depending on proximity to landmarks l1, l2, l3.
+        - Define new features.
+        - Manually pick different points.
+        - Given x, define f1 = similarity(x, l(1)) between my training example x and my first l. e^(-||x + l(1)|| ^2/2sigma^(2))
+        - The similarity function is the kernel function. This is a Gaussian kernel.
+            - k(x, l(i))
+    - Kernels and similarity
+        - x is close to one landmark, then the euclidean distance will be close to 0.
+        - If x = l(1)
+            - f1 = exp(-0/2epsilon^2), this will be close to 1.
+        - if x is far from l(1)
+            - f1 = exp(-(largenumber^2/2 epsilon^2)) close to 0.
+        - They measure how similar x is to one of the landmarks.
+        - 1 when is close to the landmark and 0 when it is far.
+        - Each landmark define a new feature.
+        - Example
+            - 2 features x1, x2.
+            - l(1) is at 3, 5.
+            - sigma square is 1.
+            - in 3 days, the vertical axis is the value of f1.
+            - The horizontal values are x1 and x2.
+            - When x is at 3, 5. f = 1 so it is at its maximum.
+            - f1 measures how close it is to the first landmark. Varies between 0 and 1 depending on how close it is to the first landmark l1.
+            - Sigma squared is a parameter of the Gaussian kernel.
+                - Having sigma square as 0.5, the bump remains similar but its width is narrower. The counturs shrink a bit too.
+                - Sigma square = 3, as you move away from l1, the value of the feature falls away slowly.
+        - Given this definition of the features. Compute features f1, f2, f3.
+            - Hypothesis will predict 1 when $\theta_0 + \theta_1f_1 + \theta_2f_2 + \theta_3f_3 >= 0$
+            - Theta 0, -0.5, theta1 = 1, theta2, = 1, theta3 = 0.
+            - If we have a training example close to l1.
+                - f1 is close to 1, f2 close to 0, f3 close to 0.
+                - theta0 + theta1_1 + theta2_0 + theta3* 0 = -0.5 + 1 = 0.5 ≥ 0, so this is equal to 1 because is greater than 0.
+            - If we get a training example far from all landmarks.
+                - f1, f2, f3 are close to 0.
+                - -0.5 = 0.5, this is less than 0, this is y = 0.
+            - All points close to landmarks will be 1.
+            - The decision boundary looks like an 8, where inside will predict y = 1 and far y = 0.
+            - This is a complex non linear decision boundary.
+    - How do we set this landmarks?
+        - For every training example we will add landmarks to all of them.
+        - We will end with m landmarks, m = training examples.
+        - My features are gonna measure how close an example is to one of the thigns we saw at the training set.
+        - Given(x(1), y(1)), (x(2), y(2))..., (x(m), y(m))
+        - choose l(1) = x(1), l2 = x2...
+        - We create a feautre vector with f1, f2,... fm. f0 is always equals to 1.
+        - Where f1 = similarity(x, l1) [l1 = x1]
+        - For a training example (x(i), y(i))
+            - $f_1^{(i)} = sim(x^{(i)}, l^{(1)})$
+            - $f_2^{(i)} = sim(x^{(i)}, l^{(2)})$
+            - .
+            - Somewhere here we will have one value where $f_i^{(i)} = sim(x^{(i)}, l^{(i)}) = exp(-0/2\sigma^2) = 1$ where l(i) will be equal to x(i). One will be equal to 1.
+            - .
+            - $f_m^{(i)} = sim(x^{(i)}, l^{(m)})$
+        - If we already have set of parameters theta, then given the value of x, compute features (all fs). Predict y =1 if theta transpose f ≥ 0.
+        - To get the parameters theta we use the SVM learning algorithm. Which means to solve the minimization problem.
+        - To make a prediction on the (i) training example, we use theta transpose f(i)
+            - $min C\sum^m_{i=1}[y^{(i)} cost_1(\theta^Tf^{(i)}) + (1-y^{(i)})cost_0(\theta^Tf^{(i)})] + \frac{1}2\sum^n_{i=0}\theta_j^2$
+        - **By solving this minimization problem we get the parameters for the SVM.**
+        - n = m, is it a sum from j equals to m.
+    - Using kernels with logistic regression will be very slow.
+    - SVM parameters
+        - How do choose the parameters of SVM.
+        - One thing is C.
+            - **Large C: Lower bias, high variance. (small lambda), more prone to overfiting.**
+            - **Small C: Higher bias, low variance (big lambda), more prone to underfiting.**
+        - Sigma squared
+            - **Large sigma square: Features f vary more smoothly. The Gaussian kernel will fall slowly.**
+                - Higher bias, low variance.
+                - In the similarity function,
+            - **Small sigma square: Features fi vary less smoothly.**
+                - Lower bias, higher variance
+                - The similarity function will vary more abruptly.
+- Using a SVM
+    - Need to specify
+        - Choice of C
+        - Choice of kernel (similarity function)
+            - One choice is to use no kernel. Also called a linear kernel.
+                - It is one that just uses theta trasnpose x, predicts 1.
+                - You do this if n is large (number of features) and m is small (number of training examples).
+            - Gaussian kernel,
+                - Choose sigma square.
+                - If you have few features. And m is large.
+    - Perform feature scaling to ensure SVM works well.
+    - Not all similarity functions make valid kernels. They need to satisfy the Mercer’s Theorem.
+    - Some kernels
+        - Polynomial kernel, k(x,l) = (XTl)^2, includes a degree and a constant.
+        
+    - Multi-class classification
+        - Many SVM have that functionality already built-in.
+        - Otherwise, use one-vs-all, train one taht distinguish from the rest.
+    - Logistic regression vs SVMs
+        - n = number of features, m = number of training examples
+        - If n is large
+            - Use logistic regression or SVM without a kernel.
+        - If n is small, m intermediate.
+            - n = 1000, m = 10 000
+            - Use SVM with gaussian kernel
+        - I f n is small, m is large
+            - n = 1000, m 500 000
+            - Create/add more features, then use logistic regression or SVM without a kernel.
+        - Neural network works for all of them but it may be slower to train.
+
+### Anomaly detection
+- Example
+    - Manufacturer of engines and measure features.
+        - x1 = heat generated
+        - x2 = vibration intensity
+    - There is a new engine. Anomaly detection wants to know if this engine is anomalous.
+    - If the new engine is far away from mos of the others then that is an anomaly.
+    - Density estimation
+        - Given an unlabeled training set, we build a model for p(x), for the probability of x where x are the features of engines.
+        - If for new aircraft engine, if p(x test) < epsilon, we flag it as an anomaly.
+            - A very low probability will be flagged as anomaly.
+        - p(xtest) ≥ epsilon it is OK
+        - Circles around, the further it is the lower the probability.
+    - Applications
+        - Fraud detection
+            - x(i) = features of user activities.
+            - Model p(x) from data.
+                - What is the probability of users behaving in different ways. What is the probability of a particular vector of features of a user’s behavior.
+            - Identify unusual users by checking which have p(x) < epsilon
+            - This will flag users that behave strangely.
+        - Manufcaturing
+        - Monitoring computers in data center
+            - Features of machines (how much memory use, cpu load)
+            - Given a dataset, model the p(x) of each computer having a set of certain features.
+- Gaussian distribution
+    - ds
+- Anomaly detection algorithm
+    - Density estimation
+        - Training set: x1...xm, features from aircraft engines,
+        - Model p(x) from the dataset.
+        - p(x) = p(x1; miu1, sigma_1^2 ) p(x2 )... p(xn )
+            - Assume that x1 is distributed accroding to a Gaussian distribution, with mean miu, and variance sigma2.
+            - x3 = distributed to a Gaussian distribution, miu2, sigma2 2.
+            - = $\Pi_{j=1}^n p(x_j;\mu_j,\sigma_j^2)$, the product of p, parametrized by miu and sigma.
+    - Anomaly detection algorithm
+        - 1. Choose features xi that might be indicative of anomalous examples. That describe general properties.
+        - 2. Given the training set, fit the parameters mu1, ...mun, sigma21...sigma2n. It is also possible to come with vectorized versions.
+            
+            - $\mu_j=\frac1m\sum^m_{i=1}x_j^{(2)}$, average value of the j feature.
+            - $\sigma^2_j = \frac1m\sum^m_{i=1}(x_j^{(i)}-\mu_j)^2$,
+        - 3. Given new example x, compute p(x) probability of the new example.
+            
+            - If p(x)< epsilon, you don’t flag this as a Gaussian anomally.
+    - Example
+        - Epsilon = 0.02
+        - x1 is close to the dataset examples
+            - p(x) ≥ epsilon, this is not an anomally.
+        - x2 is far
+            - p(x2) < epsilon, this is an anomaly.
+    - If our anomaly detector is flagging too many anomalous examples, then we need to decrease our threshold epsilon.
+- Developing an anomaly detection system
+    - 10000 good engines
+    - 20 flawed engines.
+    - Way to split it
+        - 6000 in unlabeled training set. p(x) = p(x1; mu1, sigma2) ....
+        - CV: 2000 Good engines (cross validation set) 10 anomalous.
+        - Test: 2000 good engies. 10 anomalous.
+    - Algorithm evaluation
+        - On a cross validation x, predict
+            - 1 if p(x) < epsilon (anomaly)
+            - 0 if p(x) ≥ epsilon (normal)
+        - Possible evaluaion metrics
+            - Accuracy is not a good one because 0 is much more common. Predicting 0 most of the time would mean higher accuracy but that does not reflect reality.
+            - True positive, false positive, false negative, true negative.
+            - Precision-recall
+            - F1 score.
+        - Can also use cross valdation set to choose epsilon.
+- Anomaly detection vs Supervised learning
+    - Anomaly detection
+        - Very small number of positive examples
+        - Large number of negative examples
+        - Many different types of anomalies.
+        - Future anomalies look nothing like other anomalies.
+    - Supervised learning
+        - Large number of positive and negative examples
+        - Enough positive to make sense of what positive is.
+- Choosing the features to use
+    - Plot the data to see if it is Gaussian.
+    - The algorithm works even if the data is not Gaussian.
+    - If the data does not look like a bell, we might use transformations to make it look better.
+        - We could add a log of the data which would make it look more like a bell.
+    - How do you come up with features for a anomaly detection algorithm?
+        - Error analysis pocedure
+            - Train an algorithm, run it against a cross validation set. See with what it cam wrong. See if we can come with new features.
+            - p(x) large
+            - p(x) small
+    - Choose features
+        - Example, monitoring computers in a data center
+            - x1 = memory use, x2 = number of disks...
+            - x5 = CPU loead/network traffic. This will get big if there is a normal CPU load but a small network traffic.
+- Multivariate Gaussian distribution
+    - Model p(x) all in one go instead of doing each p(x1), p(x2) separately.
+    - We can tilt the cone if we add negatives to the inverse diagonal. We can make it taller than wider by using different numbers in the main diagonal.
+- Anomaly detection using the Multivariate Gaussian distribution
+
+### Recommender systems
+- Little attention in academia but high in business.
+- Predicting movie ratings - Content based recommendations
+    - User rates movies using one to five stars.
+    - n_u is the number of users.
+    - n_m is the number of movies.
+    - r(i, j) = 1 if user j has rated movie i.
+    - y^(i, j) = rating given by user j to movie i.
+    - The recommender system problem is, given that dataset look through the data and predict the missing movie ratings.
+    - For each movie, we have a set of features. x1, x2. To wht extent a movie is...
+    - Each movie can be represented with a feature vector.
+        - x(1) = [1, 0.9, 0]
+    - For each user j, learn a parameter theta(j). Predict user j as rating movie i with theta(j) transpose x stars.
+        - Treat the predictions of each user as a separate linear regression problem.
+    - User one has theta1, user 2 has theta 2...
+        - x3 = [1, 0.99, 0], Let’s say we got theta1 = 0, 5, 0.
+        - The inner product will be
+            - 5 * 0.99 = 4.95
+    - Alice has her own theta parameter.
+    - Problem formulation
+        - r(i j) = 1 if user j has rated movie i.
+        - y(i,j) = rating by user j on movie i.
+        - m^(j) = number of movies rated by user j.
+        - To learn the parameter vector:
+            - Linear regression problem, chose a parameter so the predicted values are as closed as possible to the training data.
+            - min _thetaj sum i: r(i,j) = 1 (theta j transpose x - y ij)^2/2mj + lambda/2m sum of theta (j)^2
+            - Remove m(j) because it is a constant.
+        - For a recommender system we want to learn parameters for all the users, not only one.
+            - Add an extra sumation, this is gonna sum over all the users and is gonna minimize that.
+        - Optimization objective
+            - J(theta(1),..., theta(nu))
+        - Gradient descent update
+- Collaborative filtering
+    - Can start to learn by itself what features to use.
+    - Maybe we don’t have the features of each movie.
+    - Each user told us how much they like each type of movie.
+        - u1, u2 likes romantic movies.
+        - u3, u4 likes action movies.
+        - If we get this data, we can infer the value of x1, x2.
+        - What feature vector should x(1) be so that theta1 tranposex is approximately equals to 5, for (2) = 5, (3) = 0....
+    - Optimization algorithm
+        - Given the users have given their preferences as theta1, theta2...
+        - We want to learn feature xi for movie i.
+        - Tries to choose features xi so that all the users j that have rated that movie the model will provide a value.
+        - We want to learn all the features for all the movies.
+        - So
+            - Given x1... xnm and movie ratings, we can estimate theta(1) to theta(nu)
+            - Given theta 1...thetanU, we can estiamte x(1).... x(nm)
+        - First randomly try values for theta, then get x, then get theta.
+- Collaborative filtering algorithm
+    - If we have the features of the movies we can estimate the thetas of the algorithm.
+- Collaborative filter algorithm, vectorized implementation (Vectorization Low Rank Matrix Factorization)
+    - 4 users and 5 movies.
+    - Predicted ratings:
+        - theta(1) transpose x(1) rating of the user 1 on movie 1, theta2transpose x(1), user 2 on movie 1....
+        - x = [-x(1)transpose, - x(2) transpose, -x(3) tranpose...] each one being a row.
+        - theta = [theta(1), theta(2)...] each one in columns.
+        - Then the final matrix is X Theta
+        - This is also called Low rank matrix factorization
+    - FInding related movies
+        - For eahc movie i we learn a feature vector x(i)
+        - Features are the most important properties of a movie.
+        - How to find movie j related to movie i?
+            - We have movie i and we want to find other movies j that are related.
+            - movie i has a vector x(i), if we can find a different movie where we can find that the distance between x(i) and x(j) is small then it is an indication that they are similar.
+                - || x(i) - x(j) ||
+            - Then find the 5 movies j with the smallest distance.
+- Implementional detail mean normalization
+    - Mean nromalization.
+    - THere is an user that has not rated any movie.
+    - n = 2, learn two features. We have to learn theta(5) for user 5.
+    - We want to choose a vector theta so that the last regularization term is as small as possible.
+        - $\frac\lambda2[(\theta^{(5)}_1)^2 + (\theta^{(5)}_2)^2]$ the regularization term for user 5.
+    - We will end up with 0 0 bceause the regularization term is encouraging us to that, as there is no data. theta tranpose x will be 0.
+    - Mean normalization
+        - Compute the average rating that each movie obtained, in a vector called miu.
+        - Look at all the movie ratings and substract the mean ratings.
+        - If it is 0, then negative. Add all those to Y.
+        - This will cause each movie to have an average rating of 0.
+        - Pretend that those were the actual ratings. We will learn from this new matrix.
+        - FOr user j, on movie i predict
+            - theta (j) transpose x(i) + miu(i), we will add the mean.
+            - If the person has not rated any movie, then we will predict the average rating that movie got.
+
+### Unsupervised learning
+- Introduction
+    - Supervised learning, we find a decision boundary. Fit a hypothesis to it.
+    - In unsupervised data there are no labels, just points. Our test data is written as x(1), x(2)....
+    - Give this to an algorithm and find a structure here.
+    - An algorithm that finds clusters is a clustering algorithm.
+    - Good for market segmentation, social network analysis, organize computing clusters, astronomical data analysis.
+- KMeans Algorithm
+    - Given an unlabeled dataset, we want to have clusters.
+    - Steps
+        - Initialize two randomly called the cluster centroids.
+        - Iterative algorithm.
+            - 1, cluster assignment step
+                - Go through each of the examples. Depending to what centroid is closer it will assign it to one of them.
+            - 2, Move centroid step
+                - Move them to the average of the points colored the same color. Compute the mean.
+        - Color them again after moving the centroids, then move the centroids again.
+    - The algorithm
+        - Input
+            - K (number of clusters)
+            - Training set (x(1), x(2)...
+        - x(i) is an Rn dimensional vector, drop x0 for convention.
+        - Randomly initialize K cluster centroids miu1, miu2,... miuk.
+        - Repeat
+            - For each i of the training example, we will set c(i), that is the index from 1 to K, of cluster centroid closest to x(i), calculate the distance ||x(i) - muk|| the value of k that minimzes this.
+            - Move centroid, for each k
+                - muk = average of points assigned to cluster k.
+                - If one centroid gets 0 then better to eliminate that centroid.
+- Optimization objective
+    - c(i) = to which cluster an example is assigned.
+    - muk = cluster centroid.
+    - muc(i) = cluster centroid of cluster to which example has been assigned.
+    - Minimze the cost function J(c(1),... c(m), mu1,..., muk)
+- Random initialization
+    - How to initialize
+    - The amount of centroids should be less than the amount of training examples
+    - Random pick K training examples.
+    - Randomly pick a couple of examples and initialized them there.
+    - mu1 = x(i) and mu2 = x(j)
+    - It can end up in local optima.
+        - Try multiple random initializations.
+        - Pick clustering that gave the lowest cost.
+- Choosing the number of clusters
+    - The most common answer is to pick it by hand.
+    - There is no a right answer.
+    - Use the elbow method as an alternative
+        - There is an albow in the pattern at a number of clusters. Maybe usin the elbow is the right number of clusters.
+- Dimension reduction
+    - Another form of unsupervised learning.
+    - Data compression
+        - We can get the projections of values in a diagonal, call this new feature z.
+        - The new feature z1 specifies the location of each of those points. z1 can represent one example where before we needed two values.
+        - Now one feature that required two values just requires one.
+            - z2 E R2 → z E R
+        - Approximate the original set, we only need one number to specify the position. It is an approximation.
+    - PCA
+        - Before applying PCA is standard practice to do means normalization and feature scaling.
+        - Problem formulation: Reduce from 2 dimensions to 1 by Finding a direction (vector u1 E Rn) onto which to project the data so as to minimze the projection error.
+        - Getting a positive or negative u1 does not matter because they create the same vector where to project.
+        - We weant to find k vectors u that represent the k dimensions.
+        - We get a point and project on the surface.
+        - PCA is not linear regression.
+            - In linear regression, we want to predict some variable y given an input x. We are reducing the squared error. Vertical distances between a point and the value predicted by the hypothesis.
+            - In PCA we are reducing the short distance between the dots and the line (projection distance).
+    - PCA algorithm
+        - Before PCA, perform mean normalization. Do it with unlabeled data. Compute the mean of each feature, and replace the feature with x minus the mean. So each feature has a mean of 0.
+        - We want to find a vector that defines the surface on which to project the data. u1 and u2 will define the surface in which to project the data.
+        - Find a set of numbers on which represent our data.
+            - Compute the u vectors.
+            - How to compute numbers z (the projections in u).
+        - The procedure to find u1 is not that hard.
+        - Reduce data from n dimensions to k dimensions.
+            - Compute the covariance matrix. (Capital sigma, E)
+            - Compute the eigenvectors of the matrix sigma (E). Sigma is n x n.
+            - The columns of the u matrix will be the vectors u1, u2, that we want.
+            - From the svd command, get the first k columns to get through u1 to uk.
+            - z = U^Tx
+    - Choosing the number of principal components (k)
+        - k, the number of pronicipal components to retain.
+        - Choose k, so that Average squared projection error/Total variation of the data < 0.01
+            - So that the 99% of variance is retained.
+            - Try from k = 1 incrementaly until the variance goes lower.
+        - From the svd command, we get S where all the elements but the diagonal are zero
+        - For given k, 1 - sum i=1,k Sii/sum i=1,n Sii ≥ 0.99

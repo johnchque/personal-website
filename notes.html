@@ -23,14 +23,22 @@ title: About
         by last updated time. This ensures that the notes I am more actively
         working on are shown first.
       </p>
-      <p>I hope you can find something fun to read here.</p>
+      <p>
+        If some things do not make sense, it is probably because the context is
+        my private notes for my own understanding, sorry! I am constantly
+        refining my notes and publish the ones the are the most relevant.
+      </p>
       <div class="related-wrapper">
         {% assign note_items = site.notes | sort: "date" | reverse %} {% for
         note_items in note_items %}
         <div class="row mb-3 mb-md-0">
-          <div class="col-12 col-md-3">{{ note_items.date | date: "%B, %Y" }}</div>
+          <div class="col-12 col-md-3">
+            {{ note_items.date | date: "%B, %Y" }}
+          </div>
           <div class="col">
-            <a href="{{ note_items.url | relative_url }}">{{ note_items.title }}</a>
+            <a href="{{ note_items.url | relative_url }}"
+              >{{ note_items.title }}</a
+            >
           </div>
         </div>
         {%- endfor -%}
