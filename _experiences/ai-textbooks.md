@@ -1,8 +1,7 @@
 ---
 layout: work
 title: "ai:textbooks"
-description: 
-"Led the development of a Chrome extension with Next.js, creating a responsive and user-friendly interface. Designed and built the company website and pitch decks, helping to attract partnerships and client interest. Engaged with potential partners and early users to gather feedback, refine the product, and align it with market needs."
+description: "Led the development of a Chrome extension with Next.js, creating a responsive and user-friendly interface. Designed and built the company website and pitch decks, helping to attract partnerships and client interest. Engaged with potential partners and early users to gather feedback, refine the product, and align it with market needs."
 role: Frontend Developer
 date_start: 2023-09-01
 date_end: 2024-02-28
