@@ -1,9 +1,8 @@
 ---
 layout: work
 title: "ai:textbooks"
-description: |
-    - Led the frontend development and design of the main product, a Chrome extension, using NextJS to deliver a responsive, user-friendly interface.
-    - Developed website and pitch decks for sharing the project with potential partners and clients.
+description: 
+"Led the development of a Chrome extension with Next.js, creating a responsive and user-friendly interface. Designed and built the company website and pitch decks, helping to attract partnerships and client interest. Engaged with potential partners and early users to gather feedback, refine the product, and align it with market needs."
 role: Frontend Developer
 date_start: 2023-09-01
 date_end: 2024-02-28
@@ -25,10 +24,13 @@ OPENschool Solutions is a startup with base in Austria that aims to foster indiv
 OPENschool is the result of the work made during the program Young Sustainable Impact 2018, when I met people from Austria and Pakistan who were interested on tackling the Education problems of the world. We worked on a project that was not succesful and the learnings from that previosu project made us understand the current problems in most of the Education Systems of the world.
 
 ## Responsabilities
+
 At OPENschool, I am in charge of:
+
 - Developing and deploying the platform to testing and use by the students. Following the constant feedback of our users and providing the best UX possible for them.
 - Take the technical decisions about integration with other tools and API creation.
 - Create the website for the project to promote our work an be in contact with people interested.
 
 ## Achievements
+
 - In 2020, thanks to the work of our CEO, we got a grant of 10000USD that is used for the further development of the concept and the platform.

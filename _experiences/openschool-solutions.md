@@ -1,10 +1,7 @@
 ---
 layout: work
 title: "OPENSchool Solutions"
-description: |
-    - Implemented the platform in 6 schools in Vienna to allow children to guide their own learning within the classroom. Updated according to user’s feedback.
-    - Led platform architecture definition and executed implementation utilizing Laravel Framework.
-    - Integrated automated testing procedures and developed preliminary mockups for the operational interface.
+description: "Implemented a learning management system in six schools, supporting the OPENschool teaching methodology. Led full-stack development using Laravel and CI/CD pipelines to improve deployment processes and ensure stability. Worked closely with educators to gather feedback, prioritize features, and enhance user satisfaction."
 role: Lead Developer
 date_start: 2019-07-01
 date_end: 2023-12-30

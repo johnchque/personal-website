@@ -1,9 +1,7 @@
 ---
 layout: work
 title: "MD Systems GmbH"
-description: |
-    - Credited in a total of 500 issues in Drupal.org. Including module documentation, code fixes and custom modules.
-    - Contributed modules that are actively used in more than 150000 websites worldwide.
+description: "Contributed to over 500 tasks on Drupal.org, including feature development, bug fixes, and documentation. Built custom features for client projects based on specific user needs, improving functionality and satisfaction. Took part in code reviews and knowledge-sharing sessions, boosting team growth and project quality."
 role: Drupal Developer
 date_start: 2020-01
 date_end: 2021-07-30

@@ -1,10 +1,7 @@
 ---
 layout: work
 title: "MD Systems GmbH"
-description: |
-    - Authored 100+ contributions to Drupal modules through code patches and code documentation.
-    - Recognised for being the top 15th contributor to Drupal worldwide and received a full grant to attend DrupalCon Nashville 2018.
-    - Presented 2 conference talks in Darmstadt, Germany 2018 and Davos, Switzerland 2019.
+description: "Made over 100 contributions to Drupal modules, ranking as the 15th top contributor globally. Delivered talks at Drupal conferences in Germany and Switzerland, sharing expertise on module development. Awarded a full grant to attend DrupalCon Nashville 2018, contributing to discussions in the international Drupal community."
 role: Drupal Developer
 date_start: 01/2018
 date_end: 2019-04-30
