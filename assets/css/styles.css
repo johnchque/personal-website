@@ -17,13 +17,6 @@
 	--bs-primary-rgb: 48,127,150;
 }
 
-@font-face {
-    font-family: 'Geist';
-    src: url('../fonts/GeistVF.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
 body,
 html {
 	width: 100%;
@@ -37,8 +30,7 @@ h3,
 h4,
 h5,
 h6 {
-	letter-spacing: 2px;
-	font-family: "PT Serif", serif;
+	font-family: "Libre Baskerville", serif;
 }
 
 body,
