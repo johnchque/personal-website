@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const goTopBtn = document.getElementById("btt-button");
     const btnSwitch = document.getElementById('btnSwitch');
     const themeIcon = btnSwitch.querySelector('i');
+    const logo = document.getElementById('logo');
 
     // Theme related constants and functions
     const themeKey = 'theme';
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const setTheme = theme => {
         themeIcon.setAttribute('class', theme === darkTheme ? iconSunClass : iconMoonClass);
+        logo.setAttribute('src', theme === darkTheme ? "/assets/images/logo-d.svg" : "/assets/images/logo.svg");
         document.documentElement.setAttribute(dataBsThemeAttr, theme);
     };
 

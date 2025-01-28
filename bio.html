@@ -77,15 +77,13 @@ title: About
         reverse %} {% for project in ordered_projects %} {% if project.category
         == 'professional' %}
         <div class="row mb-4 measure-wide">
-          <div class="col-12 col-md-3 text-muted">
-            {{ project.date_start | date: "%b, %Y" }} - {% if project.date_end
-            == project.date_start %}Present{% else %}{{ project.date_end | date:
-            "%b, %Y" }}{% endif %}
-          </div>
-          <div class="col-12 col-md-9">
+          <div class="col-12">
             <a href="{{ project.external_url }}"
               >{{project.role}} - {{project.title}}</a
             >
+            <p class="mb-0 text-muted">{{ project.date_start | date: "%b, %Y" }} - {% if project.date_end
+              == project.date_start %}Present{% else %}{{ project.date_end | date:
+              "%b, %Y" }}{% endif %}</p>
             <p class="mb-0">{{project.description | newline_to_br}}</p>
             <small class="text-muted">
               {{ project.skills | join: " • " }}

@@ -4,15 +4,18 @@
 
 [data-bs-theme=dark] {
     color-scheme: dark;
-    --bs-body-bg: #1b1b1b;
-	--bs-link-color-rgb: 52, 160, 191;
+    --bs-body-bg: #313d41;
+	--bs-link-color-rgb: 242, 191, 141;
+	--bs-link-hover-color-rgb: 197, 150, 103;
 	--bs-body-color: #f3f4f6;
 	--bs-primary-rgb: 48,127,150;
+	--bs-link-hover-color:
 }
 
 [data-bs-theme=white] {
 	--bs-body-bg: #f9f9f9;
 	--bs-link-color-rgb: 48,127,150;
+	--bs-link-hover-color-rgb: 90, 154, 173;
 	--bs-body-color: #111;
 	--bs-primary-rgb: 48,127,150;
 }
@@ -46,10 +49,6 @@ p {
 
 a {
 	transition: .3s;
-}
-
-a:hover {
-	color: #1c4855
 }
 
 a.dark {
@@ -128,10 +127,6 @@ i[class^="ri"] {
 	letter-spacing: 3px;
 }
 
-.navbar-custom .nav-item .nav-link:hover {
-	color: #307f96
-}
-
 @media (min-width:992px) {
 	.navbar-custom {
 		padding-top: 2.125rem;
@@ -164,16 +159,12 @@ i[class^="ri"] {
 		opacity: 1
 	}
 
-	.navbar-custom.top-nav-collapse .nav-item .nav-link:hover {
-		color: #307f96
-	}
-
 	.p-heading {
 		width: 65%
 	}
 
 	img.responsive {
-		aspect-ratio: 3/4;
+		aspect-ratio: 3 / 4;
 		object-fit: cover;
 	}
 }

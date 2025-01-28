@@ -11,12 +11,12 @@ layout: default
     <div class="col-12 ml-top-padding">
       <div class="heading-title mb-5">
         <a href="/notes"> <i class="ri-arrow-left-line"></i>Notes</a>
-        <h1>{{ page.title }}</h1>
-        <p class="lead text-muted">{{ page.description }}</p>
         <p class="text-muted">
-          Last updated: {{ page.updated | date: "%B %-d, %Y" }} • Planted: {{
+          Updated: {{ page.updated | date: "%B %-d, %Y" }} • Planted: {{
           page.date | date: "%B %-d, %Y" }}
         </p>
+        <h1>{{ page.title }}</h1>
+        <p class="lead text-muted">{{ page.description }}</p>
       </div>
       <section class="content">{{content}}</section>
     </div>
