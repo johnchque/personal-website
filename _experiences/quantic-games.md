@@ -1,9 +1,9 @@
 ---
 layout: work
 title: "Quantic Games"
-description: "Led game development projects using Agile methods, delivering three case challenge games. Created press kits and portfolios that secured participation in the City Hall of La Paz Incubator program. Designed the creative elements for Puma Punku, which won "Best Audio" at ExpoBix 2019."
+description: "Led game development projects using Agile methods, delivering three case challenge games. Created press kits and portfolios that secured participation in the City Hall of La Paz Incubator program. Designed the creative elements for Puma Punku, which won 'Best Audio' at ExpoBix 2019."
 role: Lead Developer
-date_start: 01.05.2019
+date_start: 2019-05-01
 date_end: 2021-03-30
 external_url: https://www.facebook.com/quanticgames
 category: professional

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -80,7 +80,11 @@
     <a href="#body" class="back-to-top page-scroll" id="btt-button"
       >Back to Top</a
     >
-    {{content}} {% include footer.html %}
+    {% include bg.html %}
+
+    <article>{{content}}
+    </article>
+    
 
     <!-- Scripts -->
     <script src="/assets/js/scripts.js"></script>

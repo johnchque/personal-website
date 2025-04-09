@@ -24,6 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
         themeIcon.setAttribute('class', theme === darkTheme ? iconSunClass : iconMoonClass);
         logo.setAttribute('src', theme === darkTheme ? "/assets/images/logo-d.svg" : "/assets/images/logo.svg");
         document.documentElement.setAttribute(dataBsThemeAttr, theme);
+        document.body.classList.add('animation-ready');
+        if (theme === darkTheme) {
+            document.body.classList.add(darkTheme);
+        }
+        else {
+            document.body.classList.remove(darkTheme);
+        }
     };
 
     setTheme(getPreferredTheme());
@@ -77,3 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+function toggle(theme) {
+    document.body.classList.add('animation-ready');
+    document.body.classList.toggle('dark');
+}
