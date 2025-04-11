@@ -20,11 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const setStoredTheme = theme => localStorage.setItem(themeKey, theme);
     const getPreferredTheme = () => getStoredTheme() || darkTheme;
 
-    const setTheme = theme => {
+    // Modified setTheme function to not add animation-ready on initial load
+    const setTheme = (theme, animate = false) => {
         themeIcon.setAttribute('class', theme === darkTheme ? iconSunClass : iconMoonClass);
         logo?.setAttribute('src', theme === darkTheme ? "/assets/images/logo-d.svg" : "/assets/images/logo.svg");
         document.documentElement.setAttribute(dataBsThemeAttr, theme);
-        document.body.classList.add('animation-ready');
+        
+        // Only add animation-ready class if animate parameter is true
+        if (animate) {
+            document.body.classList.add('animation-ready');
+        }
+        
         if (theme === darkTheme) {
             document.body.classList.add(darkTheme);
         }
@@ -33,13 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    setTheme(getPreferredTheme());
+    // Initial theme setting without animation
+    setTheme(getPreferredTheme(), false);
 
+    // Button click with animation
     btnSwitch.addEventListener('click', () => {
         const currentTheme = getPreferredTheme();
         const newTheme = currentTheme === darkTheme ? lightTheme : darkTheme;
         setStoredTheme(newTheme);
-        setTheme(newTheme);
+        setTheme(newTheme, true); // Pass true to enable animation
     });
 
     // Scroll related functions and event listeners
@@ -85,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Update toggle function to ensure animation only happens when called
 function toggle(theme) {
     document.body.classList.add('animation-ready');
     document.body.classList.toggle('dark');

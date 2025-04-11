@@ -232,7 +232,7 @@ footer .social-icons ul li {
 
 
 
-article {
+main {
 	margin: 0 auto;
   
 	color: var(--dark);
@@ -242,7 +242,7 @@ article {
   h1, h2, h3, h4, h5, h6, .display-1 {
 	color: var(--highlight-color);
   }
-  article a {
+  main a {
 	color: rgba(var(--bs-link-color-rgb));
   }
   
