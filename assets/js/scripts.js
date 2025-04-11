@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const setTheme = theme => {
         themeIcon.setAttribute('class', theme === darkTheme ? iconSunClass : iconMoonClass);
-        logo.setAttribute('src', theme === darkTheme ? "/assets/images/logo-d.svg" : "/assets/images/logo.svg");
+        logo?.setAttribute('src', theme === darkTheme ? "/assets/images/logo-d.svg" : "/assets/images/logo.svg");
         document.documentElement.setAttribute(dataBsThemeAttr, theme);
         document.body.classList.add('animation-ready');
         if (theme === darkTheme) {
