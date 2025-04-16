@@ -3,10 +3,9 @@ layout: default
 ---
 
 {% include theme-bar.html %}
-<section class="container-md">
-  <div class="row justify-content-center mb-3 ml-top-padding">
-    <div class="col col-6"></div>
-    <div class="col-12 col-lg-6 content mb-5">
+<section class="container-lg">
+  <div class="row justify-content-start mb-3 ml-top-padding">
+    <div class="col-12 col-lg-6 offset-lg-6 content mb-5 pb-5">
       <h1 class="emphasis signature display-1">John Choque</h1>
       <p class="lead">SOCIAL ENTREPRENEUR AND SOFTWARE DEVELOPER</p>
       <p>
@@ -28,6 +27,23 @@ layout: default
         In my free time, I like to <a href="/notes">learn on my own</a>,
         <a href="/world/">travel around the world</a>, and write poetry.
       </p>
+    </div>
+    <div class="col-12 col-md-6 my-5">
+      <h2 class="signature display-5">The garden</h2>
+      <p>My collection of notes, essays, and ideas.</p>
+      {% assign note_items = site.notes | sort: "date" | reverse %} {% for
+      note_items in note_items %}
+      <div class="row mb-3 mb-md-0">
+        <div class="col-12 col-md-3 col-lg-3 col-xl-2">
+          {{ note_items.date | date: "%m, %Y" }}
+        </div>
+        <div class="col">
+          <a href="{{ note_items.url | relative_url }}"
+            >{{ note_items.title }}</a
+          >
+        </div>
+      </div>
+      {%- endfor -%}
     </div>
   </div>
 </section>

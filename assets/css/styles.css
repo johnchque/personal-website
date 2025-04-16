@@ -1,38 +1,80 @@
+/* ==========================================
+   CORE VARIABLES
+   ========================================== */
 :root {
-	--bs-nav-link-padding-y: 0;
-	--bs-link-color-rgb: 39,75,117;
+  /* Colors */
+  --day: #fffdfa;
+  --evening: #fccc83;
+  --dusk: #db7a2a;
+  --night: #1a191d;
+  --dawn: #1f1d2c;
+  --morning: #9fb3bf;
+
+  --primary: #274b75;
+  --secondary: #307f96;
+  --tertiary: #f2bf8d;
+
+  /* Typography */
+  --font-heading: "Libre Baskerville", serif;
+  --font-body: "Geist", sans-serif;
+  --font-signature: "Signature", sans-serif;
+
+  /* Animation */
+  --timing: cubic-bezier(0.455, 0.19, 0, 0.985);
+
+  /* Bootstrap overrides */
+  --bs-nav-link-padding-y: 0;
+  --bs-link-color-rgb: 39, 75, 117;
+  --bs-primary-rgb: 48, 127, 150;
 }
 
-[data-bs-theme=dark] {
-    color-scheme: dark;
-    --bs-body-bg: #151616;
-	--bs-link-color-rgb: 242, 191, 141;
-	--bs-link-hover-color-rgb: 197, 150, 103;
-	--bs-body-color: #f3f4f6;
-	--bs-primary-rgb: 48,127,150;
-	--bs-tertiary-color: #f2bf8d;
+/* Theme settings */
+[data-bs-theme="white"] {
+  --body-bg: #f9f9f9;
+  --body-color: #111;
+  --link-color: var(--primary);
+  --link-hover: #5a9aad;
+  --highlight: var(--primary);
+
+  --bs-body-bg: #f9f9f9;
+  --bs-body-color: #111;
+  --bs-link-color-rgb: 39, 75, 117;
+  --bs-link-hover-color-rgb: 90, 154, 173;
 }
 
-[data-bs-theme=white] {
-	--bs-body-bg: #f9f9f9;
-	--bs-link-color-rgb: 39,75,117;
-	--bs-link-hover-color-rgb: 90, 154, 173;
-	--bs-body-color: #111;
-	--bs-primary-rgb: 48,127,150;
+[data-bs-theme="dark"] {
+  color-scheme: dark;
+  --body-bg: #151616;
+  --body-color: #f3f4f6;
+  --link-color: var(--tertiary);
+  --link-hover: #c59667;
+  --highlight: var(--tertiary);
+
+  --bs-body-bg: #151616;
+  --bs-body-color: #f3f4f6;
+  --bs-link-color-rgb: 242, 191, 141;
+  --bs-link-hover-color-rgb: 197, 150, 103;
+  --bs-tertiary-color: var(--tertiary);
 }
 
+/* ==========================================
+	 FONTS & TYPOGRAPHY
+	 ========================================== */
 @font-face {
-    font-family: 'Signature';
-    src: url('../fonts/Thesignature.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Signature";
+  src: url("../fonts/Thesignature.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 body,
 html {
-	width: 100%;
-	height: 100%;
-	margin: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-size: 15px;
+  font-family: var(--font-body);
 }
 
 h1,
@@ -41,57 +83,44 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Libre Baskerville", serif;
-}
-
-body,
-p {
-	font-family: "Geist", sans-serif !important;
-	font-size: 15px;
+  font-family: var(--font-heading);
+  color: var(--highlight);
 }
 
 .p-small {
-	font-size: .75rem;
+  font-size: 0.75rem;
+}
+.emphasis {
+  color: var(--highlight);
+}
+.signature {
+  font-family: var(--font-signature);
 }
 
+/* ==========================================
+	 LAYOUT & UTILITIES
+	 ========================================== */
+.ml-top-padding {
+  padding-top: 140px;
+}
+.container-md {
+  max-width: 64rem;
+}
+.width-34,
+.content p,
+.content .highlighter-rouge,
+.content ul li {
+  max-width: 34rem;
+}
+
+/* Links & Icons */
 a {
-	transition: .3s;
+  color: rgba(var(--bs-link-color-rgb));
+  transition: 0.3s;
 }
 
 a.dark {
-	color: #626262
-}
-
-a.back-to-top {
-	position: fixed;
-	z-index: 999;
-	right: 0.75rem;
-	bottom: 0.75rem;
-	display: block;
-	width: 2.625rem;
-	height: 2.625rem;
-	background: #3b3b3b url(../images/up-arrow.png) no-repeat center 47%;
-	background-size: 1.125rem 1.125rem;
-	text-indent: -9999px;
-}
-
-a:hover.back-to-top {
-	background-color: #696969
-}
-
-#btt-button {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s, visibility 0.2s;
-}
-
-#btt-button.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-.ml-top-padding {
-	padding-top: 140px
+  color: #626262;
 }
 
 i[class^="ri"] {
@@ -99,408 +128,434 @@ i[class^="ri"] {
   vertical-align: text-top;
 }
 
-.navbar-custom .navbar-toggler {
-	border: none;
-	text-decoration: none;
-	transition: all .2s ease;
-	text-transform: uppercase;
-	/* letter-spacing: 3px; */
-	font-size: 12px
+/* Back to top button */
+a.back-to-top {
+  position: fixed;
+  z-index: 999;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  width: 2.625rem;
+  height: 2.625rem;
+  background: #3b3b3b url(../images/up-arrow.png) no-repeat center 47%;
+  background-size: 1.125rem 1.125rem;
+  text-indent: -9999px;
 }
 
+a:hover.back-to-top {
+  background-color: #696969;
+}
+
+#btt-button {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+#btt-button.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==========================================
+	 NAVIGATION
+	 ========================================== */
 .navbar-custom {
-	box-shadow: none;
-	transition: all .2s;
-	font: 400 14px/.875rem "Geist", sans-serif;
+  box-shadow: none;
+  transition: all 0.2s;
+  font: 400 14px/0.875rem var(--font-body);
 }
 
 .navbar-custom .navbar-brand.logo-image img {
-	height: 2rem
+  height: 2rem;
 }
-
 .navbar-custom .navbar-nav {
-	margin-top: .75rem;
-	margin-bottom: .5rem
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .navbar-custom .nav-item .nav-link {
-	padding: 1rem .75rem 1rem .75rem;
-	text-decoration: none;
-	transition: all .2s ease;
-	text-transform: uppercase;
-	font-weight: 400;
-	letter-spacing: 3px;
+  padding: 1rem 0.75rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 3px;
+  transition: all 0.2s ease;
 }
 
-@media (min-width:992px) {
-	.navbar-custom {
-		padding-top: 2.125rem;
-		padding-bottom: 2.125rem;
-	}
-
-	.navbar-custom .navbar-nav {
-		margin-top: 0;
-		margin-bottom: 0
-	}
-
-	.navbar-custom .nav-item .nav-link {
-		padding: .25rem .75rem .25rem .75rem;
-		opacity: .8;
-		color: unset;
-	}
-
-	.navbar-custom .nav-item .nav-link:hover {
-		opacity: 1
-	}
-
-	.navbar-custom.top-nav-collapse {
-		padding-top: 0.5rem;
-		padding-bottom: 0.5rem;
-	}
-
-	.navbar-custom.top-nav-collapse .nav-item .nav-link {
-		opacity: 1
-	}
-
-	.p-heading {
-		width: 65%
-	}
-
-	img.responsive {
-		aspect-ratio: 3 / 4;
-		object-fit: cover;
-	}
+.navbar-custom .navbar-toggler {
+  border: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
 }
 
-@media (min-width:1200px) {
-	.p-heading {
-		width: 55%
-	}
+@media (min-width: 992px) {
+  .navbar-custom {
+    padding: 2.125rem 0;
+  }
+
+  .navbar-custom .navbar-nav {
+    margin: 0;
+  }
+
+  .navbar-custom .nav-item .nav-link {
+    padding: 0.25rem 0.75rem;
+    opacity: 0.8;
+  }
+
+  .navbar-custom .nav-item .nav-link:hover {
+    opacity: 1;
+  }
+
+  .navbar-custom.top-nav-collapse {
+    padding: 0.5rem 0;
+  }
+
+  .navbar-custom.top-nav-collapse .nav-item .nav-link {
+    opacity: 1;
+  }
+
+  .p-heading {
+    width: 65%;
+  }
+
+  img.responsive {
+    aspect-ratio: 3/4;
+    object-fit: cover;
+  }
 }
 
+@media (min-width: 1200px) {
+  .p-heading {
+    width: 55%;
+  }
+}
+
+/* ==========================================
+	 COMPONENTS
+	 ========================================== */
+/* Cards */
 .card .card-img-overlay {
-	transition: all .8s cubic-bezier(.19, 1, .22, 1);
-	background: rgba(59, 59, 59, .4)
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  background: rgba(59, 59, 59, 0.4);
 }
 
 .card:hover .card-img-overlay {
-	transition: all .8s cubic-bezier(.19, 1, .22, 1);
-	background: rgba(59, 59, 59, 0.089)
+  background: rgba(59, 59, 59, 0.089);
 }
 
+/* Video */
 .video-container {
-	position: relative;
-	padding-bottom: 56.25%;
-	height: 0;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
 }
 
 .video-container iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
+/* Footer */
 footer .btn-solid-reg {
-	width: 100%
+  width: 100%;
 }
-
 footer .social-icons ul li {
-	display: inline-block;
-	margin-left: 15px
+  display: inline-block;
+  margin-left: 15px;
 }
 
-.container-md {
-	max-width: 64rem;
-}
-
-.width-34,
-.content p,
-.content .highlighter-rouge,
-.content ul li {
-	max-width: 34rem;
-}
-.emphasis {
-	color: #f2bf8d;
-}
-.signature {
-	font-family: 'signature', sans-serif;
-}
-
-
-
-
-
+/* ==========================================
+	 THEME EFFECTS
+	 ========================================== */
 main {
-	margin: 0 auto;
-  
-	color: var(--dark);
-	isolation: isolate;
+  margin: 0 auto;
+  isolation: isolate;
+}
+
+body {
+  /* Theme-specific variables */
+  --light: var(--day);
+  --dark: var(--night);
+  --shadow: #1a1917;
+  --bounce-light: #f5d7a6;
+
+  background-color: var(--light);
+  color: var(--dark);
+
+  animation-duration: 0s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+body.animation-ready {
+  animation-play-state: running;
+  animation-duration: 1s;
+  animation-name: sunrise;
+}
+
+body.animation-ready.dark {
+  animation-duration: 1.7s;
+  animation-name: sunset;
+}
+
+body.dark {
+  --light: var(--night);
+  --dark: var(--day);
+  --shadow: #030307;
+  --bounce-light: #1b293f;
+  --highlight: var(--tertiary);
+}
+
+/* ==========================================
+	 ANIMATIONS
+	 ========================================== */
+@keyframes sunrise {
+  0% {
+    background-color: var(--night);
   }
-  
-  h1, h2, h3, h4, h5, h6, .display-1 {
-	color: var(--highlight-color);
+  10% {
+    background-color: var(--dawn);
   }
-  main a {
-	color: rgba(var(--bs-link-color-rgb));
+  35% {
+    background-color: var(--morning);
   }
-  
-  
-  body {
-	--day: #fffdfa;
-	--evening: #fccc83;
-	--dusk: #db7a2a;
-	--night: #1a191d;
-	--dawn: #1f1d2c;
-	--morning: #9fb3bf;
-  
-  
-	--light: var(--day);
-	--dark: var(--night);
-	--shadow: #1a1917;
-	--bounce-light: #f5d7a6;
-	--timing-fn: cubic-bezier(0.455, 0.190, 0.000, 0.985);
-	--highlight-color: #274b75;
-  
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	width: 100%;
-	background-color: var(--light);
-  
-	animation-duration: 0s;
-	animation-fill-mode: forwards;
-	animation-timing-function: linear;
+  100% {
+    background-color: var(--day);
   }
-  
-  body.animation-ready {
-	animation-play-state: running;
-	animation-duration: 1s;
-	animation-name: sunrise;
+}
+
+@keyframes sunset {
+  0% {
+    background-color: var(--day);
   }
-  
-  body.animation-ready.dark {
-	animation-duration: 1.7s;
-	animation-name: sunset;
+  30% {
+    background-color: var(--evening);
   }
-  
-  body.dark {
-	--light: var(--night);
-	--dark: var(--day);
-	--shadow: #030307;
-	--bounce-light: #1b293f;
-	--highlight-color: #f2bf8d;
+  60% {
+    background-color: var(--dusk);
   }
-  
-  @keyframes sunrise {
-	0% {
-	  background-color: var(--night);
-	}
-  
-	10% {
-	  background-color: var(--dawn);
-	}
-  
-	35% {
-	  background-color: var(--morning);
-	}
-  
-	100% {
-	  background-color: var(--day);
-	}
+  90% {
+    background-color: var(--dawn);
   }
-  
-  @keyframes sunset {
-	0% {
-	  background-color: var(--day);
-	}
-  
-	30% {
-	  background-color: var(--evening);
-	}
-  
-	60% {
-	  background-color: var(--dusk);
-	}
-  
-	90% {
-	  background-color: var(--dawn);
-	}
-  
-	100% {
-	  background-color: var(--night);
-	}
+  100% {
+    background-color: var(--night);
   }
-  
-  #dappled-light {
-	pointer-events: none;
-	position: fixed;
-	height: 100vh;
-	width: 100vw;
+}
+
+@keyframes billow {
+  0% {
+    transform: perspective(400px) rotateX(0deg) rotateY(0deg) scale(1);
   }
-  
-  #progressive-blur {
-	position: absolute;
-	height: 100%;
-	width: 100%;
+  25% {
+    transform: perspective(400px) rotateX(1deg) rotateY(2deg) scale(1.02);
   }
-  
-  #progressive-blur>div {
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	inset: 0;
-	backdrop-filter: blur(var(--blur-amount));
-	mask-image: linear-gradient(252deg, transparent, transparent var(--stop1), black var(--stop2), black);
+  50% {
+    transform: perspective(400px) rotateX(-4deg) rotateY(-2deg) scale(0.97);
   }
-  
-  #progressive-blur>div:nth-child(1) {
-	--blur-amount: 6px;
-	--stop1: 0%;
-	--stop2: 0%;
+  75% {
+    transform: perspective(400px) rotateX(1deg) rotateY(-1deg) scale(1.04);
   }
-  
-  #progressive-blur>div:nth-child(2) {
-	--blur-amount: 12px;
-	--stop1: 40%;
-	--stop2: 80%;
+  100% {
+    transform: perspective(400px) rotateX(0deg) rotateY(0deg) scale(1);
   }
-  
-  #progressive-blur>div:nth-child(3) {
-	--blur-amount: 48px;
-	--stop1: 40%;
-	--stop2: 70%;
-  }
-  
-  #progressive-blur>div:nth-child(4) {
-	--blur-amount: 96px;
-	--stop1: 70%;
-	--stop2: 80%;
-  }
-  
-  #glow {
-	position: absolute;
-	background: linear-gradient(309deg, var(--bounce-light), var(--bounce-light) 20%, transparent);
-	transition: background 1.0s var(--timing-fn);
-	height: 100%;
-	width: 100%;
-	opacity: 0.5;
-  }
-  
-  #glow-bounce {
-	content: "";
-	position: absolute;
-	background: linear-gradient(355deg, var(--bounce-light) 0%, transparent 30%, transparent 100%);
-	transition: background 1.0s var(--timing-fn);
-	opacity: 0.5;
-	height: 100%;
-	width: 100%;
-	bottom: 0;
-  }
-  
-  .perspective {
-	position: absolute;
-	transition: transform 1.7s var(--timing-fn), opacity 4s ease;
-	top: -30vh;
-	right: 0;
-	width: 80vw;
-	height: 130vh;
-	opacity: 0.07;
-	background-blend-mode: darken;
-	transform-origin: top right;
-	transform-style: preserve-3d;
-	transform: matrix3d(0.7500, -0.0625, 0.0000, 0.0008,
-		0.0000, 1.0000, 0.0000, 0.0000,
-		0.0000, 0.0000, 1.0000, 0.0000,
-		0.0000, 0.0000, 0.0000, 1.0000);
-  }
-  
-  .dark .perspective {
-	opacity: 0.3;
-	transform: matrix3d(0.8333, 0.0833, 0.0000, 0.0003,
-		0.0000, 1.0000, 0.0000, 0.0000,
-		0.0000, 0.0000, 1.0000, 0.0000,
-		0.0000, 0.0000, 0.0000, 1.0000);
-  }
-  
-  #leaves {
-	position: absolute;
-	background-size: cover;
-	background-repeat: no-repeat;
-	bottom: -20px;
-	right: -700px;
-	width: 1600px;
-	height: 1400px;
-	background-image: url("../images/leaves.png");
-	filter: url(#wind);
-	animation: billow 8s ease-in-out infinite;
-  }
-  
-  #blinds {
-	position: relative;
-	width: 100%;
-  }
-  
-  #blinds .shutter,
-  #blinds .bar {
-	background-color: var(--shadow);
-  }
-  
-  #blinds>.shutters {
-	display: flex;
-	flex-direction: column;
-	align-items: end;
-	gap: 60px;
-	transition: gap 1.0s var(--timing-fn);
-  }
-  
-  .dark #blinds>.shutters {
-	gap: 20px;
-  }
-  
-  #blinds>.vertical {
-	top: 0;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
-  }
-  
-  .vertical>.bar {
-	width: 5;
-	height: 100%;
-  }
-  
-  .shutter {
-	width: 100%;
-	height: 40px;
-	transition: height 1.0s var(--timing-fn);
-  }
-  
-  .dark .shutter {
-	height: 80px;
-  }
-  
-  @keyframes billow {
-	0% {
-	  transform: perspective(400px) rotateX(0deg) rotateY(0deg) scale(1);
-	}
-  
-	25% {
-	  transform: perspective(400px) rotateX(1deg) rotateY(2deg) scale(1.02);
-	}
-  
-	50% {
-	  transform: perspective(400px) rotateX(-4deg) rotateY(-2deg) scale(0.97);
-	}
-  
-	75% {
-	  transform: perspective(400px) rotateX(1deg) rotateY(-1deg) scale(1.04);
-	}
-  
-	100% {
-	  transform: perspective(400px) rotateX(0deg) rotateY(0deg) scale(1);
-	}
-  }
+}
+
+/* ==========================================
+	 VISUAL EFFECTS
+	 ========================================== */
+/* Dappled Light */
+#dappled-light {
+  pointer-events: none;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+}
+
+#progressive-blur {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+#progressive-blur > div {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(var(--blur-amount));
+  mask-image: linear-gradient(
+    252deg,
+    transparent,
+    transparent var(--stop1),
+    black var(--stop2),
+    black
+  );
+}
+
+#progressive-blur > div:nth-child(1) {
+  --blur-amount: 6px;
+  --stop1: 0%;
+  --stop2: 0%;
+}
+#progressive-blur > div:nth-child(2) {
+  --blur-amount: 12px;
+  --stop1: 40%;
+  --stop2: 80%;
+}
+#progressive-blur > div:nth-child(3) {
+  --blur-amount: 48px;
+  --stop1: 40%;
+  --stop2: 70%;
+}
+#progressive-blur > div:nth-child(4) {
+  --blur-amount: 96px;
+  --stop1: 70%;
+  --stop2: 80%;
+}
+
+/* Glow Effects */
+#glow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    309deg,
+    var(--bounce-light),
+    var(--bounce-light) 20%,
+    transparent
+  );
+  transition: background 1s var(--timing);
+  opacity: 0.5;
+}
+
+#glow-bounce {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  background: linear-gradient(
+    355deg,
+    var(--bounce-light) 0%,
+    transparent 30%,
+    transparent 100%
+  );
+  transition: background 1s var(--timing);
+  opacity: 0.5;
+}
+
+/* 3D Perspective */
+.perspective {
+  position: absolute;
+  top: -30vh;
+  right: 0;
+  width: 80vw;
+  height: 130vh;
+  opacity: 0.07;
+  background-blend-mode: darken;
+  transform-origin: top right;
+  transform-style: preserve-3d;
+  transform: matrix3d(
+    0.75,
+    -0.0625,
+    0,
+    0.0008,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+  );
+  transition: transform 1.7s var(--timing), opacity 4s ease;
+}
+
+.dark .perspective {
+  opacity: 0.3;
+  transform: matrix3d(
+    0.8333,
+    0.0833,
+    0,
+    0.0003,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+  );
+}
+
+/* Leaves */
+#leaves {
+  position: absolute;
+  bottom: -20px;
+  right: -700px;
+  width: 1600px;
+  height: 1400px;
+  background-image: url("../images/leaves.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: url(#wind);
+  animation: billow 8s ease-in-out infinite;
+}
+
+/* Blinds */
+#blinds {
+  position: relative;
+  width: 100%;
+}
+
+#blinds .shutter,
+#blinds .bar {
+  background-color: var(--shadow);
+}
+
+#blinds > .shutters {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 60px;
+  transition: gap 1s var(--timing);
+}
+
+.dark #blinds > .shutters {
+  gap: 20px;
+}
+
+#blinds > .vertical {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.vertical > .bar {
+  width: 5px;
+  height: 100%;
+}
+
+.shutter {
+  width: 100%;
+  height: 40px;
+  transition: height 1s var(--timing);
+}
+
+.dark .shutter {
+  height: 80px;
+}
