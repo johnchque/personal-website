@@ -2,48 +2,66 @@
 layout: default
 ---
 
-{% include theme-bar.html %}
-<section class="container-lg">
-  <div class="row justify-content-start mb-3 ml-top-padding">
-    <div class="col-12 col-lg-6 offset-lg-6 content mb-5 pb-5">
-      <h1 class="emphasis signature display-1">John Choque</h1>
-      <p class="lead">SOCIAL ENTREPRENEUR AND SOFTWARE DEVELOPER</p>
-      <p>
-        I create impact-driven digital solutions with a deep commitment to sustainability and social innovation.
-      </p>
-      <p>
-        Throughout my career, I have explored the use and development of software as a tool to make positive impact. My
-        work falls into the categories of ed-tech, digital inclusion and accessibility, pro-feminism, computer ethics,
-        and sustainability.
-      </p>
-      <p>
-        I am currently a Senior Frontend Developer at
-        <a href="https://dk.ecco.com/" target="_blank">ECCO</a>. Prior to this
-        role, I co-founded multiple organizations and startups, and volunteered with several mission-driven initiatives.
-        You can see all my previous experience
-        <a href="/bio">here</a>.
-      </p>
-      <p>
-        In my free time, I like to <a href="/notes">learn on my own</a>,
-        <a href="/world/">travel around the world</a>, and write poetry.
-      </p>
+<section class="container">
+  <div class="row">
+    <div class="col-12 offset-lg-6 col-xl-6 mb-5">
+      <header class="row ml-top-padding align-items-center mb-3">
+        <div class="col">
+          <h1 class="emphasis signature display-3 mb-0">John Choque</h1>
+        </div>
+        <div class="col text-end">
+          <a class="page-scroll" href="#" id="btnSwitch"
+            ><i class="ri-moon-line"></i
+          ></a>
+        </div>
+      </header>
+      <section>
+        <p class="lead">SOCIAL ENTREPRENEUR AND SOFTWARE DEVELOPER</p>
+
+        <p>
+          I create impact-driven digital solutions with a deep commitment to
+          sustainability and social innovation.
+        </p>
+        <p>
+          Throughout my career, I have explored the use and development of
+          software as a tool to make positive impact. My work falls into the
+          categories of ed-tech, digital inclusion and accessibility,
+          pro-feminism, computer ethics, and sustainability.
+        </p>
+        <p>
+          I am currently a Senior Frontend Developer at
+          <a href="https://dk.ecco.com/" target="_blank">ECCO</a>. Prior to this
+          role, I co-founded multiple organizations and startups, and
+          volunteered with several mission-driven initiatives. You can see all
+          my previous experience <a href="/bio">here</a>.
+        </p>
+        <p>
+          In my free time, I like to <a href="/notes">learn on my own</a>,
+          <a href="/world/">travel around the world</a>, and write poetry.
+        </p>
+      </section>
     </div>
     <div class="col-12 col-md-6 my-5">
-      <h2 class="signature display-5">The garden</h2>
-      <p>My collection of notes, essays, and ideas.</p>
-      {% assign note_items = site.notes | sort: "date" | reverse %} {% for
-      note_items in note_items %}
-      <div class="row mb-3 mb-md-0">
-        <div class="col-12 col-md-3 col-lg-3 col-xl-2">
-          {{ note_items.date | date: "%m, %Y" }}
-        </div>
-        <div class="col">
-          <a href="{{ note_items.url | relative_url }}"
-            >{{ note_items.title }}</a
+      <h2 class="emphasis signature display-5 mb-0">Now</h2>
+      <p>What I am currently working on (Last update: 2025.05.18)</p>
+      <ul>
+        <li>
+          Taking the
+          <a href="https://www.enais.co/" target="_blank">AI Safety Collab</a>
+          course on AI Alignment.
+        </li>
+        <li>
+          Taking the
+          <a
+            target="_blank"
+            href="https://www.coursera.org/specializations/machine-learning-introduction"
+            >Machine Learning Specialization</a
           >
-        </div>
-      </div>
-      {%- endfor -%}
+          in Coursera by DeepLearning.ai
+        </li>
+        <li>Planning my next trip.</li>
+        <li>Continuously updating my <a href="/notes">digital garden</a>.</li>
+      </ul>
     </div>
   </div>
 </section>

@@ -6,7 +6,7 @@
   --day: #fffdfa;
   --evening: #fccc83;
   --dusk: #db7a2a;
-  --night: #1a191d;
+  --night: #151616;
   --dawn: #1f1d2c;
   --morning: #9fb3bf;
 
@@ -102,7 +102,7 @@ h6 {
 	 LAYOUT & UTILITIES
 	 ========================================== */
 .ml-top-padding {
-  padding-top: 140px;
+  padding-top: 120px;
 }
 .container-md {
   max-width: 64rem;
@@ -349,19 +349,23 @@ body.dark {
 
 @keyframes billow {
   0% {
-    transform: perspective(400px) rotateX(0deg) rotateY(0deg) scale(1);
+    transform: rotateX(0deg) rotateY(0deg) scale(1);
   }
-  25% {
-    transform: perspective(400px) rotateX(1deg) rotateY(2deg) scale(1.02);
+
+  18% {
+    transform: rotateX(1deg) rotateY(2deg) scale(1.03);
   }
-  50% {
-    transform: perspective(400px) rotateX(-4deg) rotateY(-2deg) scale(0.97);
+
+  32% {
+    transform: rotateX(-4deg) rotateY(-2deg) scale(0.96);
   }
-  75% {
-    transform: perspective(400px) rotateX(1deg) rotateY(-1deg) scale(1.04);
+
+  66% {
+    transform: rotateX(3deg) rotateY(-1deg) scale(1.04);
   }
+
   100% {
-    transform: perspective(400px) rotateX(0deg) rotateY(0deg) scale(1);
+    transform: rotateX(0deg) rotateY(0deg) scale(1);
   }
 }
 
@@ -370,27 +374,44 @@ body.dark {
 	 ========================================== */
 /* Dappled Light */
 #dappled-light {
+  /* animation-duration: 0s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear; */
   pointer-events: none;
   position: fixed;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
+  /* isolation: isolate; */
 }
 
 #progressive-blur {
   position: absolute;
   height: 100%;
   width: 100%;
-  content-visibility: auto;
 }
 
 #progressive-blur > div {
   position: absolute;
-  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* inset: 0; */
   backdrop-filter: blur(var(--blur-amount));
   -webkit-backdrop-filter: blur(var(--blur-amount));
-  mask-image: linear-gradient(252deg, transparent, transparent var(--stop1), black var(--stop2), black);
-  -webkit-mask-image: linear-gradient(252deg, transparent, transparent var(--stop1), black var(--stop2), black);
-  will-change: backdrop-filter;
+  mask-image: linear-gradient(
+    252deg,
+    transparent,
+    transparent var(--stop1),
+    black var(--stop2),
+    black
+  );
+  -webkit-mask-image: linear-gradient(
+    252deg,
+    transparent,
+    transparent var(--stop1),
+    black var(--stop2),
+    black
+  );
+  /* will-change: backdrop-filter; */
 }
 
 #progressive-blur > div:nth-child(1) {
@@ -421,6 +442,7 @@ body.dark {
 }
 
 #glow-bounce {
+  content: "";
   position: absolute;
   height: 100%;
   width: 100%;
@@ -492,14 +514,14 @@ body.dark {
 /* Leaves */
 #leaves {
   position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
   bottom: -20px;
   right: -700px;
   width: 1600px;
   height: 1400px;
   background-image: url("../images/leaves.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  filter: url(#wind);
+  perspective: 400px;
   animation: billow 8s ease-in-out infinite;
 }
 
@@ -536,7 +558,7 @@ body.dark {
 }
 
 .vertical > .bar {
-  width: 5px;
+  width: 12px;
   height: 100%;
 }
 
@@ -558,5 +580,4 @@ body.dark {
   #leaves {
     right: -600px;
   }
-
 }
