@@ -62,7 +62,7 @@
 	 ========================================== */
 @font-face {
   font-family: "Signature";
-  src: url("../fonts/Thesignature.ttf") format("truetype");
+  src: url("../fonts/Thesignature.woff2") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
