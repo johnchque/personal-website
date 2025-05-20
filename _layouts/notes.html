@@ -5,14 +5,14 @@ layout: default
 <div class="container">
   <div class="row ml-top-padding">
     <div class="col-12 col-lg-3 text-start mb-5">
-      <a href="/notes2" class="notes-back-link">
+      <a href="/notes" class="notes-back-link">
         <i class="ri-arrow-left-line mb-2"></i><em>Notes</em>
       </a>
     </div>
 
     <article class="heading-title col-12 col-lg-6">
       <header class="d-flex justify-content-between align-items-start">
-        <h1 class="h4 emphasis">{{ page.title }}</h1>
+        <h1>{{ page.title }}</h1>
         <a
           href="#"
           class="theme-toggle"
@@ -27,7 +27,7 @@ layout: default
       <p class="lead text-muted mb-4">{{ page.description }}</p>
       {% endif %}
 
-      <section class="content">{{content}}</section>
+      <section>{{content}}</section>
     </article>
   </div>
 </div>
