@@ -10,7 +10,7 @@ layout: default
     <div class="heading-title col-12 col-lg-6">
       <header class="row align-items-start">
         <div class="col">
-          <h1 class="h4 emphasis">Notes</h1>
+          <h1>World</h1>
         </div>
         <div class="col-1 text-end">
           <a class="page-scroll" href="#" id="btnSwitch"
@@ -29,7 +29,9 @@ layout: default
       remove_first: page.dir | split: '/' %} {% if item_crumbs.size == 2 and
       item_crumbs.first == 'world' %}
       <div class="row mb-3 mb-md-0">
-        <div class="col-12 col-md-3">{{ item.date | date: "%B, %Y" }}</div>
+        <div class="col-12 col-md-3">
+          {{ note_items.date | date: "%m.%Y" }}
+        </div>
         <div class="col">
           <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
         </div>

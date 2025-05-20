@@ -588,7 +588,7 @@ body.animation-ready.dark {
     right: -600px;
   }
 
-  .img-fluid {
+  img.img-fluid {
     margin-left: 0;
     margin-right: 0;
     width: 100%;
