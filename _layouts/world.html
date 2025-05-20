@@ -2,19 +2,24 @@
 layout: default
 ---
 
-{% include navigation.html %}
-
-<!-- Blog Detail Start -->
-
-<div class="container-md">
-  <div class="row justify-content-center mb-4">
-    <div class="col-12 ml-top-padding">
-      <div class="heading-title">
-        <a href="/world"> <i class="ri-arrow-left-line"></i> World </a>
-        <h1>{{ page.title }}</h1>
-        <p class="lead text-muted">{{ page.description }}</p>
-      </div>
-      {{ content }}
+<div class="container">
+  <div class="row ml-top-padding">
+    <div class="col-12 col-lg-3 text-start mb-5">
+      <a href="/world"><i class="ri-arrow-left-line"></i><em>World</em></a>
+    </div>
+    <div class="heading-title col-12 col-lg-6">
+      <header class="row align-items-start">
+        <div class="col">
+          <h1 class="h4 emphasis">{{ page.title }}</h1>
+        </div>
+        <div class="col-1 text-end">
+          <a class="page-scroll" href="#" id="btnSwitch"
+            ><i class="ri-moon-line"></i
+          ></a>
+        </div>
+      </header>
+      <p class="lead text-muted">{{ page.description }}</p>
+      <section class="">{{content}}</section>
     </div>
   </div>
 </div>

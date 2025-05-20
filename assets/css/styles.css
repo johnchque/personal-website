@@ -14,6 +14,12 @@
   --secondary: #307f96;
   --tertiary: #f2bf8d;
 
+  /* Spacing */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
   /* Typography */
   --font-heading: "Libre Baskerville", serif;
   --font-body: "Geist", sans-serif;
@@ -21,6 +27,10 @@
 
   /* Animation */
   --timing: cubic-bezier(0.455, 0.19, 0, 0.985);
+  --transition-fast: 0.2s;
+  --transition-medium: 0.5s;
+  --transition-slow: 1s;
+  --transition-slower: 1.7s;
 
   /* Bootstrap overrides */
   --bs-nav-link-padding-y: 0;
@@ -35,6 +45,10 @@
   --link-color: var(--primary);
   --link-hover: #5a9aad;
   --highlight: var(--primary);
+  --shadow: #1a1917;
+  --bounce-light: #f5d7a6;
+  --light: var(--day);
+  --dark: var(--night);
 
   --bs-body-bg: #f9f9f9;
   --bs-body-color: #111;
@@ -49,6 +63,10 @@
   --link-color: var(--tertiary);
   --link-hover: #c59667;
   --highlight: var(--tertiary);
+  --shadow: #030307;
+  --bounce-light: #1b293f;
+  --light: var(--night);
+  --dark: var(--day);
 
   --bs-body-bg: #151616;
   --bs-body-color: #f3f4f6;
@@ -58,11 +76,11 @@
 }
 
 /* ==========================================
-	 FONTS & TYPOGRAPHY
-	 ========================================== */
+   FONTS & BASE ELEMENTS
+   ========================================== */
 @font-face {
   font-family: "Signature";
-  src: url("../fonts/Thesignature.woff2") format("truetype");
+  src: url("../fonts/Thesignature.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -75,7 +93,8 @@ html {
   margin: 0;
   font-size: 15px;
   font-family: var(--font-body);
-  /* transition: color 0.3s ease; */
+  background-color: var(--light);
+  color: var(--dark);
 }
 
 h1,
@@ -88,25 +107,30 @@ h6 {
   color: var(--highlight);
 }
 
-.p-small {
-  font-size: 0.75rem;
+a {
+  color: rgba(var(--bs-link-color-rgb));
+  transition: var(--transition-fast);
 }
-.emphasis {
-  color: var(--highlight);
+
+a:hover {
+  color: var(--link-hover);
 }
-.signature {
-  font-family: var(--font-signature);
+
+a.dark {
+  color: #626262;
 }
 
 /* ==========================================
-	 LAYOUT & UTILITIES
-	 ========================================== */
+   LAYOUT & UTILITIES
+   ========================================== */
 .ml-top-padding {
   padding-top: 120px;
 }
+
 .container-md {
   max-width: 64rem;
 }
+
 .width-34,
 .content p,
 .content .highlighter-rouge,
@@ -114,14 +138,16 @@ h6 {
   max-width: 34rem;
 }
 
-/* Links & Icons */
-a {
-  color: rgba(var(--bs-link-color-rgb));
-  transition: 0.3s;
+.p-small {
+  font-size: 0.75rem;
 }
 
-a.dark {
-  color: #626262;
+.emphasis {
+  color: var(--highlight);
+}
+
+.signature {
+  font-family: var(--font-signature);
 }
 
 i[class^="ri"] {
@@ -129,8 +155,11 @@ i[class^="ri"] {
   vertical-align: text-top;
 }
 
+/* ==========================================
+   COMPONENTS
+   ========================================== */
 /* Back to top button */
-a.back-to-top {
+.back-to-top {
   position: fixed;
   z-index: 999;
   right: 0.75rem;
@@ -142,14 +171,14 @@ a.back-to-top {
   text-indent: -9999px;
 }
 
-a:hover.back-to-top {
+.back-to-top:hover {
   background-color: #696969;
 }
 
 #btt-button {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s, visibility 0.2s;
+  transition: opacity var(--transition-fast), visibility var(--transition-fast);
 }
 
 #btt-button.visible {
@@ -157,18 +186,54 @@ a:hover.back-to-top {
   visibility: visible;
 }
 
+/* Cards */
+.card .card-img-overlay {
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  background: rgba(59, 59, 59, 0.4);
+}
+
+.card:hover .card-img-overlay {
+  background: rgba(59, 59, 59, 0.089);
+}
+
+/* Video */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Footer */
+footer .btn-solid-reg {
+  width: 100%;
+}
+
+footer .social-icons ul li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
 /* ==========================================
-	 NAVIGATION
-	 ========================================== */
+   NAVIGATION
+   ========================================== */
 .navbar-custom {
   box-shadow: none;
-  transition: all 0.2s;
+  transition: all var(--transition-fast);
   font: 400 14px/0.875rem var(--font-body);
 }
 
 .navbar-custom .navbar-brand.logo-image img {
   height: 2rem;
 }
+
 .navbar-custom .navbar-nav {
   margin-top: 0.75rem;
   margin-bottom: 0.5rem;
@@ -180,16 +245,291 @@ a:hover.back-to-top {
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 3px;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
 }
 
 .navbar-custom .navbar-toggler {
   border: none;
   font-size: 12px;
   text-transform: uppercase;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
 }
 
+/* ==========================================
+   THEME EFFECTS & ANIMATIONS
+   ========================================== */
+main {
+  margin: 0 auto;
+  isolation: isolate;
+}
+
+body {
+  animation-duration: 0s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+body.animation-ready {
+  animation-play-state: running;
+  animation-duration: 1s;
+  animation-name: sunrise;
+}
+
+body.animation-ready.dark {
+  animation-duration: 1.7s;
+  animation-name: sunset;
+}
+
+@keyframes sunrise {
+  0% {
+    background-color: var(--night);
+  }
+  10% {
+    background-color: var(--dawn);
+  }
+  35% {
+    background-color: var(--morning);
+  }
+  100% {
+    background-color: var(--day);
+  }
+}
+
+@keyframes sunset {
+  0% {
+    background-color: var(--day);
+  }
+  30% {
+    background-color: var(--evening);
+  }
+  60% {
+    background-color: var(--dusk);
+  }
+  90% {
+    background-color: var(--dawn);
+  }
+  100% {
+    background-color: var(--night);
+  }
+}
+
+@keyframes billow {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) scale(1);
+  }
+  18% {
+    transform: rotateX(1deg) rotateY(2deg) scale(1.03);
+  }
+  32% {
+    transform: rotateX(-4deg) rotateY(-2deg) scale(0.96);
+  }
+  66% {
+    transform: rotateX(3deg) rotateY(-1deg) scale(1.04);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg) scale(1);
+  }
+}
+
+/* ==========================================
+   VISUAL EFFECTS
+   ========================================== */
+/* Dappled Light */
+#dappled-light {
+  pointer-events: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+/* Progressive Blur */
+#progressive-blur {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+#progressive-blur > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(var(--blur-amount));
+  -webkit-backdrop-filter: blur(var(--blur-amount));
+  mask-image: linear-gradient(
+    252deg,
+    transparent,
+    transparent var(--stop1),
+    black var(--stop2),
+    black
+  );
+  -webkit-mask-image: linear-gradient(
+    252deg,
+    transparent,
+    transparent var(--stop1),
+    black var(--stop2),
+    black
+  );
+}
+
+#progressive-blur > div:nth-child(1) {
+  --blur-amount: 8px;
+  --stop1: 0%;
+  --stop2: 0%;
+}
+
+#progressive-blur > div:nth-child(2) {
+  --blur-amount: 72px;
+  --stop1: 30%;
+  --stop2: 60%;
+}
+
+/* Glow Effects */
+#glow,
+#glow-bounce {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  transition: background var(--transition-slow) var(--timing);
+}
+
+#glow {
+  background: linear-gradient(
+    309deg,
+    var(--bounce-light),
+    var(--bounce-light) 20%,
+    transparent
+  );
+}
+
+#glow-bounce {
+  bottom: 0;
+  background: linear-gradient(
+    355deg,
+    var(--bounce-light) 0%,
+    transparent 30%,
+    transparent 100%
+  );
+}
+
+/* 3D Perspective */
+.perspective {
+  position: absolute;
+  top: -30vh;
+  right: 0;
+  width: 80vw;
+  height: 130vh;
+  opacity: 0.07;
+  background-blend-mode: darken;
+  transform-origin: top right;
+  transform-style: preserve-3d;
+  transform: matrix3d(
+    0.75,
+    -0.0625,
+    0,
+    0.0008,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+  );
+  transition: transform var(--transition-slower) var(--timing), opacity 4s ease;
+}
+
+.dark .perspective {
+  opacity: 0.3;
+  transform: matrix3d(
+    0.8333,
+    0.0833,
+    0,
+    0.0003,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+  );
+}
+
+/* Leaves */
+#leaves {
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  bottom: -20px;
+  right: -700px;
+  width: 1600px;
+  height: 1400px;
+  background-image: url("../images/leaves.webp");
+  perspective: 400px;
+  animation: billow 8s ease-in-out infinite;
+}
+
+/* Blinds */
+#blinds {
+  position: relative;
+  width: 100%;
+}
+
+#blinds .shutter,
+#blinds .bar {
+  background-color: var(--shadow);
+}
+
+#blinds > .shutters {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 60px;
+  transition: gap var(--transition-slow) var(--timing);
+}
+
+.dark #blinds > .shutters {
+  gap: 20px;
+}
+
+#blinds > .vertical {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.vertical > .bar {
+  width: 12px;
+  height: 100%;
+}
+
+.shutter {
+  width: 100%;
+  height: 40px;
+  transition: height var(--transition-slow) var(--timing);
+}
+
+.dark .shutter {
+  height: 80px;
+}
+
+/* ==========================================
+   RESPONSIVE STYLES
+   ========================================== */
 @media (min-width: 992px) {
   .navbar-custom {
     padding: 2.125rem 0;
@@ -232,346 +572,6 @@ a:hover.back-to-top {
   }
 }
 
-/* ==========================================
-	 COMPONENTS
-	 ========================================== */
-/* Cards */
-.card .card-img-overlay {
-  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-  background: rgba(59, 59, 59, 0.4);
-}
-
-.card:hover .card-img-overlay {
-  background: rgba(59, 59, 59, 0.089);
-}
-
-/* Video */
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* Footer */
-footer .btn-solid-reg {
-  width: 100%;
-}
-footer .social-icons ul li {
-  display: inline-block;
-  margin-left: 15px;
-}
-
-/* ==========================================
-	 THEME EFFECTS
-	 ========================================== */
-main {
-  margin: 0 auto;
-  isolation: isolate;
-}
-
-body {
-  /* Theme-specific variables */
-  --light: var(--day);
-  --dark: var(--night);
-  --shadow: #1a1917;
-  --bounce-light: #f5d7a6;
-
-  background-color: var(--light);
-  color: var(--dark);
-
-  animation-duration: 0s;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
-}
-
-body.animation-ready {
-  animation-play-state: running;
-  animation-duration: 1s;
-  animation-name: sunrise;
-}
-
-body.animation-ready.dark {
-  animation-duration: 1.7s;
-  animation-name: sunset;
-}
-
-body.dark {
-  --light: var(--night);
-  --dark: var(--day);
-  --shadow: #030307;
-  --bounce-light: #1b293f;
-  --highlight: var(--tertiary);
-}
-
-/* ==========================================
-	 ANIMATIONS
-	 ========================================== */
-@keyframes sunrise {
-  0% {
-    background-color: var(--night);
-  }
-  10% {
-    background-color: var(--dawn);
-  }
-  35% {
-    background-color: var(--morning);
-  }
-  100% {
-    background-color: var(--day);
-  }
-}
-
-@keyframes sunset {
-  0% {
-    background-color: var(--day);
-  }
-  30% {
-    background-color: var(--evening);
-  }
-  60% {
-    background-color: var(--dusk);
-  }
-  90% {
-    background-color: var(--dawn);
-  }
-  100% {
-    background-color: var(--night);
-  }
-}
-
-@keyframes billow {
-  0% {
-    transform: rotateX(0deg) rotateY(0deg) scale(1);
-  }
-
-  18% {
-    transform: rotateX(1deg) rotateY(2deg) scale(1.03);
-  }
-
-  32% {
-    transform: rotateX(-4deg) rotateY(-2deg) scale(0.96);
-  }
-
-  66% {
-    transform: rotateX(3deg) rotateY(-1deg) scale(1.04);
-  }
-
-  100% {
-    transform: rotateX(0deg) rotateY(0deg) scale(1);
-  }
-}
-
-/* ==========================================
-	 VISUAL EFFECTS
-	 ========================================== */
-/* Dappled Light */
-#dappled-light {
-  /* animation-duration: 0s;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear; */
-  pointer-events: none;
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  /* isolation: isolate; */
-}
-
-#progressive-blur {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-
-#progressive-blur > div {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  /* inset: 0; */
-  backdrop-filter: blur(var(--blur-amount));
-  -webkit-backdrop-filter: blur(var(--blur-amount));
-  mask-image: linear-gradient(
-    252deg,
-    transparent,
-    transparent var(--stop1),
-    black var(--stop2),
-    black
-  );
-  -webkit-mask-image: linear-gradient(
-    252deg,
-    transparent,
-    transparent var(--stop1),
-    black var(--stop2),
-    black
-  );
-  /* will-change: backdrop-filter; */
-}
-
-#progressive-blur > div:nth-child(1) {
-  --blur-amount: 8px;
-  --stop1: 0%;
-  --stop2: 0%;
-}
-
-#progressive-blur > div:nth-child(2) {
-  --blur-amount: 72px;
-  --stop1: 30%;
-  --stop2: 60%;
-}
-
-/* Glow Effects */
-#glow {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(
-    309deg,
-    var(--bounce-light),
-    var(--bounce-light) 20%,
-    transparent
-  );
-  transition: background 1s var(--timing);
-  opacity: 0.5;
-}
-
-#glow-bounce {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  bottom: 0;
-  background: linear-gradient(
-    355deg,
-    var(--bounce-light) 0%,
-    transparent 30%,
-    transparent 100%
-  );
-  transition: background 1s var(--timing);
-  opacity: 0.5;
-}
-
-/* 3D Perspective */
-.perspective {
-  position: absolute;
-  top: -30vh;
-  right: 0;
-  width: 80vw;
-  height: 130vh;
-  opacity: 0.07;
-  background-blend-mode: darken;
-  transform-origin: top right;
-  transform-style: preserve-3d;
-  transform: matrix3d(
-    0.75,
-    -0.0625,
-    0,
-    0.0008,
-    0,
-    1,
-    0,
-    0,
-    0,
-    0,
-    1,
-    0,
-    0,
-    0,
-    0,
-    1
-  );
-  transition: transform 1.7s var(--timing), opacity 4s ease;
-}
-
-.dark .perspective {
-  opacity: 0.3;
-  transform: matrix3d(
-    0.8333,
-    0.0833,
-    0,
-    0.0003,
-    0,
-    1,
-    0,
-    0,
-    0,
-    0,
-    1,
-    0,
-    0,
-    0,
-    0,
-    1
-  );
-}
-
-/* Leaves */
-#leaves {
-  position: absolute;
-  background-size: cover;
-  background-repeat: no-repeat;
-  bottom: -20px;
-  right: -700px;
-  width: 1600px;
-  height: 1400px;
-  background-image: url("../images/leaves.png");
-  perspective: 400px;
-  animation: billow 8s ease-in-out infinite;
-}
-
-/* Blinds */
-#blinds {
-  position: relative;
-  width: 100%;
-}
-
-#blinds .shutter,
-#blinds .bar {
-  background-color: var(--shadow);
-}
-
-#blinds > .shutters {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  gap: 60px;
-  transition: gap 1s var(--timing);
-}
-
-.dark #blinds > .shutters {
-  gap: 20px;
-}
-
-#blinds > .vertical {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.vertical > .bar {
-  width: 12px;
-  height: 100%;
-}
-
-.shutter {
-  width: 100%;
-  height: 40px;
-  transition: height 1s var(--timing);
-}
-
-.dark .shutter {
-  height: 80px;
-}
-
 @media (max-width: 800px) {
   #progressive-blur > div:nth-child(2) {
     --blur-amount: 36px;
@@ -580,4 +580,18 @@ body.dark {
   #leaves {
     right: -600px;
   }
+
+  .img-fluid {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.img-fluid {
+  margin-left: -25%;
+  margin-right: -25%;
+  width: 150%;
+  max-width: 150%;
 }

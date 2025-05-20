@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="white">
   <head>
+    <!-- Performance: Preload critical assets -->
     <link
       rel="preload"
       href="/assets/fonts/Thesignature.woff2"
@@ -9,10 +10,13 @@
       crossorigin
     />
 
-    <!-- Required meta tags -->
+    <!-- Core meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="John Choque" />
+    <!-- Theme color for browser UI -->
+    <meta name="theme-color" content="#274b75" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#151616" media="(prefers-color-scheme: dark)" />
 
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,15 +41,12 @@
       site.title }}{% endif %}
     </title>
 
+    <!-- Favicon: Add multiple formats for better device support -->
     <link rel="icon" href="/assets/images/favicon.ico" />
 
-    <!-- Stylesheets -->
+    <!-- Stylesheets: Optimize by combining font requests -->
     <link
-      href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700&subset=latin-ext&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Geist:400,700&subset=latin-ext&display=swap"
+      href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Geist:400,700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -80,14 +81,12 @@
     </script>
   </head>
 
-  <body id="body">
-    <a href="#main-content" class="skip-link visually-hidden"
-      >Skip to main content</a
-    >
+  <body id="body" class="animation-paused">
+    <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
 
     {% include bg.html %}
 
-    <main id="main-content" role="main">{{ content }}</main>
+    <main id="main-content" role="main" tabindex="-1">{{ content }}</main>
 
     <a
       href="#body"
@@ -122,8 +121,5 @@
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
     ></script>
     {% endif %}
-
-    <!-- Analytics (commented out in your original) -->
-    <!-- {% include analytics.html %} -->
   </body>
 </html>

@@ -2,26 +2,39 @@
 layout: default
 ---
 
-{% include navigation.html %}
-
-<div class="container-md">
-  <div class="row mb-4">
-    <div class="col-12 col-lg-8 ml-top-padding">
-      <div class="heading-title mb-5">
-        <h1>World</h1>
-        <p class="lead">Photos and videos I have taken throughout the world.</p>
-        <p>Here you will find all photos I don't post on social media as I'm trying to be more conscious about my data and privacy. While the work is not yet complete, I keep migrating my photos to platforms with less tracking, less algorithmic filtering, and less advertising.</p>
-        {% for item in site.pages %} {% assign item_crumbs = item.url |
-        remove_first: page.dir | split: '/' %} {% if item_crumbs.size == 2 and
-        item_crumbs.first == 'world' %}
-        <div class="row mb-3 mb-md-0">
-          <div class="col-12 col-md-3">{{ item.date | date: "%B, %Y" }}</div>
-          <div class="col">
-            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-          </div>
+<div class="container">
+  <div class="row ml-top-padding">
+    <div class="col-12 col-lg-3 text-start mb-5">
+      <a href="/"><i class="ri-arrow-left-line"></i><em>Home</em></a>
+    </div>
+    <div class="heading-title col-12 col-lg-6">
+      <header class="row align-items-start">
+        <div class="col">
+          <h1 class="h4 emphasis">Notes</h1>
         </div>
-        {% endif %} {% endfor %}
+        <div class="col-1 text-end">
+          <a class="page-scroll" href="#" id="btnSwitch"
+            ><i class="ri-moon-line"></i
+          ></a>
+        </div>
+      </header>
+      <p class="lead">Photos and videos I have taken throughout the world.</p>
+      <p>
+        Here you will find all photos I don't post on social media as I'm trying
+        to be more conscious about my data and privacy. While the work is not
+        yet complete, I keep migrating my photos to platforms with less
+        tracking, less algorithmic filtering, and less advertising.
+      </p>
+      {% for item in site.pages %} {% assign item_crumbs = item.url |
+      remove_first: page.dir | split: '/' %} {% if item_crumbs.size == 2 and
+      item_crumbs.first == 'world' %}
+      <div class="row mb-3 mb-md-0">
+        <div class="col-12 col-md-3">{{ item.date | date: "%B, %Y" }}</div>
+        <div class="col">
+          <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        </div>
       </div>
+      {% endif %} {% endfor %}
     </div>
   </div>
 </div>
