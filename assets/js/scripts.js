@@ -1,4 +1,4 @@
-// scripts.js - Improved while maintaining your existing logic
+// scripts.js - Unified theme system using only data-bs-theme attribute
 
 document.addEventListener('DOMContentLoaded', () => {
     'use strict';
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return window.matchMedia('(prefers-color-scheme: dark)').matches ? darkTheme : lightTheme;
         };
 
-        // Modified setTheme function to not add animation-ready on initial load
+        // Unified setTheme function - only uses data-bs-theme attribute
         const setTheme = (theme, animate = false) => {
             if (themeIcon) {
                 themeIcon.setAttribute('class', theme === darkTheme ? iconSunClass : iconMoonClass);
@@ -45,17 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 logo.setAttribute('src', theme === darkTheme ? "/assets/images/logo-d.svg" : "/assets/images/logo.svg");
             }
             
+            // Only set the data-bs-theme attribute on html element
             document.documentElement.setAttribute(dataBsThemeAttr, theme);
             
             // Only add animation-ready class if animate parameter is true
             if (animate) {
                 document.body.classList.add('animation-ready');
-            }
-            
-            if (theme === darkTheme) {
-                document.body.classList.add(darkTheme);
-            } else {
-                document.body.classList.remove(darkTheme);
             }
         };
 
@@ -64,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Button click with animation
         btnSwitch.addEventListener('click', () => {
-            const currentTheme = getPreferredTheme();
+            const currentTheme = document.documentElement.getAttribute(dataBsThemeAttr) || lightTheme;
             const newTheme = currentTheme === darkTheme ? lightTheme : darkTheme;
             setStoredTheme(newTheme);
             setTheme(newTheme, true); // Pass true to enable animation
@@ -160,30 +155,32 @@ function setupAccessibility() {
     });
 }
 
-// External toggle function - maintained for backward compatibility
+// Simplified external toggle function - now unified
 function toggle(theme) {
     document.body.classList.add('animation-ready');
-    document.body.classList.toggle('dark');
     
-    // Update data-bs-theme attribute to match body class
-    const isDark = document.body.classList.contains('dark');
-    document.documentElement.setAttribute('data-bs-theme', isDark ? 'dark' : 'white');
+    // Get current theme from html attribute
+    const currentTheme = document.documentElement.getAttribute('data-bs-theme') || 'white';
+    const newTheme = currentTheme === 'dark' ? 'white' : 'dark';
+    
+    // Set theme on html element only
+    document.documentElement.setAttribute('data-bs-theme', newTheme);
     
     // Store preference
-    localStorage.setItem('theme', isDark ? 'dark' : 'white');
+    localStorage.setItem('theme', newTheme);
     
     // Update icon if present
     const btnSwitch = document.getElementById('btnSwitch');
     if (btnSwitch) {
         const themeIcon = btnSwitch.querySelector('i');
         if (themeIcon) {
-            themeIcon.setAttribute('class', isDark ? 'ri-sun-line' : 'ri-moon-line');
+            themeIcon.setAttribute('class', newTheme === 'dark' ? 'ri-sun-line' : 'ri-moon-line');
         }
     }
     
     // Update logo if present
     const logo = document.getElementById('logo');
     if (logo) {
-        logo.setAttribute('src', isDark ? "/assets/images/logo-d.svg" : "/assets/images/logo.svg");
+        logo.setAttribute('src', newTheme === 'dark' ? "/assets/images/logo-d.svg" : "/assets/images/logo.svg");
     }
 }

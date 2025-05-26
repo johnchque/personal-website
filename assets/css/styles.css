@@ -38,7 +38,7 @@
   --bs-primary-rgb: 48, 127, 150;
 }
 
-/* Theme settings */
+/* Theme settings - UNIFIED SYSTEM */
 [data-bs-theme="white"] {
   --body-bg: #f9f9f9;
   --body-color: #111;
@@ -295,7 +295,7 @@ footer .social-icons ul li {
 }
 
 /* ==========================================
-   THEME EFFECTS & ANIMATIONS
+   THEME EFFECTS & ANIMATIONS - UNIFIED SYSTEM
    ========================================== */
 main {
   margin: 0 auto;
@@ -308,13 +308,15 @@ body {
   animation-timing-function: linear;
 }
 
-body.animation-ready {
+/* Animation ready states - target html element instead of body */
+[data-bs-theme="white"] body.animation-ready {
   animation-play-state: running;
   animation-duration: 1s;
   animation-name: sunrise;
 }
 
-body.animation-ready.dark {
+[data-bs-theme="dark"] body.animation-ready {
+  animation-play-state: running;
   animation-duration: 1.7s;
   animation-name: sunset;
 }
@@ -371,7 +373,7 @@ body.animation-ready.dark {
 }
 
 /* ==========================================
-   VISUAL EFFECTS
+   VISUAL EFFECTS - UNIFIED SYSTEM
    ========================================== */
 /* Dappled Light */
 #dappled-light {
@@ -451,7 +453,7 @@ body.animation-ready.dark {
   );
 }
 
-/* 3D Perspective */
+/* 3D Perspective - UNIFIED SYSTEM */
 .perspective {
   position: absolute;
   top: -30vh;
@@ -483,7 +485,7 @@ body.animation-ready.dark {
   transition: transform var(--transition-slower) var(--timing), opacity 4s ease;
 }
 
-.dark .perspective {
+[data-bs-theme="dark"] .perspective {
   opacity: 0.3;
   transform: matrix3d(
     0.8333,
@@ -519,7 +521,7 @@ body.animation-ready.dark {
   animation: billow 8s ease-in-out infinite;
 }
 
-/* Blinds */
+/* Blinds - UNIFIED SYSTEM */
 #blinds {
   position: relative;
   width: 100%;
@@ -538,7 +540,7 @@ body.animation-ready.dark {
   transition: gap var(--transition-slow) var(--timing);
 }
 
-.dark #blinds > .shutters {
+[data-bs-theme="dark"] #blinds > .shutters {
   gap: 20px;
 }
 
@@ -562,7 +564,7 @@ body.animation-ready.dark {
   transition: height var(--transition-slow) var(--timing);
 }
 
-.dark .shutter {
+[data-bs-theme="dark"] .shutter {
   height: 80px;
 }
 
