@@ -1,5 +1,3 @@
-// scripts.js - Unified theme system using only data-bs-theme attribute
-
 document.addEventListener('DOMContentLoaded', () => {
     'use strict';
 
@@ -24,19 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const getStoredTheme = () => localStorage.getItem(themeKey);
         const setStoredTheme = theme => localStorage.setItem(themeKey, theme);
         
-        // Check for OS preference if no stored theme
-        const getPreferredTheme = () => {
-            const storedTheme = getStoredTheme();
-            if (storedTheme) {
-                return storedTheme;
-            }
-            
-            // Check for OS preference
-            return window.matchMedia('(prefers-color-scheme: dark)').matches ? darkTheme : lightTheme;
+        // Get current theme (already set by the anti-flash script)
+        const getCurrentTheme = () => {
+            return document.documentElement.getAttribute(dataBsThemeAttr) || lightTheme;
         };
 
-        // Unified setTheme function - only uses data-bs-theme attribute
-        const setTheme = (theme, animate = false) => {
+        // Update UI elements to match current theme (called on page load)
+        const syncUIWithTheme = (theme, animate = false) => {
             if (themeIcon) {
                 themeIcon.setAttribute('class', theme === darkTheme ? iconSunClass : iconMoonClass);
             }
@@ -45,30 +37,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 logo.setAttribute('src', theme === darkTheme ? "/assets/images/logo-d.svg" : "/assets/images/logo.svg");
             }
             
-            // Only set the data-bs-theme attribute on html element
-            document.documentElement.setAttribute(dataBsThemeAttr, theme);
-            
             // Only add animation-ready class if animate parameter is true
             if (animate) {
                 document.body.classList.add('animation-ready');
             }
         };
 
-        // Initial theme setting without animation
-        setTheme(getPreferredTheme(), false);
+        // Set theme and update UI
+        const setTheme = (theme, animate = false) => {
+            // Set the theme attribute
+            document.documentElement.setAttribute(dataBsThemeAttr, theme);
+            
+            // Update UI elements
+            syncUIWithTheme(theme, animate);
+            
+            // Store the preference
+            setStoredTheme(theme);
+        };
+
+        // Initialize UI to match the current theme (set by anti-flash script)
+        const currentTheme = getCurrentTheme();
+        syncUIWithTheme(currentTheme, false);
 
         // Button click with animation
         btnSwitch.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute(dataBsThemeAttr) || lightTheme;
+            const currentTheme = getCurrentTheme();
             const newTheme = currentTheme === darkTheme ? lightTheme : darkTheme;
-            setStoredTheme(newTheme);
             setTheme(newTheme, true); // Pass true to enable animation
         });
         
         // Listen for OS theme changes
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
             if (!getStoredTheme()) { // Only auto-switch if user hasn't set preference
-                setTheme(event.matches ? darkTheme : lightTheme, true);
+                const newTheme = event.matches ? darkTheme : lightTheme;
+                setTheme(newTheme, true);
             }
         });
     }
@@ -155,7 +157,7 @@ function setupAccessibility() {
     });
 }
 
-// Simplified external toggle function - now unified
+// External toggle function - maintained for backward compatibility
 function toggle(theme) {
     document.body.classList.add('animation-ready');
     
@@ -163,7 +165,7 @@ function toggle(theme) {
     const currentTheme = document.documentElement.getAttribute('data-bs-theme') || 'white';
     const newTheme = currentTheme === 'dark' ? 'white' : 'dark';
     
-    // Set theme on html element only
+    // Set theme on html element
     document.documentElement.setAttribute('data-bs-theme', newTheme);
     
     // Store preference
