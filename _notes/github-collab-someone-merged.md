@@ -11,7 +11,9 @@ For example, it could be the case that you are developing a feature for 2 weeks.
 1. Your code can be merged BUT latest changes in develop may cause unintended consequences in your branch.
 	- It could be the case that if you have previews for each branch, your preview may not contain the latest changes from develop and may confuse the quality assurance team.
 2. Your code cannot be merged because there are conflicts. That would happen because your branch and the latest merged feature branch, made changes in the same files, so GitHub does not know how to mix both fixes.
+
 This short guide will cover the first case.
+
 ### Code can be merged but possible unintended consequences
 Imagine that you are working on a login page for your platform. Your task was to implement an automatic scrolling with a button. However, another team mate had implement a parallax effect in the same page. If you don't rebase your branch and merge directly into develop, you may end up realising that your scrolling does not work along the parallax effect that was just introduced.
 

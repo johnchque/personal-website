@@ -86,6 +86,38 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block; /* Ensure no font swap */
+  src: url('../fonts/libre-baskerville-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url('../fonts/libre-baskerville-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('../fonts/geist-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url('../fonts/geist-700.woff2') format('woff2');
+}
+
 body,
 html {
   width: 100%;
