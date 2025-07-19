@@ -29,11 +29,12 @@ layout: default
       remove_first: page.dir | split: '/' %} {% if item_crumbs.size == 2 and
       item_crumbs.first == 'world' %}
       <div class="row mb-3 mb-md-0">
-        <div class="col-12 col-md-3">
-          {{ item.date | date: "%B, %Y" }}
-        </div>
+        
         <div class="col">
           <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        </div>
+        <div class="col-auto">
+          {{ item.date | date: "%B, %Y" }}
         </div>
       </div>
       {% endif %} {% endfor %}

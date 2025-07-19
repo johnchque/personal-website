@@ -26,8 +26,7 @@ title: Notes
           href="https://stackingthebricks.com/how-blogs-broke-the-web/"
           target="_blank"
           >ruined the fun web</a
-        >. If you want to see my personal Table of Contents, check
-        <a href="/notes/toc">here</a>.
+        >.
       </p>
       <p>
         However, in this page you can see a list of all my public notes sorted
@@ -40,19 +39,26 @@ title: Notes
         refining my notes and publish the ones the are the most relevant.
       </p>
       <div class="related-wrapper">
-        {% assign note_items = site.notes | sort: "date" | reverse %} {% for
-        note_items in note_items %}
-        <div class="row mb-3 mb-md-0">
-          <div class="col-12 col-md-3">
-            {{ note_items.date | date: "%B %d, %Y" }}
+        {% assign note_items = site.notes | sort: "date" | reverse %} {% assign
+        notes_by_year = note_items | group_by_exp: "item", "item.date | date:
+        '%Y'" %} {% for year_group in notes_by_year %}
+        <div class="year-group mb-4 position-relative">
+          <div class="year-heading year text-muted mb-3">{{ year_group.name }}</div>
+          {% for note_item in year_group.items %}
+          <div class="row mb-3 mb-md-0">
+            <div class="col">
+              
+              <a href="{{ note_item.url | relative_url }}"
+                >{{ note_item.title }}</a
+              >
+            </div>
+            <div class="col-auto text-end text-muted">
+              {{ note_item.date | date: "%B %d" }}
+            </div>
           </div>
-          <div class="col">
-            <a href="{{ note_items.url | relative_url }}"
-              >{{ note_items.title }}</a
-            >
-          </div>
+          {% endfor %}
         </div>
-        {%- endfor -%}
+        {% endfor %}
       </div>
     </div>
   </div>

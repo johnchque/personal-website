@@ -1,40 +1,62 @@
 ---
 layout: default
+title: Projects
 ---
 
-{% include navigation.html %}
+<div class="container">
+  <div class="row justify-content-start mb-4 ml-top-padding">
+    <div class="col-12 col-lg-3 text-start mb-5">
+      <a href="/"><i class="ri-arrow-left-line"></i><em>Home</em></a>
+    </div>
+    <div class="heading-title col-12 col-lg-6">
+      <header class="row align-items-start">
+        <div class="col">
+          <h1>Projects</h1>
+        </div>
+        <div class="col-1 text-end">
+          <a class="page-scroll" href="#" id="btnSwitch"
+            ><i class="ri-moon-line"></i
+          ></a>
+        </div>
+      </header>
+      <p class="lead">
+        A consolidated list of all the things I created along the years.
+      </p>
+      <p>
+        The projects listed here have multiple shapes and forms, with different
+        collaborators and purposes. They go from making a music video for a
+        friend to having my own startup.
+      </p>
+      <p>
+        I love building and creating things. That's why the list you see here is
+        diverse in nature. I always love to explore new knowledge areas and even
+        better if they are outside my common expertise.
+      </p>
+      <div class="related-wrapper">
+        {% assign project_items = site.projects | sort: "date" | reverse %} {%
+        assign notes_by_year = project_items | group_by_exp: "item", "item.date
+        | date: '%Y'" %} {% for year_group in notes_by_year %}
+        <div class="year-group mb-4 position-relative">
+          <div class="year-heading year text-muted mb-3">
+            {{ year_group.name }}
+          </div>
+          {% for project_item in year_group.items %}
+          <div class="row mb-3 mb-md-0">
+            <div class="col">
+              <a href="{{ project_item.url | relative_url }}"
+                >{{ project_item.title }}</a
+              >
 
-<div class="container-md">
-  <div class="row justify-content-center mb-4">
-    <div class="col-12 ml-top-padding">
-      <h1>Projects</h1>
-      {% assign projects_by_year = site.projects | sort: 'date' | reverse %} {%
-      assign years = "" %} {% for project in projects_by_year %} {% assign year
-      = project.date | date: "%Y" %} {% unless years contains year %} {% assign
-      years = years | append: year | append: "," %} {% endunless %} {% endfor %}
-      {% assign years = years | split: "," | sort | reverse %} {% for year in
-      years %} {% unless year == "" %}
-      <h3>{{ year }}</h3>
-      <div class="row">
-        {% for project in projects_by_year %} {% assign project_year =
-        project.date | date: "%Y" %} {% if project_year == year %}
-
-        <a
-          href="{{ project.url | relative_url }}"
-          class="col-12 col-sm-6 col-lg-4 mb-4 text-decoration-none"
-        >
-          <img
-            class="card-img-top mb-2 rounded"
-            src="{{ project.thumbnail }}"
-            alt="Card image top"
-          />
-          <div class="text-decoration-underline">{{ project.title }}</div>
-          <div class="text-secondary">{{ project.category }}</div>
-          <div class="text-primary fst-italic small">{{ project.type }}</div>
-        </a>
-        {% endif %} {% endfor %}
+              <p>{{ project_item.description }}</p>
+            </div>
+            <div class="col-auto text-end text-muted">
+              {{ project_item.date | date: "%B %d" }}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endfor %}
       </div>
-      {% endunless %} {% endfor %}
     </div>
   </div>
 </div>

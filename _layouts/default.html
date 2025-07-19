@@ -3,18 +3,20 @@
   <head>
     <!-- CRITICAL: Anti-flash script - must be first in head -->
     <script>
-      (function() {
+      (function () {
         // Get stored theme or system preference immediately
         const getInitialTheme = () => {
-          const stored = localStorage.getItem('theme');
+          const stored = localStorage.getItem("theme");
           if (stored) return stored;
-          
-          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'white';
+
+          return window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "white";
         };
-        
+
         // Set theme immediately to prevent flash
         const theme = getInitialTheme();
-        document.documentElement.setAttribute('data-bs-theme', theme);
+        document.documentElement.setAttribute("data-bs-theme", theme);
       })();
     </script>
 
@@ -46,8 +48,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="John Choque" />
     <!-- Theme color for browser UI -->
-    <meta name="theme-color" content="#274b75" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#151616" media="(prefers-color-scheme: dark)" />
+    <meta
+      name="theme-color"
+      content="#274b75"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#151616"
+      media="(prefers-color-scheme: dark)"
+    />
 
     <!-- Preconnect only to CDNs we still use -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
@@ -91,13 +101,13 @@
 
     <link
       rel="preload"
-      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript>
       <link
-        href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
         rel="stylesheet"
       />
     </noscript>
@@ -126,7 +136,9 @@
   </head>
 
   <body id="body" class="animation-paused">
-    <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
+    <a href="#main-content" class="skip-link visually-hidden-focusable"
+      >Skip to main content</a
+    >
 
     {% include bg.html %}
 

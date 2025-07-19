@@ -5,6 +5,7 @@ date: 2025-05-28
 updated: 2025-05-28
 description: A log of things I'm learning to build strong core software engineering skills.
 ---
+
 ## Frontend
 ### NextJS
 
@@ -33,5 +34,6 @@ description: A log of things I'm learning to build strong core software engineer
 |                                               |              |                                                                                     |                                       |
 |                                               |              |                                                                                     |                                       |
 |                                               |              |                                                                                     |                                       |
+
 ## Deep Learning
 @TODO

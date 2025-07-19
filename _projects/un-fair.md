@@ -1,8 +1,8 @@
 ---
 layout: project
-title: '"Un-fair" by Vishay khxl'
+title: '"Un-fair" music video'
 date: 2023-05-05
-description: "A video production."
+description: "Video production for the song 'Un-fair' by Vishay Khxl."
 thumbnail: /assets/images/portfolio/video/music_video_unfair.jpg
 category: Video Production
 ---

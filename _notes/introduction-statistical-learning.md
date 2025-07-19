@@ -3,7 +3,8 @@ layout: notes
 title: An introduction to Statistical Learning
 date: 2025-05-27
 updated: 2025-05-27
-description: A book by Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani, and Jonathan Taylor. 
+description: A book by Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani, and Jonathan Taylor.
+category: Learning
 ---
 - Statistical learning refers to a set of tools to understand data.
 - Supervised statistical learning invlves building a model for predicting or estimating an output based on inputs.

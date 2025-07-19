@@ -1,8 +1,8 @@
 ---
 layout: project
-title: '"Subconscious Fallout"'
+title: '"Subconscious Fallout" album'
 date: 2023-03-03
-description: "A music album with @vishaykhxl."
+description: "Music album mixing rap and metal."
 thumbnail: /assets/images/portfolio/cover_design_music.jpg
 category: Music Album
 ---

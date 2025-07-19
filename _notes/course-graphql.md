@@ -4,6 +4,7 @@ title: My GraphQL notes
 date: 2023-12-27
 updated: 2023-12-27
 description: Notes from the @NetNinja course in YouTube.
+category: Learning
 ---
 
 https://www.youtube.com/watch?v=xMCnDesBggM&list=PL4cUxeGkcC9gUxtblNUahcsg0WLxmrK_y

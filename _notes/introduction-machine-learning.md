@@ -4,6 +4,7 @@ title: Introduction to Machine Learning by Andrew Ng
 date: 2022-10-13
 updated: 2025-05-27
 description: My notes for the Introduction to Machine Learning course by Andrew Ng.
+category: Learning
 ---
 [YouTube Playlist](https://www.youtube.com/playlist?list=PLiPvV5TNogxIS4bHQVW4pMkj4CHA8COdX)
 

@@ -4,6 +4,7 @@ title: My ReactJS notes
 date: 2024-01-01
 updated: 2024-01-01
 description: Notes from the @NetNinja course in YouTube.
+category: Learning
 ---
 
 ## Create a React Application

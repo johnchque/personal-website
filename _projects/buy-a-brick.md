@@ -1,9 +1,9 @@
 ---
 layout: project
-title: '"Buy a Brick" Donation Campaign'
+title: '"Buy a Brick" donation campaign'
 date: 2023-11-01
 updated: 2023-12-08
-description: "A video production with Station - The student and innovation house."
+description: "Video production for Station, the student and innovation house."
 thumbnail: /assets/images/portfolio/cover_video_campaigns.jpg
 category: Video Production
 type: Project

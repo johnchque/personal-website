@@ -605,6 +605,12 @@ body {
     aspect-ratio: 3/4;
     object-fit: cover;
   }
+
+
+.year-group .year {
+  left: -10rem;
+  position: absolute;
+}
 }
 
 @media (min-width: 1200px) {

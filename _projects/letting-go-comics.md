@@ -3,7 +3,7 @@ layout: project
 title: "Letting Go Comics"
 date: 2021-03-26
 updated: 2021-05-24
-description: "Doodles for a healing heart."
+description: "Series of web comics for a healing heart."
 thumbnail: /assets/images/experience/letting-go-comics.png
 type: Project
 category: Web Comic

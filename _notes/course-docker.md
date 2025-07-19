@@ -4,6 +4,7 @@ title: My Docker notes
 date: 2023-12-23
 updated: 2023-12-23
 description: Notes from the @NetNinja course in YouTube.
+category: Learning
 ---
 
 https://www.youtube.com/watch?v=31ieHmcTUOk&list=PL4cUxeGkcC9hxjeEtdHFNYMtCpjNBm3h7&index=1
