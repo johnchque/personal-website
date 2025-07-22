@@ -87,35 +87,35 @@
 }
 
 @font-face {
-  font-family: 'Libre Baskerville';
+  font-family: "Libre Baskerville";
   font-style: normal;
   font-weight: 400;
   font-display: block; /* Ensure no font swap */
-  src: url('../fonts/libre-baskerville-400.woff2') format('woff2');
+  src: url("../fonts/libre-baskerville-400.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Libre Baskerville';
+  font-family: "Libre Baskerville";
   font-style: normal;
   font-weight: 700;
   font-display: block;
-  src: url('../fonts/libre-baskerville-700.woff2') format('woff2');
+  src: url("../fonts/libre-baskerville-700.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Geist';
+  font-family: "Geist";
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url('../fonts/geist-400.woff2') format('woff2');
+  src: url("../fonts/geist-400.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Geist';
+  font-family: "Geist";
   font-style: normal;
   font-weight: 700;
   font-display: block;
-  src: url('../fonts/geist-700.woff2') format('woff2');
+  src: url("../fonts/geist-700.woff2") format("woff2");
 }
 
 body,
@@ -139,12 +139,24 @@ h6 {
   color: var(--highlight);
 }
 
-h1 { font-size: 1.75rem; }
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1.25rem; }
-h4 { font-size: 1.125rem; }
-h5 { font-size: 1rem; }
-h6 { font-size: 0.875rem; } 
+h1 {
+  font-size: 1.75rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 1.125rem;
+}
+h5 {
+  font-size: 1rem;
+}
+h6 {
+  font-size: 0.875rem;
+}
 
 a {
   color: rgba(var(--bs-link-color-rgb));
@@ -606,11 +618,10 @@ body {
     object-fit: cover;
   }
 
-
-.year-group .year {
-  left: -10rem;
-  position: absolute;
-}
+  .year-group .year {
+    left: -10rem;
+    position: absolute;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -620,6 +631,10 @@ body {
 }
 
 @media (max-width: 800px) {
+  .ml-top-padding {
+    padding-top: 40px;
+  }
+
   #progressive-blur > div:nth-child(2) {
     --blur-amount: 36px;
   }
