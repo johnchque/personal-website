@@ -1,6 +1,6 @@
 ---
 layout: notes
-title: Course: React Hooks by Codevolution
+title: "Course: React Hooks by Codevolution"
 date: 2025-05-01
 updated: 2025-07-22
 description: Notes from the Codevolution course in YouTube.
