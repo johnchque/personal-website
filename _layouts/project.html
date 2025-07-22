@@ -2,23 +2,34 @@
 layout: default
 ---
 
-{% include navigation.html %}
-
 <!-- Blog Detail Start -->
 
-<div class="container-md">
-  <div class="row">
-    <div class="col-12 ml-top-padding">
-      <div class="heading-title mb-5">
-        <a href="/projects"> <i class="ri-arrow-left-line"></i>Projects</a>
-        <h1>{{ page.title }}</h1>
-        <p class="lead text-muted">{{ page.description }}</p>
-        <p class="text-muted">
-          Last updated: {{ page.updated | date: "%B %-d, %Y" }} • Planted: {{
-          page.date | date: "%B %-d, %Y" }}
-        </p>
-      </div>
-      <section class="content">{{content}}</section>
+<div class="container">
+  <div class="row ml-top-padding">
+    <div class="col-12 col-lg-3 text-start mb-5">
+      <a href="/projects" class="notes-back-link">
+        <i class="ri-arrow-left-line mb-2"></i><em>Projects</em>
+      </a>
     </div>
+
+    <article class="heading-title col-12 col-lg-6">
+      <header class="d-flex justify-content-between align-items-start">
+        <h1>{{ page.title }}</h1>
+        <a
+          href="#"
+          class="theme-toggle"
+          id="btnSwitch"
+          aria-label="Toggle dark mode"
+        >
+          <i class="ri-moon-line"></i>
+        </a>
+      </header>
+
+      {% if page.description %}
+      <p class="lead text-muted mb-4">{{ page.description }}</p>
+      {% endif %}
+
+      <section>{{content}}</section>
+    </article>
   </div>
 </div>

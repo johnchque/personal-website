@@ -39,8 +39,8 @@ title: Notes
         refining my notes and publish the ones the are the most relevant.
       </p>
       <div class="related-wrapper">
-        {% assign note_items = site.notes | sort: "date" | reverse %} {% assign
-        notes_by_year = note_items | group_by_exp: "item", "item.date | date:
+        {% assign note_items = site.notes | sort: "updated" | reverse %} {% assign
+        notes_by_year = note_items | group_by_exp: "item", "item.updated | date:
         '%Y'" %} {% for year_group in notes_by_year %}
         <div class="year-group mb-4 position-relative">
           <div class="year-heading year text-muted mb-3">{{ year_group.name }}</div>
@@ -53,7 +53,7 @@ title: Notes
               >
             </div>
             <div class="col-auto text-end text-muted">
-              {{ note_item.date | date: "%B %d" }}
+              {{ note_item.updated | date: "%B %d" }}
             </div>
           </div>
           {% endfor %}

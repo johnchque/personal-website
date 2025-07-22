@@ -28,9 +28,11 @@ category: Learning
 	- Hooks avoid the confusion with the this keyword.
 	- Hooks allow to reuse stateful logic.
 	- Hooks organise logic inside a component into reusable units.
+
 ## useState
 - Allows to use state within functional components.
 - A simple counter
+
 ```js
 function HookCounter() {
 	// Array destructuring.
@@ -47,8 +49,10 @@ function HookCounter() {
 
 export default HookCounter;
 ```
+
 - When the component renders a state variable is created and initialised with the default value.
 - The default value is never used in rerenders.
+
 ### Rules of hooks
 - Only call hooks at the top level.
 - Don't call hooks inside loops, conditions, or nested functions.
@@ -56,6 +60,7 @@ export default HookCounter;
 
 ## useState with previous state
 - A counter for incrementing, decrementing and resetting.
+
 ```js
 function HookCounter() {
 	const initialCount = 0;
@@ -77,14 +82,18 @@ function HookCounter() {
 
 export default HookCounter;
 ```
+
 - Not the right way to increase value, it is not safe.
 - Add a button to increment the value by 5
+
 ```js
 const incrementFive = () => {
 	setCount(prevCount => prevCount + 5);
 }
 ```
+
 - When we need to update a state value based on the previous value, pass a function that will set the new state value.
+
 ```js
 function HookCounter() {
 	const initialCount = 0;
@@ -109,12 +118,15 @@ function HookCounter() {
 
 export default HookCounter;
 ```
+
 - This approach is more safe because:
 	- Since state updates are async, then setCount(count + 5) would use the current value of count at the time of rendering. Not necessarily the most recent value.
 	- If multiple states updates are made, the first approach may end up using stale values.
 - Functional updates ensure we are always using the most current state value.
 - The second approach is preferred to state updates that depend on the previous value.
+
 ## useState with object
+
 ```js
 function HookCounter() {
 	const [name, setName] = useState({firstName: '', lastName: ''});
@@ -133,10 +145,13 @@ function HookCounter() {
 
 export default HookCounter;
 ```
+
 - The default value is an object.
 - A state variable can be string, number. boolean, object, or an array.
 - Spread name and override what you need to.
+
 ## useState with array
+
 ```js
 function HookCounter() {
 	const [items, setItems] = useState([]);
@@ -164,12 +179,16 @@ function HookCounter() {
 
 export default HookCounter;
 ```
+
 - The useState hook adds state to functional components.
 - The useState hook returns an array with 2 elements, the current value and the setter for it.
+
 ## useEffect
 - Let's us perform side effects in functional components.
 - A replacement for componentDitMount, componentDidUpdate, and componentWillUnmount.
+
 ## useEffect after render
+
 ```js
 function HookCounter() {
 	const [count, setCount] = useState(0);
@@ -190,11 +209,14 @@ function HookCounter() {
 
 export default HookCounter;
 ```
+
 - useEffect is executed after every render.
 - We are asking react to execute the method we are passing as a parameter to run every time the component renders.
 - It runs in every render and the first time.
 - useEffect should be placed inside the component.
+
 ## Conditionally run effects
+
 ```js
 function HookCounter() {
 	const [count, setCount] = useState(0);
@@ -217,9 +239,12 @@ function HookCounter() {
 
 export default HookCounter;
 ```
+
 - In the array we need to watch for prop or state. If those changes then the effect will be executed.
 - If we want to execute only when the count changes, we add it to the dependency.
+
 ## Run effects only once
+
 ```js
 function HookCounter() {
 	const [x, setX] = useState(0);
@@ -249,11 +274,13 @@ function HookCounter() {
 
 export default HookCounter;
 ```
+
 - With this, the effect does not depend or props or state. So no reason to call this effect on rerenders.
 - This replaces componentDidMount.
+
 ## useEffect with cleanup
-https://www.youtube.com/watch?v=DTlmk6QeOHY&list=PLC3y8-rFHvwisvxhZ135pogtX7_Oe3Q3A&index=10
 - Replaces componentDidMount from class components.
+
 ```js
 function HookCounter() {
 	const [display, setDisplay] = useState(true);
@@ -268,9 +295,11 @@ function HookCounter() {
 
 export default HookCounter;
 ```
+
 - Even when the component is removed, the component listener that belongs to the component is still listening and executing.
 - *Warning: Can't perform a React state update on an unmounted component.*
 - The returned function will be executed when the component will unmount.
+
 ```js
 	...
 	useEffect(() => {
@@ -284,8 +313,11 @@ export default HookCounter;
 	}, []);
 	...
 ```
+
 - The cleanup code can be cancelling subscriptions, timers, or removing event handlers.
+
 ## useEffect with incorrect dependency
+
 ```js
 function HookCounter() {
 	const [count, setCount] = useState(0);
@@ -310,9 +342,11 @@ function HookCounter() {
 
 export default HookCounter;
 ```
+
 - Dependency array should be thought of as a way to let React know about everything the effect must watch for changes.
 - With an empty array we told React to ignore watching for changes.
 - With count as a dependency, we get the expected result.
+
 ```js
 function HookCounter() {
 	const [count, setCount] = useState(0);
@@ -337,9 +371,11 @@ function HookCounter() {
 
 export default HookCounter;
 ```
+
 - Since setCount keeps track of the previous count value, we don't need count as a dependency of the effect.
 - Sometimes we want to call a function inside useEffect.
 - When we do that, we can forget that someProp is a dependency.
+
 ```js
 function HookCounter() {
 	const [count, setCount] = useState(0);
@@ -368,9 +404,12 @@ function HookCounter() {
 
 export default HookCounter;
 ```
+
 - When you need a function that needs to be called inside useEffect is better to define it INSIDE useEffect.
 	- Actual issue is not with Closure, but with how states are managed by React. Closure means that the inner (child) function has access to the outer (parent) function's variables, even after the outer function has finished executing. Importantly, this access is through a reference, meaning the function should always have access to the latest values. Therefore, closure alone cannot be the reason why tick has access to stale values. In React, however, state is immutable. When the setter function (setCount) is called, React creates a new state value rather than modifying the existing one. In our example, we are never actually changing the value of the initial count state (the one captured by tick). Instead, React is creating a new state instance. As a result, even though closures ensure that functions retain a reference to variables, tick continues to reference the original state value from when it was first created. The actual issue is not that the value is stale, but that the reference itself is stale.
+
 ## Fetching data with useEffect
+
 ```
 npm install axios
 ```
@@ -407,6 +446,7 @@ export default HookCounter;
 ```
 
 How to fetch individual posts?
+
 ```js
 function DataFetching() {
 
@@ -436,6 +476,7 @@ export default HookCounter;
 ```
 
 How to trigger a request on a button click?
+
 ```js
 function DataFetching() {
 
