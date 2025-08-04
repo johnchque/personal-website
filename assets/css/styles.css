@@ -6,7 +6,7 @@
   --day: #fffdfa;
   --evening: #fccc83;
   --dusk: #db7a2a;
-  --night: #151616;
+  --night: #111111;
   --dawn: #1f1d2c;
   --morning: #9fb3bf;
 
@@ -107,7 +107,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("../fonts/geist-400.woff2") format("woff2");
+  src: url("../fonts/Inter_18pt-Regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -115,7 +115,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: block;
-  src: url("../fonts/geist-700.woff2") format("woff2");
+  src: url("../fonts/Inter_18pt-Bold.woff2") format("woff2");
 }
 
 body,
@@ -161,6 +161,7 @@ h6 {
 a {
   color: rgba(var(--bs-link-color-rgb));
   transition: var(--transition-fast);
+  text-decoration: none;
 }
 
 a:hover {
@@ -632,7 +633,7 @@ body {
 
 @media (max-width: 800px) {
   .ml-top-padding {
-    padding-top: 40px;
+    padding-top: 60px;
   }
 
   #progressive-blur > div:nth-child(2) {

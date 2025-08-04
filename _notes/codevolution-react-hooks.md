@@ -513,3 +513,149 @@ export default HookCounter;
 
 ## useContext
 https://www.youtube.com/watch?v=CI7EYWmRDJE&list=PLC3y8-rFHvwisvxhZ135pogtX7_Oe3Q3A&index=15
+
+- In a react application with a lot of components with different levels.
+- The requirement would be that the deep nested components need to show the username.
+- To do so we would pass down the state as a prop.
+- Context provides a way to pass data through the component tree without having to pass manually props to all levels.
+- There are 3 steps to implement Context.
+- 1. Implement it in the App component.
+
+```js
+// App.js
+export const UserContext = React.createContext();
+```
+
+
+- Second step is to provide this context with a value.
+	- This provider must wrap the children components for the value to be available.
+
+```ts
+// App.js
+<UserContext.Provider value={"John"}>
+	<ComponentExample />
+</UserContext.Provider>
+```
+
+- 3. The third step is to consume the context value.
+	- We have to make use of the render props pattern.
+	- The context provides use with the username.
+
+```ts
+// ComponentExample.js
+import {UserContext} from "../App";
+
+function ComponentExample() {
+	return (
+		<div>
+			<UserContext.Consumer>
+				{
+					user => {
+						return <div>User: {user}</div>
+					}
+				}
+			</UserContext.Consumer>
+		</div>
+	)
+}
+```
+
+- What happens with more Context values.
+
+```ts
+// App.js
+<UserContext.Provider value={"John"}>
+	<ChannelContext.Provider value={"Example"}>
+		<ComponentExample />
+	</ChannelContext.Provider>
+</UserContext.Provider>
+```
+
+```ts
+// ComponentExample.js
+import {UserContext} from "../App";
+import {ChannelContext} from "../App";
+
+function ComponentExample() {
+	return (
+		<div>
+			<UserContext.Consumer>
+				{
+					user => {
+						return (
+							<ChannelContext.Consumer>
+								{
+									channel => {
+										return <div>User: {user}, {channel}</div>
+									}
+								}
+							</ChannelContext.Consumer>
+						)
+					}
+				}
+			</UserContext.Consumer>
+		</div>
+	)
+}
+```
+
+- What is a better way to consume these values? The useContext hook.
+- The first 2 steps remain the same. The hook only makes it easier to consumer the context values.
+
+```ts
+// ComponentExample.js
+import React, {useContext} from "react";
+import {UserContext, ChannelContext} from "../App";
+
+function ComponentExample() {
+
+	const user = useContext(UserContext);
+	const channel = useContext(ChannelContext);
+
+	return (
+		<div>
+			{user} - {channel}
+		</div>
+	)
+}
+```
+
+## useReducer
+- It is a hook used for state management. It is an alternative to useState.
+- useReduce was used to build useState. It is more primitive.
+- Reducers
+	- Let's say we have an array of 4 elements.
+	- Then we have a reducer that gets 2 parameters and sums them both.
+	- A reducer gets 2 parameters, does some operation and returns them as a single value.
+	- useReducer(reducer, initialState);
+- Let's implement a counter.
+
+```ts
+function App() {
+	return <div className="App">
+	</div>
+}
+```
+
+```ts
+// CounterOne.ts
+
+const initialState = 0;
+const reducer (state, action) => {
+	
+	return newState;
+}
+
+function CounterOne() {
+	useReducer(reducer, initialState);
+	return (
+		<div>
+			<button>Increment</button>
+			<button>Decrement</button>
+			<button>Reset</button>
+		</div>
+	)
+}
+```
+
+- Action is an instruction to the reducer function.
