@@ -6,5 +6,3 @@ description: "A book to help cis men to create their own pro-feminist groups."
 thumbnail: /assets/images/portfolio/video/music_video_unfair.jpg
 category: Video Production
 ---
-
-{% include youtube_player.html id='hzd-6uAiY1M' %}
