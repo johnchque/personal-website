@@ -1,12 +1,12 @@
 ---
 layout: notes
-title: My ReactJS notes
+title: Full React Course by Nentninja
 date: 2024-01-01
 updated: 2024-01-01
 description: Notes from the @NetNinja course in YouTube.
 category: Learning
 ---
-
+https://www.youtube.com/watch?v=j942wKiXFu8&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d
 ## Create a React Application
 ```
 npx create-react-app [name]

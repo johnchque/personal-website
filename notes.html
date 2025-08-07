@@ -36,21 +36,32 @@ title: Notes
       <p>
         If some things do not make sense, it is probably because the context is
         my private notes for my own understanding, sorry! I am constantly
-        refining my notes and publish the ones the are the most relevant.
+        refining my notes and publish the ones the are the most relevant
       </p>
       <div class="related-wrapper">
-        {% assign note_items = site.notes | sort: "updated" | reverse %} {% assign
-        notes_by_year = note_items | group_by_exp: "item", "item.updated | date:
-        '%Y'" %} {% for year_group in notes_by_year %}
+        {% assign note_items = site.notes | sort: "updated" | reverse %} {%
+        assign notes_by_year = note_items | group_by_exp: "item", "item.updated
+        | date: '%Y'" %} {% for year_group in notes_by_year %}
         <div class="year-group mb-4 position-relative">
-          <div class="year-heading year text-muted mb-3">{{ year_group.name }}</div>
+          <div class="year-heading year text-muted mb-3">
+            {{ year_group.name }}
+          </div>
           {% for note_item in year_group.items %}
           <div class="row mb-3 mb-md-0">
             <div class="col">
-              
-              <a href="{{ note_item.url | relative_url }}"
-                >{{ note_item.title }}</a
-              >
+              <a href="{{ note_item.url | relative_url }}">
+                {% case note_item.category %} {% when 'Learning' %}
+                <i class="ri-book-2-fill"></i>
+                {% when 'Seedling' %}
+                <i class="ri-seedling-fill"></i>
+                {% when 'Budding' %}
+                <i class="ri-plant-fill"></i>
+                {% when 'Evergreen' %}
+                <i class="ri-tree-fill"></i>
+                {% else %}
+                <i class="ri-leaf-fill"></i>
+                {% endcase %} {{ note_item.title }}
+              </a>
             </div>
             <div class="col-auto text-end text-muted">
               {{ note_item.updated | date: "%B %d" }}

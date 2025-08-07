@@ -4,6 +4,7 @@ title: Someone made a merge before me - GitHub collaboration
 date: 2025-05-25
 updated: 2025-05-25
 description: Collaborative development with git and github.
+category: Budding
 ---
 When working with teams, it is always a good idea to have a common understanding of how to collaborate in a single codebase.
 Without a common understanding there could be cases where changes are made without others knowing that would create bugs or unintended behaviors.

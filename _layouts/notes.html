@@ -11,8 +11,20 @@ layout: default
     </div>
 
     <article class="heading-title col-12 col-lg-6">
-      <header class="d-flex justify-content-between align-items-start">
-        <h1>{{ page.title }}</h1>
+      <header class="d-flex justify-content-between align-items-start mb-3">
+        <div class="emphasis">
+          {% case page.category %} {% when 'Learning' %}
+          <i class="ri-book-2-fill"></i>
+          {% when 'Seedling' %}
+          <i class="ri-seedling-fill"></i>
+          {% when 'Budding' %}
+          <i class="ri-plant-fill"></i>
+          {% when 'Evergreen' %}
+          <i class="ri-tree-fill"></i>
+          {% else %}
+          <i class="ri-leaf-fill"></i>
+          {% endcase %} {{ page.category }}
+        </div>
         <a
           href="#"
           class="theme-toggle"
@@ -22,6 +34,7 @@ layout: default
           <i class="ri-moon-line"></i>
         </a>
       </header>
+      <h1>{{ page.title }}</h1>
 
       {% if page.description %}
       <p class="lead text-muted mb-4">{{ page.description }}</p>

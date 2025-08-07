@@ -204,7 +204,7 @@ a.dark {
 
 i[class^="ri"] {
   display: inline-block;
-  vertical-align: text-top;
+  vertical-align: baseline;
 }
 
 /* ==========================================

@@ -1,6 +1,6 @@
 ---
 layout: notes
-title: My Docker notes
+title: Docker Crash Course by Netninja
 date: 2023-12-23
 updated: 2023-12-23
 description: Notes from the @NetNinja course in YouTube.

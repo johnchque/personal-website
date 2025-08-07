@@ -1,6 +1,6 @@
 ---
 layout: notes
-title: My GraphQL notes
+title: GraphQL Crash Course by Netninja
 date: 2023-12-27
 updated: 2023-12-27
 description: Notes from the @NetNinja course in YouTube.
